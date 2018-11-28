@@ -1,5 +1,5 @@
 ---
-title: 'Science des données'
+title: 'Science des données biologiques'
 subtitle:  \includegraphics[width=.08\textwidth,height=.1\textheight]{../template/biodatascience.png}
   \includegraphics[width=.08\textwidth,height=.1\textheight]{../template/SciViews-logo.pdf} \vfill Rendons les étudiants actifs de leurs apprentissages 
 author: Guyliann Engels & Philippe Grosjean 
@@ -15,35 +15,104 @@ SciViews::R
 ```
 
 
-### Présentation 
-
-Les statistiques “classiques” telles qu’enseignées dans un cursus de biologie sont de plus en plus insuffisantes dans le contexte actuel de la recherche.
+### Contexte 
 
  **Crise de la reproductibilité**, **Open Science**, **Open Data**, **Open Knowledge**
 
-\hfill
+Les statistiques “classiques” sont de plus en plus insuffisantes dans le contexte actuel de la recherche, à tel point qu'on parle maintenant d'une autre discipline\ : **la science des données.**
 
-Notre solution :
+![](image/StatisticsisDead.png)
 
-- Suppression des cours et de tp 
-- Etudiants actifs
+
+### Science des données : à l'interface entre plusieurs disciplines
+
+\columnsbegin
+\columnhalf
+
+- La Science des Données, c'est la discipline qui s'intéresse à l'analyse de données _sous toutes ses formes_
+
+- Très large et **interdisciplinaire** :
+    + **(Bio)statistiques** et visualisation
+    + Utilisation d'**outils informatiques**
+    + Expertise dans le domaine (**biologie**)
+
+- \alert{Il faut maîtriser simultanément les 3 domaines pour être un scientifique des données.}
+
+*C'est notre objectif que nos étudiants montois en biologie se distinguent par une formation plus complète en "science des données biologiques" que dans les autres universités belges.*
+
+\columnhalf
+
+![](image/data-science-venn.png)
+
+\columnsend
+
+### Un job recherché
+
+![](image/best-job.png)
+
+
+### Projet
+
+- Formation solide en science des données
+    * "Vendeur" pour attirer des étudiants vers l'UMONS
+    * Avantage à nos étudiants sur le marché de l'emploi
+
+![](image/data-scientist-useful.jpg)
+
+- Classes renversées
+- Cours et T.P. remplacés par des activités où les étudiants sont **(pro)actifs**
 - Apprentissage en continu
+- **Méthodes et matériel pédagogiques modernisés**
+- Évolution vers un MOOC, version anglaise
 
-Nos espérences :
-
-- Travaux reproductible : <https://github.com/BioDataScience-Course/sdd4_memoir>
 
 ### Processus d’apprentissage continu
 
-L'apprentissage est réparti sur 4 années pour un total de 16 crédits (175h en présentiel)
+L'apprentissage est réparti sur 4 années pour un total de 16 crédits (200h en présentiel)
 
 ![](image/processus.png)
 
+
+### Biostatistique dans les universités belges
+
+| Université   | Cours (h) | Exercices |  Total (h)  |
+|:-------------|:---------:|:---------:|:-----------:|
+| UCLouvain    |    36     |     39    |   75        |
+| ULiège       |    65     |     30    |   95        |
+| UNamur       |    41     |     74    |   115       |
+| ULB          |    54     |     78    |   132       |
+| UMons (*)    |    75     |    125    |   200       |
+
+(*) Y compris SDD4 & SDD5 à option en Master
+
+Et chez nos voisins flamands\ ?
+
+| Université   | Cours (h) | Exercices |  Total (h)  |
+|:-------------|:---------:|:---------:|:-----------:|
+| VUB          |    42     |    42     |   84        |
+| KUL          |    72     |    71     |   143       |
+| UAntwerpen   |    ??     |    ??     |   165       |
+| UGent        |    90     |   121     |   211       |
+
+
 ### Processus d'apprentissage actif
 
-Contenu des cours centralisé, varié, en ligne et en constante amélioration :  <http://biodatascience-course.sciviews.org>
+Il n'y a pas que le nombre d'heures qui compte. *Nous voulons rendre cet enseignement le plus qualitatif possible\ !* Contenu des cours centralisé, varié, en ligne et en constante amélioration :  <http://biodatascience-course.sciviews.org>
 
 ![](image/apprentissage.png)
+
+
+### Amélioration du point de vue qualitatif
+
+- Contenu numérique (vidéos, quizz, exercices en ligne)
+- Enregistrement de **toutes les actions** des étudiants dans une base de données
+- Feedback analysable pour déterminer ce qui fonctionne bien et moins bien
+- Progression des étudiants suivie de près
+
+#### Besoins
+
+Cette année-ci, nous déployons la partie du cours 1 (75h en présenciel, 12 modules). Pour progresser, nous avons besoin d'outils techniques (e.g., annotation dans les vidéos), et d'une aide institutionnelle (SAP, informatique, pédagogues, main d'oeuvre pour l'aide à l'élaboration du matériel pédagogique)
+
 
 ### En pratique 
 
@@ -83,7 +152,7 @@ Prenons le module 2 du cours de science des données I : visualisation et infér
 
 ___
 
-Progression des étudiants via les quiz en ligne 
+Progression des étudiants via les quizz et exercices en ligne.
 
 \columnsbegin
 \columnlarge
@@ -102,7 +171,10 @@ Lors de la réalisation des exercices, toutes les données sont récupérées et
 
 - Progression individuelle
 
+- Notez le taux de participation élevé\ !
+
 \columnsend
+
 
 ### Pour aller plus loin
 
@@ -112,9 +184,10 @@ Prenons le module 2 du cours de science des données I : visualisation et infér
 
 - [H5p](https://h5p.com)
 
-### Présentation
 
-Présentation d'un poster à la conférence : Rencontres R à Rennes 2018
+### Diffusion
+
+Présentation d'un poster à la conférence : Rencontres R à Rennes 2018.
 
 [Introduction de nouveaux outils (learnr, Github classroom,. . . ) dans un cours de Science des Données Biologiques](https://github.com/BioDataScience-Course/RencontresRRennes2018)
 
