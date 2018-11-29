@@ -101,19 +101,6 @@ Il n'y a pas que le nombre d'heures qui compte. *Nous voulons rendre cet enseign
 
 ![](image/apprentissage.png)
 
-
-### Amélioration du point de vue qualitatif
-
-- Contenu numérique (vidéos, quizz, exercices en ligne)
-- Enregistrement de **toutes les actions** des étudiants dans une base de données
-- Feedback analysable pour déterminer ce qui fonctionne bien et moins bien
-- Progression des étudiants suivie de près
-
-#### Besoins
-
-Cette année-ci, nous déployons la partie du cours 1 (75h en présenciel, 12 modules). Pour progresser, nous avons besoin d'outils techniques (e.g., annotation dans les vidéos), et d'une aide institutionnelle (SAP, informatique, pédagogues, main d'oeuvre pour l'aide à l'élaboration du matériel pédagogique)
-
-
 ### En pratique 
 
 Prenons le module 2 du cours de science des données I : visualisation et inférence (<http://biodatascience-course.sciviews.org/sdd-umons/visu1.html>)
@@ -194,3 +181,24 @@ Présentation d'un poster à la conférence : Rencontres R à Rennes 2018.
 \hfill
 
 \alert{Grand intérêt marqué par les professeurs présents}
+
+
+### Conclusion
+
+Amélioration du point de vue **qualitatif**
+
+- **Contenu numérique** (vidéos, quizz, exercices en ligne)
+    + Intégration de ces supports intéractifs
+    + Ouverture vers l'extérieur de ces supports (Moodle ? MOOC ?)
+- Enregistrement de toutes les actions des étudiants dans une base de données
+    + Analyse en vue d'**amélioration** des supports
+    + Sujet de recherche en pédagogie ? 
+- Restructuration d'un **salle info** propice à l'apprentissage actif
+
+#### Besoins
+
+- Evolution des outils numériques (H5P ? MOOC ?)
+- Aide (SAP ? Audiovisuel ? assistant pédagogique ? ...)
+- Projet de recherche associé ? 
+- Promotion à l'UMONS et à l'extérieur du projet
+
