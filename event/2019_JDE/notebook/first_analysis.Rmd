@@ -1,0 +1,168 @@
+---
+title: "Présentation pour la journée de l'enseignement"
+author: "Engels Guyliann & Grosjean philippe"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+```{r setup, echo = FALSE, warning=FALSE, results='hide', message=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+SciViews::R
+library(forcats)
+```
+
+## Introduction
+
+Ce document à pour objectif de réaliser une première analyse rapide  de la base des données sdd_data pour en présenter les premières tendances lors de JDE 2019.
+
+```{r}
+sdd <- read("../data/sdd_data.rds")
+sdd$tutorial <- factor(sdd$tutorial)
+ord <- rev(levels(sdd$tutorial))
+```
+
+La premièr question que je me pose est de connaitre le nombre de réponse formulée par quiz de manière globale.
+
+```{r}
+chart(sdd, formula = ~ fct_relevel(tutorial, ord) %fill=% tutorial) +
+  geom_bar( show.legend = F) +
+  coord_flip() +
+  labs( x = "Tutoriels", y = "Occurences")
+```
+
+La base de données comprend `r length(sdd$tutorial)`. Le tutoriel **sdd1.04a** a le plus grand nombre d'entrée dans la base de données avec `r length(sdd$tutorial[sdd$tutorial == "sdd1.04a"])`. Cependant, chaque questionnaire ne comprend pas le même nombre de question. Il est dès lors intéressant de diviser le nombre d'entrée par tutoriel en fonction du nombre de question par tutoriel.
+
+```{r}
+sdd %>.% 
+  mutate(., tuto_label = as.factor(paste(tutorial, label, sep = "_"))) %>.%
+  group_by(., tutorial)%>.%
+  summarise(., ntot = length(tutorial), n = length(unique(tuto_label)), ratio = ntot/n) %>.%
+  chart(., ratio ~ fct_relevel(tutorial, ord) %fill=% tutorial) +
+  geom_col(show.legend = F) +
+  coord_flip() +
+  labs( x = "Tutoriels", y = "Nombre d'entrée / nombre de question")
+```
+
+Au cours du premier quadrimestre, quand est ce que les étudiants ont réalisé les séances d'exercice.
+```{r}
+chart(data = sdd, fct_relevel(tutorial, ord) ~ date %fill=% tutorial) +
+  ggridges::geom_density_ridges(show.legend = F) +
+  labs( x = "Tutoriels", y = "Temps")
+```
+
+On observe que certaines séances d'exercices semble avoir mis en difficulté les étudiants. Prennons la séance d'exercice **sdd1.04a** pour tenter de comprendre les difficultés éprouvées par les étudiants.
+
+## **sdd1.04**
+
+La séance d'exercice comprend 17 questions dont les 10 premières sont des réalisations d'exercices dans R suivi de 6 questions sous la forme de quiz et enfin une dernière entrée pour y indiquer un commentaire sur la séance d'exercice.
+
+```{r}
+or <- c("bar1", "pie1", "bar2", "point1", "boxplot1", "histo1", 
+        "histo2", "line1", "line2", "comb1", "quiz-1", "quiz-2", 
+        "quiz1-1", "quiz1-2", "quiz1-3", "quiz1-4", "comm")
+ord <- rev(or)
+
+sdd %>.%
+  filter(., tutorial == "sdd1.04a") %>.%
+  chart(., ~ fct_relevel(label, ord)) +
+  geom_bar() + coord_flip() +
+  labs(x= "Réponses proposées", y = "Occurences")
+```
+
+### quiz-2
+
+La question labellée quiz-2 semble avoir porté un gros problème. Intéressons nous à cette question 
+
+```{r}
+sdd %>.%
+  filter(., tutorial == "sdd1.04a") %>.%
+  filter(., label == "quiz-2") -> t
+
+for (i in 1:nrow(t)) {
+  res <- jsonlite::fromJSON(t$data[i])$answers
+  t1 <- str_remove_all(sort(res), pattern = "un graphique en")
+  t1 <- str_c(t1, collapse = " & ")
+  if (length(res)) t$answers[i] <- t1
+}
+
+titre <- jsonlite::fromJSON(t$data[1])$question
+```
+
+ La question etait donc : `r titre`
+
+```{r}
+chart(t, ~ answers) +
+  geom_bar() +
+  coord_flip()+
+  labs(x= "Réponses proposées", y = "Occurences")
+```
+
+Suite à l'analyse des réponses proposées, on peut en tirer plusieurs pistes de réfléxions. Tout d'abord, on observe que les étudiants ont répondu principalement par le graphique en barres ce qui est une bonne réponse mais pas la seule. La question ne précise pas explicitement que plusieurs réponses peuvent être envisagé.
+
+```{r}
+t %>.% 
+  group_by(., user_name) %>.%
+  summarise(., first = first(answers))  -> test
+
+
+
+chart(t, ~ answers) +
+  geom_bar() +
+  geom_bar(mapping = f_aes(~first), data = test, fill = "red") +
+  coord_flip() +
+  labs(x= "Réponses proposées", y = "Occurences")
+```
+
+### quiz1-1
+
+```{r}
+sdd %>.%
+  filter(., tutorial == "sdd1.04a") %>.%
+  filter(., label == "quiz1-1") -> tt
+
+tt$answers <- NA
+for (i in 1:nrow(tt)) {
+  res <- jsonlite::fromJSON(tt$data[i])$answers
+  t1 <- str_c(sort(res), collapse = " & ")
+  t1 <- str_replace(t1, pattern = "la moyenne", replacement = "mean")
+  t1 <- str_replace(t1, pattern = "la valeur maximale et la valeur minimale", replacement = "max-min")
+  t1 <- str_replace(t1, pattern = "la médiane", replacement = "med")
+  t1 <- str_replace(t1, pattern = "l'espace inter-quartile", replacement = "iqr")
+  t1 <- str_replace(t1, pattern = "l'écart-type", replacement = "sd")
+  if (length(res)) tt$answers[i] <- t1
+}
+
+titre <- jsonlite::fromJSON(tt$data[1])$question
+```
+
+La question etait  : `r titre`
+
+```{r}
+chart(tt, ~ answers) +
+  geom_bar() +
+  coord_flip() +
+  labs(x= "Réponses proposées", y = "Occurences")
+```
+
+En décortiquant les réponses formulées par les étudiants, on observe qu'avec plusieurs tentatives possibles les bonnes réponses sont trouvées par les étudiants. Cependant, qu'en est il de leurs premières réponses (en rouge sur le graphique) ? 
+
+```{r}
+tt %>.% 
+  group_by(., user_name) %>.%
+  summarise(., first = first(answers)) -> test 
+
+chart(tt, ~ answers) +
+  geom_bar() +
+  geom_bar(mapping = f_aes(~first), data = test, fill = "red") +
+  coord_flip() +
+  labs(x= "Réponses proposées", y = "Occurences")
+```
+
+L'analyse des commentaires de ce quiz ne portait pas sur cette question.
+
+## Conclusion 
+
+La base de données collectant les informations des séances d'exercice est un outil très puissant qui permet un amélioration constante des outils proposé aux étudiants.
