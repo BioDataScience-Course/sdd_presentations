@@ -1,5 +1,5 @@
 ---
-title: "Learn the basic knowledge of the biological data science"
+title: "Better learning of data science in a biology curriculum by using R, RStudio, learnr & Github Classroom"
 author: "Engels Guyliann & Grosjean philippe"
 date: "`r Sys.Date()`"
 output: github_document
@@ -8,8 +8,8 @@ output: github_document
 
 ## Abstract
 
-We propose an inverse class of students to learn the biological data science with our learning tools in french. Students use the SVbox a virtual box with R and R studio and lots of other tools for reproducible research as Jupiter, Spyder, ... (add svbox app)
+After switching to modern tools for teaching data science (http://biodatascience-course.sciviews.org) with R, RStudio, learnr & Github ClassRoom, a higher participation rate and better overall results were observed in comparison to the old, traditional biostatistics course. By using richer, interactive learning material, we were able to increase interest, participation and learning of undergraduate students enrolled in a biology curriculum at UMONS, Belgium. The content of the course increased by 40% without increasing the number of in-class hours (75h). 
 
-We use a website (package blogdown) to structure our lessons and ours tools. An e-book (bookdown package) is used for the theoretical notions. With each notion, interactive tutorials (learnr package) coupled to a database are proposed. The analysis of harvested data in a web apps (shiny package) easily enables to highlight the student difficulties and to improve the educational quality tools. We also can use this database to evaluate the students.
+Among tools used, a fully configured virtual machine (svbox) with preinstalled R, RStudio, Python, Jupyter, Spyder and 1346 R packages is used both in class and at home. An e-book (bookdown) is used to collect pedagogical material in a centralized place. Twenty interactive tutorials (learnr) are proposed and individual learning progression is recorded (mongodb). Individual or group assessments are provided in Github Classroom. Data wrangling, plots and reproducible workflows are emphasized using tidyverse, and R Markdown.
 
-Students perform group work managed by GitHub Classroom. They use the RStudio projects to organise their work.  We have chosen to use Rmarkdown as a central tool to produce a report and notebook. our goal is to provide students with all the tools they need to conduct quality and reproducible research.
+85% of learnr exercises were finished, and a total of 187 Github repositories were created (37 students). Overall this approach was very successful with 92% success at the exam. We never got such a high success rate so far, with students that are not chiefly motivated to use a computer or to crunch numbers.
