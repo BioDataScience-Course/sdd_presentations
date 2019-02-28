@@ -1,0 +1,7 @@
+The svbox, an easily installable software environment for reproducible data science with R, Python and Julia
+================
+Philippe Grosjean & Guyliann Engels
+
+Reproducible research requires reproducible computing environments. There are many ways to standardize software ecosystems: virtualization, containerization (Docker), remastered live linux, virtual environments (Anaconda), cloud computing, ... All these solutions require a certain degree of technical skills to deploy. This is a barrier to distribute work to the mass. The easier-to-deploy solutions are thin containers with just a few software components. In case a more complex system is needed, the technical barrier resurfaces.
+
+We present here the SciViews Box, or svbox (<http://www.sciviews.org/svbox>), a fat reproducible software environment for data science providing R, Python, Julia and thousands of pre-installed packages, with RStudio server and Jupyter interconnected in the same box. Installation and use have been polished to be as easy as possible on Linux, Windows, or MacOS. It may be useful to distribute your next hybrid (say R + Python, or R + Julia) computations, or for your data science courses (see for instance <http://biodatascience-course.sciviews.org/sdd-umons/decouverte-des-outils.html> -in French-). In comparison to a course-dedicated server, your students truly own their svbox and can use it after the course. This is a major advantage for the adoption of reproducible data science practices by “non-technical” users, like biologists or social scientists.
