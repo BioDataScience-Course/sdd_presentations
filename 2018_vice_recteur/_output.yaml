@@ -10,4 +10,4 @@ beamer_presentation:
   fig_crop: false
   fig_caption: false
   includes:
-    in_header: "../template/_header.tex"
+    in_header: "template/_header.tex"

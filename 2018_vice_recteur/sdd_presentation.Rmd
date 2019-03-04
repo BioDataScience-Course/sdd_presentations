@@ -1,12 +1,15 @@
 ---
-title: 'Science des données biologiques'
-subtitle:  \includegraphics[width=.08\textwidth,height=.1\textheight]{../template/biodatascience.png}
-  \includegraphics[width=.08\textwidth,height=.1\textheight]{../template/SciViews-logo.pdf} \vfill Rendons les étudiants actifs de leurs apprentissages 
-author: Guyliann Engels & Philippe Grosjean 
-institute: Université de Mons, Belgique\break Laboratoire d'Écologie numérique des Milieux aquatiques\break \includegraphics[width=.08\textwidth,height=.1\textheight]{../template/EcoNum-logo.pdf} \break \url{http://biodatascience-course.sciviews.org} \break \url{sdd@sciviews.org}
+title: "Science des données biologiques"
+author: "Guyliann Engels & Philippe Grosjean"
 date: ''
-fontfamily: mathpazo
+institute: Université de Mons, Belgique\break Laboratoire d'Écologie numérique des
+  Milieux aquatiques\break \includegraphics[width=.08\textwidth,height=.1\textheight]{template/EcoNum-logo.pdf}
+  \break \url{http://biodatascience-course.sciviews.org} \break \url{sdd@sciviews.org}
 fontsize: 9pt
+subtitle: \includegraphics[width=.08\textwidth,height=.1\textheight]{template/biodatascience.png}
+  \includegraphics[width=.08\textwidth,height=.1\textheight]{template/SciViews-logo.pdf}
+  \vfill Rendons les étudiants actifs de leurs apprentissages
+fontfamily: mathpazo
 ---
 
 ```{r setup, include=FALSE}

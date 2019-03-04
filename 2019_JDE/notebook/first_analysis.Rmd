@@ -21,6 +21,8 @@ Les étudiants du cours de Science des Données I de l'année académique 2018-2
 
 ```{r}
  sdd_dt <- fread("../data/sdd_dt.csv")
+sdd_dt <- read("../data/sdd.rds", type = "rds")
+sdd_dt <- as.data.table(sdd_dt)
  sdd_dt[ , c("date", "tutorial", "version", "user_name", "event", "tuto_label") := list(
    parse_datetime(date), 
    factor(tutorial), 
