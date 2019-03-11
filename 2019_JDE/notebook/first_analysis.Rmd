@@ -20,7 +20,7 @@ library(forcats)
 Les étudiants du cours de Science des Données I de l'année académique 2018-2019 ont été les premiers étudiants à entrer dans la nouvelle philosophie proposée de cette suite de cours allant de SDD1 à SDD5. Ces cours axé sur la pratique sont donnés sous la forme de classe inversée. Parmi l'ensemble des outils mis à la dispotion des étudiants des séances d'exercice sous la forme de quiz intéractif avec le package [learnr](https://rstudio.github.io/learnr/) ont été proposé. L'ensemble des résultats proposés par les étudiants durant ces quiz ont été sauvegardé dans une base de données dont ce document propose une première ébauche. 
 
 ```{r}
- sdd_dt <- fread("../data/sdd_dt.csv")
+#sdd_dt <- fread("../data/sdd_dt.csv")
 sdd_dt <- read("../data/sdd.rds", type = "rds")
 sdd_dt <- as.data.table(sdd_dt)
  sdd_dt[ , c("date", "tutorial", "version", "user_name", "event", "tuto_label") := list(
@@ -64,7 +64,7 @@ Le graphique suivant représente la densité des entrées dans la base de donné
 ```{r}
 chart(data = sdd_dt, fct_relevel(tutorial, ord) ~ date %fill=% tutorial) +
   ggridges::geom_density_ridges(show.legend = F) +
-  labs( x = "Temps", y = "Tutoriels")
+  labs( x = "Temps [mois]", y = "Quiz")
 ggsave(filename = "progress_student.png",path = "../figure/", dpi = 1000, width = 5.79, height = 4.51)
 ```
 
@@ -118,11 +118,28 @@ b <- chart(qu04, ~ fct_relevel(label, ord) %fill=% event) +
 
 combine_charts(list(a,b), common.legend = TRUE)
 rm(qu1)
-# chart(qu04, ~ fct_relevel(label, ord) %fill=% event) +
-#   geom_bar(show.legend = F) +
-#   coord_flip() +
-#   labs(x= "Réponses proposées", y = "Occurences", fill = "Evénements")
-# ggsave(, filename = "entree_question.png",path = "../figure/", dpi = 1000, width = 5.79, height = 4.51)
+
+
+qu04_1 <- qu04
+tt <- unique(qu04_1$label)
+t <- c("bar1","pie1", "bar2", "point1", "boxplot1", "histo1", "histo2", "line1", "line2", "comb1", "question1", "question2", "question3", "question4", "question5", "question6", "comm")
+
+qu04_1$label <- factor(qu04_1$label, levels = or, labels = c("bar1","pie1", "bar2", "point1", "boxplot1", "histo1", "histo2", "line1", "line2", "comb1", "question1", "question2", "question3", "question4", "question5", "question6", "comm"))
+ord <- rev(t)
+
+qu04_1$event <- as.character(qu04_1$event)
+qu04_1$event[qu04_1$label == "comm"] <- "commentaire"
+qu04_1$event <- as.factor(qu04_1$event)
+chart(qu04_1, ~ label %fill=% event) +
+   geom_bar(show.legend = F) +
+   coord_flip() +
+   labs(x= "Réponses proposées", y = "Occurences", fill = "Evénements")
+
+chart(qu04_1, ~ fct_relevel(label, ord) %fill=% event) +
+   geom_bar(show.legend = F) +
+   coord_flip() +
+   labs(x= "Questions", y = "Nombre d'essais", fill = "Evénements")
+ ggsave(, filename = "entree_question.png",path = "../figure/", dpi = 1000, width = 5.79, height = 4.51)
 ```
 
 Au sein des différents exercices proposés durant ce tutoriels, nous décidons de porter notre attention sur 4 exercices dont :
@@ -198,7 +215,7 @@ chart(t, sum_per_tot ~ n | label) +
   geom_point() +
   geom_line() +
   geom_hline(yintercept = 100) +
-  labs( x = "Nombre de tentatives", y = "Total de bonnes \n réponses") +
+  labs( x = "Nombre d'essais", y = "Réponses correctes [%]") +
   expand_limits(x= c(0, 20), y= c(0, 100)) -> a
 
 b <- chart(bar_co1, ~ diff | label) +
@@ -206,7 +223,7 @@ b <- chart(bar_co1, ~ diff | label) +
   labs( x = "Temps (min)", y = "Nombre de bonnes \n réponses") +
   expand_limits(x= c(0, 20), y= c(0, 15))
 
-combine_charts(list(a,b), nrow = 2)
+combine_charts(list(a,b), nrow = 2, labels = c("A", "B"))
 ggsave(filename = "code_comparaison.png",path = "../figure/", dpi = 1000, width = 5.79, height = 4.51)
 ```
 
@@ -268,19 +285,27 @@ knitr::kable(tt, col.names = c("Label de la question", "Nombre d'étudiant"))
 ```
 
 ```{r}
+x <- unique(t$label)
+t$label <- factor(t$label, levels =  x, labels = c("question2", "question4"))
+t$label <- factor(t$label, levels =  c("question4", "question2"))
+
 chart(t, sum_per_tot ~ n | label) +
   geom_point() +
   geom_line() +
   geom_hline(yintercept = 100) +
-  labs( x = "Nombre de tentatives", y = "Total de bonnes \n réponses") +
+  labs( x = "Nombre d'essais", y = "Réponses correctes [%]") +
   expand_limits(x= c(0, 20), y= c(0, 100)) -> a
+
+x <- unique(quiz1$label)
+quiz1$label <- factor(quiz1$label, levels =  x, labels = c("question2", "question4"))
+quiz1$label <- factor(quiz1$label, levels =  c("question4", "question2"))
 
 b <- chart(quiz1, ~ diff | label) +
   geom_histogram() +
   labs( x = "Temps (min)", y = "Nombre de bonnes \n réponses") +
   expand_limits(x= c(0, 20), y= c(0, 15))
 
-combine_charts(list(a,b), nrow = 2)
+combine_charts(list(a,b), nrow = 2, labels = c("C", "D"))
 ggsave(filename = "quiz_comparaison.png",path = "../figure/", dpi = 1000, width = 5.79, height = 4.51)
 ```
 

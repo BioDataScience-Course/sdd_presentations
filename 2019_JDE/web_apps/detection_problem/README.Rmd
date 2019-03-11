@@ -1,0 +1,36 @@
+---
+title: "Outils de détection des difficultés des étudiants dans l'utilisation de quiz interactifs (package leanr)"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F,warning = F, message = F)
+SciViews::R
+library(data.table)
+
+# Import dataset
+sdd_dt <- data.table::fread("data/sdd_dt.csv")
+```
+
+Cette application shiny a pour objectif de proposer un outils de détection des difficultés des étudiants.
+
+```{r}
+sdd_dt[ , c("date", "tutorial", "version", "user_name", "event", "data", "tuto_label") := list(
+   parse_datetime(date), 
+   factor(tutorial), 
+   factor(version, levels = c("1.0.0", "1.1.0", "1.2.0"), ordered = TRUE ),
+   factor(user_name),
+   factor(event),
+   NULL,
+   factor(tuto_label)
+   )]
+ord <- rev(levels(sdd_dt$tutorial))
+```
+
+
+```{r}
+chart(data = sdd_dt, fct_relevel(tutorial, ord) ~ date %fill=% tutorial) +
+  ggridges::geom_density_ridges(show.legend = F) +
+  labs( x = "Temps", y = "Tutoriels")
+```
+
