@@ -17,7 +17,7 @@ library(forcats)
 
 ## Introduction
 
-Les étudiants du cours de Science des Données I de l'année académique 2018-2019 ont été les premiers étudiants à entrer dans la nouvelle philosophie proposée de cette suite de cours allant de SDD1 à SDD5. Ces cours axé sur la pratique sont donnés sous la forme de classe inversée. Parmi l'ensemble des outils mis à la dispotion des étudiants des séances d'exercice sous la forme de quiz intéractif avec le package [learnr](https://rstudio.github.io/learnr/) ont été proposé. L'ensemble des résultats proposés par les étudiants durant ces quiz ont été sauvegardé dans une base de données dont ce document propose une première ébauche. 
+Les étudiants du cours de Science des Données I de l'année académique 2018-2019 ont été les premiers étudiants à entrer dans la nouvelle philosophie proposée de cette suite de cours allant de SDD1 à SDD5. Ces cours axés sur la pratique sont donnés sous la forme de classe inversée. Parmi l'ensemble des outils mis à la dispotion des étudiants des séances d'exercice sous la forme de quiz interactif avec le package [learnr](https://rstudio.github.io/learnr/) ont été proposé. L'ensemble des résultats proposés par les étudiants durant ces quiz ont été sauvegardé dans une base de données dont ce document propose une première ébauche. 
 
 ```{r}
 #sdd_dt <- fread("../data/sdd_dt.csv")
@@ -65,6 +65,7 @@ Le graphique suivant représente la densité des entrées dans la base de donné
 chart(data = sdd_dt, fct_relevel(tutorial, ord) ~ date %fill=% tutorial) +
   ggridges::geom_density_ridges(show.legend = F) +
   labs( x = "Temps [mois]", y = "Quiz")
+
 ggsave(filename = "progress_student.png",path = "../figure/", dpi = 1000, width = 5.79, height = 4.51)
 ```
 
