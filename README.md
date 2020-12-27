@@ -1,4 +1,4 @@
-# Présentations relatives au projet SDD à l'ULMONS
+# Présentations relatives au projet SDD à l'UMONS
 
 Ce dépôt centralise l’ensemble des présentations, des posters et des outils de démonstration employés pour présenter la méthode d’enseignement de nos cours de Science des Données Biologiques à l'UMONS.
 
