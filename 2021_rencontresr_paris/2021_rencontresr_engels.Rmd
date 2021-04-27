@@ -1,0 +1,52 @@
+---
+title: "Retour d'expérience sur l'enseignement de la science des données biologiques en classe inversée"
+author:
+- Guyliann Engels 1^[Service d'écologie numérique, Institut Complexys & Infortech, guyliann.engels@umons.ac.be]
+- Philippe Grosjean 2^[Service d'écologie numérique, Institut Complexys & Infortech, philippe.grosjean@umons.ac.be]
+output: pdf_document
+indent: true
+bibliography: ref.bib
+---
+
+\begin{center}
+\textbf{Résumé}
+\end{center}
+R est enseigné dans le cursus en biologie de l'Université de Mons, Belgique. Cinq cours de sciences des données en classe inversée sont dispensé entre le deuxième bachelier et la seconde années de master. Nous utilisons le package {learnitdown} afin de gérer nos différents outils d'apprentissage {bookdown}, h5p, {leanrr}, {shiny} et les projets individuels ou de groupes sur GitHub. Nous pouvons suivre finement la progression de chaque étudiant. Sur l'année académique 2020-2021, les 133 étudiants ont réalisé 8800 commit et modifié plus de 300000 lignes dans les 33 projets proposé. On dénombre également plus de 300000 entrées dans la base de données associé aux activités H5P, learnR et shiny.
+
+\noindent \textbf{Mots-clefs} : Science des données biologiques -- suivi de l'apprentissage -- classe inversée -- learnitdown
+
+## Développement 
+
+R est enseigné dans le cursus des biologistes de l'Université de Mons en Belgique. Depuis 2018, les cours classique de biostatistique ont été remplacés par des cours de sciences des données biologiques donné en classe inversée. Ces nouveaux cours ont permit d'intégrer des nouvelles notions liées à la reproductibilité, à l'Open Data ou encore à l'Open Science. Ce changement d'approche pédagogique a été de paire avec l'utilisation de nouveaux outils d'apprentissages comme {bookdown}, {shiny}, {learnR},...
+
+Les activités d'apprentissages sont découpées en 3 niveaux. D'abord, les étudiants lisent les notions théoriques illustrées dans un contexte biologique grâce à {bookdown} et répondent à des questions intégrées générées avec H5P ou {Shiny} (<https://wp.sciviews.org/>). Ensuite, les étudiants réalisent des tutoriaux {learnR} afin de se familiariser avec le code R associé à ces notions théoriques. Pour finir, ils réalisent des travaux individuels ou de groupe afin d'appliquer ces notions théoriques sur un cas pratique en biologie. Les travaux sont hébergé sur Github dans une organisation (<https://github.com/BioDataScience-Course>) et généré via GitHub Classroom.
+
+Nous utilisons le package R {learnitdown} (<https://github.com/SciViews/learnitdown>) afin de gérer efficacement l'ensemble des outils employés comme une forme de plateforme d'apprentissage (*LMS Learning Managment Systems*) dédié à R.
+
+Les résultats des activités H5P, shiny et learnr sont directement collectés dans une base de données. Les projets sont analysés grâce au gestionnaire de versions git. Sur l'année 2020-2021 académique, les 133 étudiants réparti sur 3 années ont réalisé plus de 8800 commit et ont modifié plus de 300000 lignes dans les 33 projets proposés. On dénombre également plus de 300000 entrées dans la base de données associé aux activités H5P, learnR et shiny. L'analyse de ces nombreuses données nous permettent de suivre finement le travail réalisé par chaque étudiant. Les étudiants ont accès à leur progression grâce à un rapport de progression individuelle.
+
+Outre l'analyse fine de la progression d'un étudiant dans un cours données, l'analyse transversale des données sur plusieurs années vont également être très utiles afin d'adapter les activités d'apprentissages. Néanmoins, nous avons déjà 3 années successive d'étudiants qui ont suivi le même cours. 
+
+___
+
+
+La soumission doit contenir :
+
+1. le titre de la présentation,
+
+2. les noms des auteurs,
+
+3. les contacts des auteurs, incluant l’institut et le courriel,
+
+4. le résumé de l'intervention,
+
+5. les mots-clefs,
+
+6. le développement,
+
+7. d'éventuelles références (@chiquet2018variational).
+
+La soumission de deux pages maximum devra être déposée au format PDF sur le site web de la conférence.
+
+
+## Références
