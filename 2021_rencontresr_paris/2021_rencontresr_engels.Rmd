@@ -11,44 +11,20 @@ bibliography: ref.bib
 \begin{center}
 \textbf{Résumé}
 \end{center}
-R est enseigné dans les [cours de science des données](https://wp.sciviews.org) du cursus en biologie de l'Université de Mons, en Belgique. Cinq cours en classe inversée et apprentissage par projet sont dispensés sur les quatre dernières années de la formation (du deuxième bachelier à la seconde années de Master). Nous utilisons le package [{learnitdown}](https://www.sciviews.org/learnitdown/) afin de gérer nos différents outils d'apprentissage {bookdown}, h5p, {learnr}, {shiny} et les projets individuels ou de groupes sur GitHub. Pour l'année académique 2020-2021, les 133 étudiants ont réalisé 8800 commit et modifié plus de 300.000 lignes dans les 33 projets réalisés. On dénombre également plus de 300.000 entrées dans la base de données associée aux exercices H5P, learnR et Shiny. Cet exposé détaille la progression de l'apprentissage des étudiants analysée au travers de ces données.
+R est enseigné dans les [cours de science des données](https://wp.sciviews.org) du cursus en biologie de l'Université de Mons, en Belgique. Cinq cours en classe inversée et apprentissage par projet sont dispensés sur les quatre dernières années de la formation (du deuxième bachelier à la seconde années de Master). Nous utilisons le package [{learnitdown}](https://www.sciviews.org/learnitdown/) afin de gérer nos différents outils d'apprentissage {bookdown}, h5p, {learnr}, {shiny} et les projets individuels ou de groupes sur GitHub. L'ensemble de ces activités sont analysées afin d'obtenir un suivi précis en temps réel de la progression de chaque étudiant. Ces derniers peuvent également consulter un rapport de progression individuelle afin de suivre leur propre progression. Cet exposé détaille la progression de l'apprentissage des étudiants analysée au travers de ces données.
 
 \noindent \textbf{Mots-clefs} : Science des données biologiques -- suivi de l'apprentissage -- classe inversée -- learnitdown
 
 ## Développement 
 
-R est enseigné dans le cursus de biologie de l'Université de Mons en Belgique. Depuis 2018, les cours classique de biostatistique ont été remplacés par des cours de sciences des données biologiques en classe inversée. Ces nouveaux cours ont permit d'intégrer des nouvelles notions liées à la reproductibilité, au données ouvertes ou encore à l'Open Science. Ce changement d'approche pédagogique a été accompagné de l'utilisation de nouveaux outils comme des {bookdown} intégrés dans un [site Wordpress](https://wp.sciviews.org), des applications {shiny}, des tutoriels {learnR},...
+R est enseigné dans le cursus de biologie de l'Université de Mons en Belgique. Depuis 2018, les cours classique de biostatistique ont été remplacés par des cours de sciences des données biologiques en classe inversée. Ces nouveaux cours ont permit d'intégrer des nouvelles notions liées à la reproductibilité, au données ouvertes ou encore à l'Open Science. Ce changement d'approche pédagogique a été accompagné de l'utilisation progressive de nouveaux outils comme des {bookdown} intégrés dans un [site Wordpress](https://wp.sciviews.org), des applications {shiny}, des tutoriels {learnR},...
 
 Les activités d'apprentissages sont découpées en trois niveaux. D'abord, les étudiants lisent les notions théoriques illustrées dans un contexte biologique grâce à {bookdown} et répondent à des questions intégrées (H5P ou {Shiny}). Ensuite, les étudiants réalisent des tutoriels {learnR} afin de se familiariser avec le code R associé à ces notions théoriques. Pour finir, ils réalisent des travaux individuels ou de groupe afin d'appliquer ces notions théoriques sur un cas pratique en biologie. Les travaux sont hébergé sur Github dans une organisation (<https://github.com/BioDataScience-Course>) et généré via GitHub Classroom.
 
-Nous utilisons le package R [{learnitdown}](https://github.com/SciViews/learnitdown) afin de gérer efficacement l'ensemble des outils employés comme une forme de plateforme d'apprentissage (*LMS Learning Managment Systems*) dédié à R.
+Sur trois ans, le nombre d'étudiant suivant le cours de science des données biologique I a augmenté de 60%.  De ce fait, nous utilisons le package R [{learnitdown}](https://github.com/SciViews/learnitdown) afin de gérer efficacement l'ensemble des apprenants ainsi que les outils employés comme une forme de plateforme d'apprentissage (*LMS Learning Managment Systems*) dédié à R.
 
-Les résultats des activités H5P, {shiny} et {learnr} sont directement collectés dans une base de données. Les projets sont analysés grâce au gestionnaire de versions git. Sur l'année 2020-2021 académique, les 133 étudiants réparti sur 3 années ont réalisé plus de 8800 commit et ont modifié plus de 300.000 lignes dans les 33 projets réalisés. On dénombre également plus de 300.000 entrées dans la base de données associé aux activités H5P, {learnr} et {shiny}. A noter que les étudiants visualisent à tout moment leur rapport de progression et que leur évaluation est uniquement basée sur ces exercices (pas d'examen en fin d'année).
+Les résultats des activités H5P, {shiny} et {learnr} sont directement collectés dans une base de données. Les projets sont analysés grâce au gestionnaire de versions git. Sur l'année 2020-2021 académique, les 133 étudiants réparti sur 3 années ont réalisé plus de 8850 commit et ont modifié plus de 310.000 lignes dans les 34 projets réalisés. On dénombre également plus de 300.000 entrées dans la base de données associé aux activités H5P, {learnr} et {shiny}. A noter que les étudiants visualisent à tout moment leur rapport de progression et que leur évaluation est uniquement basée sur ces exercices. Ce suivi en continu permet à l'étudiant de suivre sa propre progression. Ces cours en classe inversé intéressent les étudiants. La motivation des étudiants est élevé et plus de 90% des activités sont réalisés. On dénombre un très faible taux d'abandon des étudiants (moins de 10% la première année). 
 
-<que donne l'analyse?> (mettre qsuerlques éléments ici qui donnent envie de suivre cette présentation)
-
-L'analyse transversale des données sur plusieurs années montre que...  Nous avons actuellement 3 années successives d'étudiants qui ont suivi le même cours. Les premiers outils implémentés sont les travaux sur Github et les tutoriaux learnr. Les 163 étudiants ont travaillé sur 30 projets (8700 commit, 413943 lignes modifiés) et réalisé entre 10 et 15 tutoriels learnr (227887 entrées). La participation à ce cours est très élevé et le pourcentage de réussite à ce cours est de 80% et plus chaque année.
-
-___
+L'analyse transversale des données sur plusieurs années montre que l'assiduité est directement proportionnel à la note finale. Nous obtenons plusieurs profils d'étudiants allant des étudiants qui abandonnent aux étudiants perfectionnistes. Le pourcentage de réussite reste stable et supérieur à 80%. Les activités d'apprentissages les plus compliquées sont détectées et adaptées chaque année afin de permettre aux étudiants d'acquérir les nouvelles compétences plus progressivement. Par exemple, le nombre de projet à réaliser a augmenté mais la nombre de commit par étudiant sur l'ensemble des projets reste stable. Les notes obtenues pour les différents projets à réalisé est hautement corrélé avec les notes obtenues aux examens. De ce fait, nous avons pu supprimer les examens de fin d'années.
 
 
-La soumission doit contenir :
-
-1. le titre de la présentation,
-
-2. les noms des auteurs,
-
-3. les contacts des auteurs, incluant l’institut et le courriel,
-
-4. le résumé de l'intervention,
-
-5. les mots-clefs,
-
-6. le développement,
-
-7. d'éventuelles références (@chiquet2018variational).
-
-La soumission de deux pages maximum devra être déposée au format PDF sur le site web de la conférence.
-
-
-## Références
