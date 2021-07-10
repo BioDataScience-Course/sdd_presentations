@@ -147,7 +147,7 @@ read("data/sdd_infos.csv") %>.%
 
 ### Suivi en temps réel
 
-![](figures/grade_sdd1_q1.png)
+![](figures/grade_sdd1.png)
 
 ### Evaluation
 
