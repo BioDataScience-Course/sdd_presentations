@@ -45,7 +45,7 @@ Guyliann Engels
 
 - crise de la reproductibilité 
 - crise de la valeur P
-- Croissance exponentielle des données
+- croissance exponentielle des données
 
 => Nos cours de Biostatistiques sont **dépassés**
 
@@ -145,11 +145,11 @@ read("data/sdd_infos.csv") %>.%
 
 ![](figures/la.png)
 
-### Suivi en temps réel
+### Construction de la note
 
 ![](figures/grade_sdd1.png)
 
-### Evaluation
+### Examen vs projet
 
 ```{r, fig.height= 2.5}
 read("data/sdd_eval.csv") %>.%
@@ -176,11 +176,13 @@ read("data/sdd_log.csv") %>.%
   labs(y = "Somme des lignes modifées", x = "Projets")
 ```
 
-### Conclusion
+___
 
 \begin{center}
 \textbf{Avez-vous des questions ?}
 \end{center}
+
+\vfill
 
 **Ressources utiles**
 
