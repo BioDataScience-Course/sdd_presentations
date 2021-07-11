@@ -165,24 +165,40 @@ Dans nos cours, **projets de groupe** (mobiliser l'**intelligence collective**).
 
 ## Perception
 
-### Charge cognitive des learnrs
+### Charge cognitive des learnrs (NASA-TLX, Hart & Staveland 1988)
 
-...
-
-
-### Utilisabilité du logiciel R + RStudio
-
-...
+![](images/Nasa-TLX_learnr.png)
 
 
-### État émotionnel général
+### Charge cognitive perçue des learnrs
 
-...
+![](images/rtlx.png)
+
+### Perception générale (roue des émotions de Genève)
+
+![](images/roue des émotions.png)
+
+
+### Perception générale - résultats
+
+![](images/emotions.png)
+
+
+### Perception du logiciel (System Usability Scale, Brooke 2013)
+
+\centering
+
+![](images/SUS_software.png){width='75%'}
+
+
+### SUS logiciel R + RStudio - résultats
+
+![](images/sus.png)
 
 
 ### Conclusions
 
-...
+... **TODO**
 
 ___
 
