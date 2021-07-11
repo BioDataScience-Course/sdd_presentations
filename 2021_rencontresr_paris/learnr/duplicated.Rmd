@@ -1,0 +1,163 @@
+---
+title: "`duplicated()`"
+tutorial:
+  id: "org.sciviews.demo.duplicated"
+  version: 1.0.0
+author: "Philippe Grosjean & Guyliann Engels"
+date: "2021-10-07"
+output: 
+  learnr::tutorial:
+    progressive: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(learnr)
+gradethis::gradethis_setup()
+
+set.seed(477)
+ex <- tibble::tibble(
+  month = sample(month.name, size = 10, replace = TRUE),
+  value = rnorm(10)
+)
+```
+
+<br/>
+
+**Objectif\ :** apprendre à utiliser la fonction `duplicated()` pour extraire le premier élément de chaque occurrence d'une variable dans un tableau.
+
+**Rappels\ :**
+
+[... ajoutez ici les prérequis et les rappels nécessaires à ce tutoriel.]
+
+
+## Utilisation de `duplicated()` sur un vecteur
+
+*Note\ : ceci constitue l'exercice de niveau 2 qui consiste à appliquer dans R le concept vu au cours après auto-évaluation de sa compréhension à l'aide d'un ou plusieurs petits exercices H5P faciles de niveau 1.*
+
+```{r prepare_data}
+set.seed(477)
+ex <- tibble::tibble(
+  month = sample(month.name, size = 10, replace = TRUE),
+  value = rnorm(10)
+)
+```
+
+Utilisez `duplicated()` pour sélectionner la première occurrence de chaque mois dans le **vecteur** `ex$month` et placez le résultat dans `v2`\ :
+
+```{r dupvec, exercise=TRUE, exercise.setup="prepare_data", exercise.timelimit=10}
+(v2 <- ___[___(___$___)])
+```
+
+```{r dupvec-hint-1}
+(v2 <- ex$___[___(ex$___)])
+```
+
+```{r dupvec-hint-2}
+(v2 <- ex$___[___duplicated(ex$___)])
+
+## Attention! Le hint suivant montre la solution ! ##
+```
+
+```{r dupvec-solution}
+(v2 <- ex$month[!duplicated(ex$month)])
+```
+
+```{r dupvec-check}
+gradethis::grade_this_code()
+```
+
+
+## Utilisation de `duplicated()` sur un tableau
+
+*Note\ : cet exercice peut effectivement se trouver dans le tutoriel, mais il peut aussi constituer une étape à réaliser dans un projet GitHub individuel visant à analyser un jeu de données de manière guidée (niveau 3).*
+
+Vous partez du tableau `ex` dont voici les 5 premières lignes\ :
+
+```{r, echo=TRUE}
+head(ex, n = 5)
+```
+
+Extrayez un sous-tableau avec les lignes correspondant aux premières occurrences de chaque mois dans la variable `ex_sub` en utilisant la fonction `duplicated()`.
+
+```{r duptab, exercise=TRUE, exercise.setup="prepare_data", exercise.timelimit=10}
+(ex_sub <- ___)
+```
+
+```{r duptab-hint-1}
+(ex_sub <- ex[___])
+```
+
+```{r duptab-hint-2}
+(ex_sub <- ex[___, ])
+```
+
+```{r duptab-hint-3}
+(ex_sub <- ex[____(___$___), ])
+## Attention! Le hint suivant montre la solution ! ##
+```
+
+```{r duptab-solution}
+(ex_sub <- ex[!duplicated(ex$month), ])
+```
+
+```{r duptab-check}
+gradethis::grade_this_code()
+```
+
+
+## Utilisation créative de `duplicated()`
+
+*Note\ : ceci constitue une utilisation un rien plus complexe de `duplicated()` pour effectuer une sélection en fonction de plusieurs colonnes. Nous réserverons son utilisation dans un projet GitHub d'analyse d'un jeu de données plus complexe en groupe de 2 à 4 étudiants (niveau 4).*
+
+Dans un tableau `ex2`, nous avons également les années dans la colonne `year` en plus des mois. Voici les 5 premières lignes de notre tableau augmenté\ :
+
+```{r echo=FALSE}
+set.seed(477)
+ex2 <- tibble::tibble(
+  month = sample(month.name, size = 10, replace = TRUE),
+  value = rnorm(10),
+  year = sample(c(2020, 2021), size = 10, replace = TRUE)
+) %>% dplyr::select(year, month, value)
+```
+
+```{r, echo=TRUE}
+head(ex2, n = 5)
+```
+
+À partir de `ex2`, créez `ex2_sub` qui ne contient que les premières lignes pour une combinaison année-mois, toujours en utilisant `duplicated()`.
+
+```{r prepare_data2}
+set.seed(477)
+ex2 <- tibble::tibble(
+  month = sample(month.name, size = 10, replace = TRUE),
+  value = rnorm(10),
+  year = sample(c(2020, 2021), size = 10, replace = TRUE)
+) %>% dplyr::select(year, month, value)
+```
+
+```{r duptab2, exercise=TRUE, exercise.setup="prepare_data2", exercise.timelimit=10}
+(ex2_sub <- ___[___(___), ])
+```
+
+```{r duptab2-hint-1}
+(ex2_sub <- ___[!duplicated(___), ])
+```
+
+```{r duptab2-hint-2}
+(ex2_sub <- ___[!duplicated(___(ex2$year, ___)), ])
+```
+
+```{r duptab2-hint-3}
+(ex2_sub <- ___[!duplicated(paste(ex2$year, ___)), ])
+## Attention! Le hint suivant montre la solution ! ##
+```
+
+```{r duptab2-solution}
+(ex2_sub <- ex2[!duplicated(paste(ex2$year, ex2$month)), ])
+```
+
+```{r duptab2-check}
+gradethis::grade_this_code()
+```

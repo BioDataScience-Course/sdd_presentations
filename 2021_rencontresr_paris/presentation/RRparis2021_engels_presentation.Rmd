@@ -3,7 +3,7 @@ title: "Retour d'expérience sur l'enseignement de la science des données biolo
 shorttitle: "Beamer Slides"
 subtitle: "\\break \\vfill \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/EcoNum-logo.pdf}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/biodatascience.png}"
 author: "Guyliann Engels & Philippe Grosjean"
-institute: "Université de Mons, Belgique\\break Laboratoire d'Écologie numérique \\break <\\url{guyliann.engelsn@umons.ac.be}>"
+institute: "Université de Mons, Belgique\\break Service d'Écologie numérique \\break <\\url{guyliann.engels@umons.ac.be}>"
 date: ""
 fontfamily: mathpazo
 fontsize: 9pt
@@ -64,21 +64,21 @@ Guyliann Engels
 
 ### Objectifs
 
-**Accompagner** des étudiants afin qu'ils soient capables de réaliser les étapes suivantes de manière **reproducutible** : 
+**Accompagner** les étudiants afin qu'ils soient capable de réaliser les étapes suivantes de manière **reproductible** :
 
 - **collecter** des données, 
 - **nettoyer** des données, 
 - **remanier** des données, 
 - **analyser** des données,
 - **communiquer** les résultats,
-- **dévelloper** un esprit critique
+- **développer** un esprit critique.
 
 
 ### Enseignement revisité
 
 ![](figures/sdd_modif.png)
 
-### Contenu des cours
+### Contenu des cours de science des données à l'Université de Mons
 
 \begincols
 \begincol{.50\textwidth}
@@ -99,7 +99,7 @@ Guyliann Engels
 
 - recherche reproductible
 - gestion de projet
-- collaboration entre les étudiants
+- collaboration entre étudiants
 - open data
 
 \endcol
@@ -159,7 +159,7 @@ read("data/sdd_infos.csv") %>.%
 
 \vfill
 
- => En 2020-2021, plus de **450.000 entrées** pour 130 étudiants dans notre base de données
+ => En 2020-2021, + de **450.000 entrées** pour 130 étudiants
 
 ### Analyse de l'apprentissage
 
@@ -184,7 +184,7 @@ read("data/sdd_log.csv") %>.%
   chart(., change ~ app %fill=% type) +
   geom_boxplot() +
   coord_flip() +
-  labs(y = "Somme des lignes modifiées", x = "Projets")
+  labs(y = "Lignes modifiées", x = "Projets")
 ```
 
 ### Avez-vous des questions ?
