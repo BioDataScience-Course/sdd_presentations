@@ -3,7 +3,7 @@ title: "Retour d'expérience sur l'enseignement de la science des données biolo
 shorttitle: "Beamer Slides"
 subtitle: "\\break \\vfill \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/EcoNum-logo.pdf}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/biodatascience.png}"
 author: "Guyliann Engels & Philippe Grosjean"
-institute: "Université de Mons, Belgique\\break Laboratoire d'Écologie numérique \\break <\\url{guyliann.engelsn@umons.ac.be}>"
+institute: "Université de Mons, Belgique\\break Service d'Écologie numérique \\break <\\url{guyliann.engels@umons.ac.be}>"
 date: ""
 fontfamily: mathpazo
 fontsize: 9pt
@@ -43,48 +43,49 @@ Guyliann Engels
 
 ### Constat
 
-- crise de la reproductibilité 
-- crise de la valeur P
-- croissance exponentielle des données
+- Crise de la reproductibilité 
+- Crise de la valeur P
+- Croissance exponentielle des données
 
 => Nos cours de Biostatistiques sont **dépassés**
 
 ### Objectifs
 
-**Accompagner** des étudiants afin qu'ils soient capable de réaliser les étapes suivantes de manière **reproducutible** : 
+**Accompagner** les étudiants afin qu'ils soient capable de réaliser les étapes suivantes de manière **reproductible** : 
 
 - **collecter** des données, 
 - **nettoyer** des données, 
 - **remanier** des données, 
 - **analyser** des données,
-- **communiquer** les analyses
+- **communiquer** les résultats,
+- **développer** un esprit critique.
 
 ### Enseignement revisité
 
 ![](figures/sdd_modif.png)
 
-### Contenu des cours
+### Contenu des cours de science des données à l'Université de Mons
 
 \begincols
 \begincol{.50\textwidth}
-**Connaissance spécialisée**
+**Connaissances spécialisées**
 
 \vfill
 
 - visualisation \& inférence
 - modélisation \& analyse multivariée
-- machine learning \& série spatio-temporelle
+- machine learning \& séries spatio-temporelles
 
 \endcol
 \begincol{.50\textwidth}
 
-**Compétence transversale**
+**Compétences transversales**
 
 \vfill
 
 - recherche reproductible
 - gestion de projet
-- collaboration entre les étudiants
+- collaboration entre étudiants
 - open data
 
 \endcol
@@ -112,8 +113,8 @@ On veut des étudiants **actifs**
 **Cahier des charges :**
 
 - cours centralisé,
-- exercice intégré dans le cours,
-- récupération des données généré par les étudiants
+- exercices intégrés dans le cours,
+- récupération des données générées par les étudiants
 
 
 
@@ -133,7 +134,7 @@ read("data/sdd_infos.csv") %>.%
 
 \vfill
 
- => + de 300000 entrées dans notre base de données
+ => en 2020-2021, + de 450.000 évènements collectés pour 130 étudiants
 
 ### Analyse de l'apprentissage
 
@@ -173,7 +174,7 @@ read("data/sdd_log.csv") %>.%
   chart(., change ~ app %fill=% type) +
   geom_boxplot() +
   coord_flip() +
-  labs(y = "Somme des lignes modifées", x = "Projets")
+  labs(y = "Lignes modifiées", x = "Projets")
 ```
 
 ___
