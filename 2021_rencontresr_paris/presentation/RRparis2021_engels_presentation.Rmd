@@ -198,6 +198,7 @@ read("data/sdd_log.csv") %>.%
 - Site web : <https://wp.sciviews.org/>
 - sdd_admin : bookdown sur nos outils <https://github.com/BioDataScience-Course/sdd-admin>
 - {learnitdown} : <https://www.sciviews.org/learnitdown/>
+- présentation : <https://github.com/BioDataScience-Course/sdd_presentations>
 
 \vfill
 
