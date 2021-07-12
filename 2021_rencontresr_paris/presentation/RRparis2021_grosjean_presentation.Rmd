@@ -128,9 +128,11 @@ Exercice **H5P** (https://h5p.org/node/1193264). Facile, ludique, mais un rien p
 
 ### Niveau 2 : appliquer
 
-Mise en situation, code R exécutable et vérifiable : **tutoriel learnr**.
+Code R exécutable et vérifiable. 5 à 10 exercices dans un **tutoriel learnr**. Exemple disponible à **https://go.sciviews.org/learnr_duplicated** 
 
-**TODO:** lien vers le tutoriel de démo + effectuer l'exercice dedans...
+*(sauver en duplicated.Rmd, ouvrir dans RStudio et cliquer sur "Run Document").*
+
+![](images/learnr.png)
 
 
 ### Niveau 3 : transférer
