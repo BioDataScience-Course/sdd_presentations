@@ -1,10 +1,10 @@
 ---
 title: "Perception de R et RStudio par des apprenants dans des cours de science des données biologiques"
 shorttitle: "Beamer Slides"
-subtitle: "\\break \\vfill \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/EcoNum-logo.pdf}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/biodatascience.png}"
+subtitle: "\\break \\vfill \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/EcoNum-logo.pdf}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/biodatascience.png}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{figures/rr2021.jpg}"
 author: "Philippe Grosjean & Guyliann Engels"
 institute: "Université de Mons, Belgique\\break Service d'Écologie numérique \\break <\\url{philippe.grosjean@umons.ac.be}>, <\\url{phgrosjean@sciviews.org}>"
-date: ""
+date: "Rencontres R 2021, Paris"
 fontfamily: mathpazo
 fontsize: 9pt
 ---
@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 #SciViews::R
 ```
 
-### Contexte
+### De quoi allons-nous parler ?
 
 **Cours de science des données biologiques à l'Université de Mons** (https://wp.sciviews.org), cf. présentation précédente de Guyliann Engels
 
@@ -30,7 +30,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 ### Apprendre, niveau 0.x
 
-Cours en amphis, vidéos, "textbooks", ... = apprenants **passifs**
+Cours en amphis, vidéos, ... = apprenants **passifs**
 
 ![](images/lecture.jpg)
 
@@ -76,7 +76,7 @@ Imitation sans réfléchir
 ![](images/apprendre2.png){width='80%'}
 
 
-### Exemple: retirer les premiers éléments uniques (vecteur ou tableau)
+### Exemple : retirer les premiers éléments uniques (vecteur ou tableau)
 
 Jeu de données exemple dans la variable `ex`:
 
@@ -96,7 +96,7 @@ Je veux récupérer la première ligne pour chaque mois du tableau.
 
 ---
 
-Résolution avec tidyverse ({dplyr}) pour un tableau:
+Résolution avec tidyverse ({dplyr})\ :
 
 ```{r, echo=TRUE}
 library(tidyverse)
@@ -105,7 +105,7 @@ ex %>%
   slice_head(n = 1)
 ```
 
-**Notez ceci:**
+**Notez ceci\ :**
 
 - L'ordre des éléments dans le tableau final a changé (ordre alphabétique),
 - Cela ne fonctionne pas pour un vecteur
@@ -121,9 +121,9 @@ En R de base, vous pouvez utiliser la fonction `duplicated()`.
 
 ### Niveau 1 : faire
 
-Facile, ludique, mais un rien plus évolué que le "bête" recopiage. Exercice **H5P**. 
+Exercice **H5P**. Facile, ludique, mais un rien plus évolué que le "bête" recopiage.
 
-Exemple : https://h5p.org/node/1193264
+Exemple\ : https://h5p.org/node/1193264
 
 ![](images/h5p_drag_words.png)
 
@@ -147,7 +147,7 @@ Dans nos cours\ : **projets individuels** dans GitHub / RStudio.
 
 \vfill
 
-*Exemple\ : le jeu de données à analyser implique de récupérer la première occurrence pour chaque type d'évènment.*
+*Exemple\ : le jeu de données à analyser implique de récupérer la première occurrence pour chaque type d'évènement.*
 
 **TODO:** retravailler et illustrer cette dia.
 
@@ -191,6 +191,54 @@ Dans nos cours, **projets de groupe** (mobiliser l'**intelligence collective**).
 ![](images/SUS_software.png){width='75%'}
 
 
+### Interprétation de l'échelle SUS
+
+Sur base de plusieurs centaines d'utilisation, une échelle indicative se dégage (Brooke 2013, SUS: a retrospective).
+
+\vfill
+
+\begincols
+\begincol{.50\textwidth}
+
+**SUS**
+
+- 25
+
+- 39
+
+- 52
+
+- **68**
+
+- 73
+
+- 86
+
+- 100
+
+\endcol
+\begincol{.50\textwidth}
+
+**Utilisabilité**
+
+- pire imaginable
+
+- mauvais
+
+- acceptable
+
+- **score moyen**
+
+- bon
+
+- excellent
+
+- meilleur imaginable
+
+\endcol
+\endcols
+
+
 ### SUS logiciel R + RStudio - résultats
 
 ![](images/sus.png)
@@ -198,7 +246,13 @@ Dans nos cours, **projets de groupe** (mobiliser l'**intelligence collective**).
 
 ### Conclusions
 
-... **TODO**
+- Apprentissage **actif** en plusieurs **étapes** de difficulté croissante
+
+- Tutoriels **learnr** efficaces pour *appliquer* (niveau 2)\ ; Charge cognitive perçue moyenne
+
+- Beaucoup de concepts nouveaux au premier cours\ : **émotions générales** négatives qui évoluent en positif aux cours suivants
+
+- Projets individuels et en groupe avec **R, RStudio et GitHub**\ : utilisabilité perçue plutôt faible
 
 ___
 
