@@ -175,7 +175,7 @@ read("data/sdd_infos.csv") %>.%
 
 ![](figures/grade_sdd1.png)
 
-### Amélioration des exercices
+### Quantification de la charge de travail
 
 ```{r, fig.height= 3}
 read("data/sdd_log.csv") %>.%
