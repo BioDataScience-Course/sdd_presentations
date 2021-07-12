@@ -21,7 +21,7 @@ SciViews::R
 
 Philippe Grosjean
 
-- Professeur
+- Professeur 
 - Biologiste marin
 - Développeur en R
 
@@ -43,15 +43,28 @@ Guyliann Engels
 
 ### Constat
 
-- Crise de la reproductibilité 
-- Crise de la valeur P
-- Croissance exponentielle des données
+\begincols
+\begincol{.50\textwidth}
+
+- croissance exponentielle des données
+- crise de la reproductibilité 
+- crise de la valeur P
+
+\endcol
+\begincol{.50\textwidth}
+
+\includegraphics[width=1\linewidth]{figures/bigdata.png}
+
+\endcol
+\endcols
+
+\vfill
 
 => Nos cours de Biostatistiques sont **dépassés**
 
 ### Objectifs
 
-**Accompagner** les étudiants afin qu'ils soient capable de réaliser les étapes suivantes de manière **reproductible** : 
+**Accompagner** les étudiants afin qu'ils soient capable de réaliser les étapes suivantes de manière **reproductible** :
 
 - **collecter** des données, 
 - **nettoyer** des données, 
@@ -59,6 +72,7 @@ Guyliann Engels
 - **analyser** des données,
 - **communiquer** les résultats,
 - **développer** un esprit critique.
+
 
 ### Enseignement revisité
 
@@ -110,13 +124,24 @@ On veut des étudiants **actifs**
 
 ### Support de cours
 
-**Cahier des charges :**
+\begin{center}
+\textbf{Cahier des charges}
+\end{center}
 
 - cours centralisé,
 - exercices intégrés dans le cours,
 - récupération des données générées par les étudiants
 
 
+\begin{center}
+\textbf{Outils}
+
+
+\includegraphics{figures/svbox.png}
+
+
+Machine virtuelle précongifurée qui comprend R, Rstudio, git et plus de 1200 packages utiles dnas la science des données
+\end{center}
 
 ### Démonstration
 
@@ -134,7 +159,7 @@ read("data/sdd_infos.csv") %>.%
 
 \vfill
 
- => en 2020-2021, + de 450.000 évènements collectés pour 130 étudiants
+ => En 2020-2021, + de **450.000 entrées** pour 130 étudiants
 
 ### Analyse de l'apprentissage
 
@@ -150,22 +175,7 @@ read("data/sdd_infos.csv") %>.%
 
 ![](figures/grade_sdd1.png)
 
-### Examen vs projet
-
-```{r, fig.height= 2.5}
-read("data/sdd_eval.csv") %>.%
-  mutate(., course_year = paste0(course, " (", acad_year, ")")) %>.%
-  chart(., exam ~ result | course_year) +
-  geom_vline(xintercept = 5, alpha = 0.3) +
-  geom_hline(yintercept = 5, alpha = 0.3) +
-  geom_jitter(alpha = 1, width = 0.05, height = 0.05, show.legend = FALSE) +
-  ylim(c(0,10)) +
-  xlim(c(0,10)) +
-  labs(y = "Note de l'examen (/10)", x = "Note des projets (/10)") +
-  theme(aspect.ratio = 1)
-```
-
-### Amélioration des exercices
+### Quantification de la charge de travail
 
 ```{r, fig.height= 3}
 read("data/sdd_log.csv") %>.%
@@ -177,16 +187,23 @@ read("data/sdd_log.csv") %>.%
   labs(y = "Lignes modifiées", x = "Projets")
 ```
 
-___
+### Avez-vous des questions ?
 
 \begin{center}
-\textbf{Avez-vous des questions ?}
+\textbf{Ressources utiles}
 \end{center}
 
 \vfill
 
-**Ressources utiles**
-
 - Site web : <https://wp.sciviews.org/>
 - sdd_admin : bookdown sur nos outils <https://github.com/BioDataScience-Course/sdd-admin>
 - {learnitdown} : <https://www.sciviews.org/learnitdown/>
+
+\vfill
+
+\begin{center}
+\includegraphics[width=.16\textwidth,height=.2\textheight]{template/EcoNum-logo.pdf}  \includegraphics[width=.16\textwidth,height=.2\textheight]{template/biodatascience.png}
+\end{center}
+
+
+
