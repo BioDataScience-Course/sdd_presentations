@@ -1,10 +1,10 @@
 ---
 title: "Retour d'expérience sur l'enseignement de la science des données biologiques en classe inversée"
 shorttitle: "Beamer Slides"
-subtitle: "\\break \\vfill \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/EcoNum-logo.pdf}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/biodatascience.png}"
+subtitle: "\\break \\vfill \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/EcoNum-logo.pdf}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/biodatascience.png}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{figures/rr2021.jpg}"
 author: "Guyliann Engels & Philippe Grosjean"
 institute: "Université de Mons, Belgique\\break Service d'Écologie numérique \\break <\\url{guyliann.engels@umons.ac.be}>"
-date: ""
+date: "Rencontres R 2021, Paris"
 fontfamily: mathpazo
 fontsize: 9pt
 ---
