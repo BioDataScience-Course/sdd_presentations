@@ -12,6 +12,14 @@ runtime: shiny_prerendered
 ---
 
 ```{r setup, include=FALSE}
+# Tested with R 4.0.5 and options(repos = c(CRAN =
+# "https://mran.microsoft.com/snapshot/2021-05-17"))
+# Devel versions needed:
+#remotes::install_github("r-lib/rlang")
+#remotes::install_github("rstudio/learnr")
+#remotes::install_github("rstudio/greadethis")
+#install.packages(c("dplyr", "tibble"))
+
 knitr::opts_chunk$set(echo = TRUE)
 library(learnr)
 gradethis::gradethis_setup()
@@ -25,16 +33,54 @@ ex <- tibble::tibble(
 
 <br/>
 
-**Objectif\ :** apprendre à utiliser la fonction `duplicated()` pour extraire le premier élément de chaque occurrence d'une variable dans un tableau.
+**Objectif\ :** apprendre à utiliser la fonction `duplicated()` pour extraire le premier élément de chaque occurrence d'une variable dans un tableau ou un vecteur (ceci est un exemple pour illustrer le type d'exercices progressifs proposés en niveau 2 de difficulté dans un tutoriel {learnr} pour les cours à https://wp.scviews.org).
 
 **Rappels\ :**
 
 [... ajoutez ici les prérequis et les rappels nécessaires à ce tutoriel.]
 
+*Note\ : Les étudiants perdent 10% des points à chaque hint vu, et 50% s'ils voient la solution. Ainsi, cela les motive à essayer effectivement par eux-mêmes, tout en autorisant une aide s'ils sont bloqués. L'enregistrement de leur activité en respect du RGPD se fait dans une base MongoDB grâce au package {learnitdown} (mais pas ici !).*
+
+
+## Utilisation simple de `duplicated()`
+
+Voici un vecteur `v`\ :
+
+```{r, echo=FALSE}
+v <- c("chien", "chat", "chien", "chat", "chat", "cheval", "chien")
+```
+
+```{r, echo=TRUE}
+print(v)
+```
+
+```{r prepare_vec}
+v <- c("chien", "chat", "chien", "chat", "chat", "cheval", "chien")
+```
+
+Indiquez à quelle position se situe la première occurrence de chaque mot dans `v` en retournant un vecteur `v1` de même taille contenant des valeurs logiques (`TRUE` ou `FALSE`). Utilisez `duplicated()` pour y arriver.
+
+```{r dupvec1, exercise=TRUE, exercise.setup="prepare_vec", exercise.timelimit=10}
+v1 <- ___(___)
+v1
+```
+
+```{r dupvec1-hint-1}
+v1 <- !___(v)
+v1
+## Attention! Le hint suivant montre la solution ! ##
+```
+
+```{r dupvec1-solution}
+v1 <- !duplicated(v)
+v1
+```
+
+```{r dupvec1-check}
+gradethis::grade_this_code(correct = "Il suffit d'inverser le résultat renvoyé par duplicated() grâce à ! (not)")
+```
 
 ## Utilisation de `duplicated()` sur un vecteur
-
-*Note\ : ceci constitue l'exercice de niveau 2 qui consiste à appliquer dans R le concept vu au cours après auto-évaluation de sa compréhension à l'aide d'un ou plusieurs petits exercices H5P faciles de niveau 1.*
 
 ```{r prepare_data}
 set.seed(477)
@@ -46,26 +92,26 @@ ex <- tibble::tibble(
 
 Utilisez `duplicated()` pour sélectionner la première occurrence de chaque mois dans le **vecteur** `ex$month` et placez le résultat dans `v2`\ :
 
-```{r dupvec, exercise=TRUE, exercise.setup="prepare_data", exercise.timelimit=10}
+```{r dupvec2, exercise=TRUE, exercise.setup="prepare_data", exercise.timelimit=10}
 (v2 <- ___[___(___$___)])
 ```
 
-```{r dupvec-hint-1}
+```{r dupvec2-hint-1}
 (v2 <- ex$___[___(ex$___)])
 ```
 
-```{r dupvec-hint-2}
+```{r dupvec2-hint-2}
 (v2 <- ex$___[___duplicated(ex$___)])
 
 ## Attention! Le hint suivant montre la solution ! ##
 ```
 
-```{r dupvec-solution}
+```{r dupvec2-solution}
 (v2 <- ex$month[!duplicated(ex$month)])
 ```
 
-```{r dupvec-check}
-gradethis::grade_this_code()
+```{r dupvec2-check}
+gradethis::grade_this_code(correct = "Le vecteur de valeurs logiques est utilisé à l'intérieur d'un indiçage sur le vecteur v[....] pour extraire les éléments qui nous intéressent.")
 ```
 
 
@@ -103,7 +149,7 @@ Extrayez un sous-tableau avec les lignes correspondant aux premières occurrence
 ```
 
 ```{r duptab-check}
-gradethis::grade_this_code()
+gradethis::grade_this_code(correct = "Le principe est le même que dans l'exercice précédent, mais l'indiçage se fait sur les lignes à l'aide de x[...., ].")
 ```
 
 

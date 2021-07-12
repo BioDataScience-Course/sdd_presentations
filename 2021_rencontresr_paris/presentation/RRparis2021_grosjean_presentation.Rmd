@@ -121,13 +121,9 @@ En R de base, vous pouvez utiliser la fonction `duplicated()`.
 
 ### Niveau 1 : faire
 
-Exercice **H5P**. Facile, ludique, mais un rien plus évolué que le "bête" recopiage.
+Exercice **H5P** (https://h5p.org/node/1193264). Facile, ludique, mais un rien plus évolué que le "bête" recopiage.
 
-Exemple\ : https://h5p.org/node/1193264
-
-![](images/h5p_drag_words.png)
-
-**TODO:** QR code pour l'exercice.
+![](images/h5p_drag_words_qr.png)
 
 
 ### Niveau 2 : appliquer
