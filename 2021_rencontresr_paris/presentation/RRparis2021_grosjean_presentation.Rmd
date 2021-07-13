@@ -62,9 +62,27 @@ Imitation sans réfléchir
 \endcols
 
 
-### Apprendre... vraiment, un processus complexe
+### Apprendre : s'appuyer sur la science
 
-![](images/learning.png)
+\begincols
+\begincol{.50\textwidth}
+
+![](images/how_learning_happens.jpg)
+
+\endcol
+\begincol{.50\textwidth}
+
+28 recherches clés sur la compréhension du mécanisme de l'apprentissage.
+
+\vfill
+
+ 
+
+"How to learn effectively, efficiently, and enjoyably."
+
+\endcol
+\endcols
+
 
 ### Apprendre, niveaux 1 à 4
 
@@ -94,24 +112,8 @@ head(ex, n = 5)
 
 Je veux récupérer la première ligne pour chaque mois du tableau.
 
----
 
-Résolution avec tidyverse ({dplyr})\ :
-
-```{r, echo=TRUE}
-library(tidyverse)
-ex %>%
-  group_by(month) %>%
-  slice_head(n = 1)
-```
-
-**Notez ceci\ :**
-
-- L'ordre des éléments dans le tableau final a changé (ordre alphabétique),
-- Cela ne fonctionne pas pour un vecteur
-
-
-### Le même... mais en R de base (ordre sans importance)
+### Résolution en R de base
 
 En R de base, vous pouvez utiliser la fonction `duplicated()`.
 
@@ -121,7 +123,7 @@ En R de base, vous pouvez utiliser la fonction `duplicated()`.
 
 ### Niveau 1 : faire
 
-Exercice **H5P** (https://h5p.org/node/1193264). Facile, ludique, mais un rien plus évolué que le "bête" recopiage.
+Exercice **H5P** (**https://go.sciviews.org/h5p_duplicated**). Facile, ludique, mais un rien plus évolué que le "bête" recopiage.
 
 ![](images/h5p_drag_words_qr.png)
 
@@ -135,30 +137,15 @@ Code R exécutable et vérifiable. 5 à 10 exercices dans un **tutoriel learnr**
 ![](images/learnr.png)
 
 
-### Niveau 3 : transférer
+### Niveau 3 transférer & 4 créer
 
-Être capable de transférer le principe vu dans un **contexte différent**.
+- Application du principe **en situation** (analyse de données).
 
-\vfill
-
-Dans nos cours\ : **projets individuels** dans GitHub / RStudio.
+- Le niveau 4 nécessite d'inventer une variante (ex.\ : retirer les premières occurrences en fonction de deux ou plusieurs colonnes simultanément).
 
 \vfill
 
-*Exemple\ : le jeu de données à analyser implique de récupérer la première occurrence pour chaque type d'évènement.*
-
-**TODO:** retravailler et illustrer cette dia.
-
-
-### Niveau 4 : créer
-
-**Inventer des nouvelles utilisations du concept.**
-
-\vfill
-
-Dans nos cours, **projets de groupe** (mobiliser l'**intelligence collective**).
-
-*Exemple\ : dans un projet, devoir extraire le premier évènement pour chaque utilisateur et chaque mois\ ?*
+Dans nos cours\ : **projets individuels et de groupe** dans GitHub / RStudio.
 
 
 ## Perception
@@ -192,6 +179,10 @@ Dans nos cours, **projets de groupe** (mobiliser l'**intelligence collective**).
 ### Interprétation de l'échelle SUS
 
 Sur base de plusieurs centaines d'utilisation, une échelle indicative se dégage (Brooke 2013, SUS: a retrospective).
+
+\vfill
+
+Attention\ : **utilisabilité** différent d'utilité\ !
 
 \vfill
 
@@ -244,7 +235,7 @@ Sur base de plusieurs centaines d'utilisation, une échelle indicative se dégag
 
 ### Conclusions
 
-- Apprentissage **actif** en plusieurs **étapes** de difficulté croissante
+- Apprentissage **actif** en plusieurs **étapes** de difficultés croissantes
 
 - Tutoriels **learnr** efficaces pour *appliquer* (niveau 2)\ ; Charge cognitive perçue moyenne
 
