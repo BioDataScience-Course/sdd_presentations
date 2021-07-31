@@ -1,0 +1,90 @@
+---
+title: "An Integrated Teaching Environment for R with {learnitdown}\n"
+subtitle: "⚔<br/>with xaringan"
+author: "Philippe Grosjean & Guyliann Engels"
+institute: "Numerical Ecology, University of Mons, Be"
+date: "2021/07/06"
+output:
+  xaringan::moon_reader:
+    css: ["useR", "useR-fonts"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+# Context
+
+✅ Nice components available: R, RStudio, learnr, <br/>
+Shiny, H5P, GitHub (Classroom), ...
+
+--
+
+❌ No integration of these components
+
+--
+
+❌ No activity tracking
+
+--
+
+❌ No identification of the users
+
+--
+
+=> **{learnitdown}**  
+
+---
+
+# Teaching Platform
+
+![learnitdown general organization](figures/learnitdown1.png)
+
+---
+
+# Teaching Platform
+
+![learnitdown general organization](figures/learnitdown2.png)
+
+---
+
+# Teaching Platform
+
+![learnitdown general organization](figures/learnitdown3.png)
+
+---
+
+# Teaching Platform
+
+![learnitdown general organization](figures/learnitdown4.png)
+
+---
+
+# Teaching Platform
+
+![learnitdown general organization](figures/learnitdown5.png)
+
+---
+
+# Example
+
+Data Science course at the University of Mons, Belgium.
+
+```{r echo=FALSE, out.width=750}
+knitr::include_graphics("figures/course.png")
+```
+
+---
+
+class: center, middle
+
+# Thanks!
+
+{learnitdown} package: https://www.sciviews.org/learnitdown/.
+ 
+ <br/>
+
+Example of course: https://wp.sciviews.org (in French)
+
