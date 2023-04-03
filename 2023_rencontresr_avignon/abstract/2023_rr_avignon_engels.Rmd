@@ -1,0 +1,31 @@
+---
+title: "Application {shiny} de correction de projets individuels utilisant R, RStudio, GitHub"
+author:
+- Guyliann Engels 1^[Service d'écologie numérique, Institut Complexys & Infortech, Université de Mons, Belgique, guyliann.engels@umons.ac.be]
+- Philippe Grosjean 2^[Service d'écologie numérique, Institut Complexys & Infortech, Université de Mons, Belgique, philippe.grosjean@umons.ac.be]
+output: pdf_document
+indent: true
+---
+
+```{=tex}
+\begin{center}
+\textbf{Résumé (max 300 mots)}
+\end{center}
+```
+Les étudiant suivant les cours de sciences de données biologiques à l'université de Mons réalisent des travaux sur des questions biologiques sous la forme de projet RStudio contenant des documents R Markdown et des scripts R à compléter. Les projets réalisés sont hébergés sur l'organisation GitHub dédiée au cours [BioDataScience-Course](https://github.com/BioDataScience-Course). Ces derniers sont générés à l'aide de GitHub Classroom sur base de dépôts template qui sont structurés à l'aide d'un README et de balises dans les documents R Markdown et les scripts R.
+
+La correction de travaux est réalisée à l'aide de grilles critériées. La correction n'est pas une tâche aisée afin d'obtenir une correction similaire et reproductible d'un étudiant à l'autre. Ce travail est long s'il faut aussi fournir des commentaires dans la grille pour que chaque étudiant puisse comprendre sa note et ce qu'il peut améliorer. Nous avons développé une application web {Shiny} pour corriger critère après critère tous les travaux en série. La partie concernée de chaque travail est extraite des documents R Markdown et des scripts R. Ces extraits sont regroupés et triés automatiquement avec un algorithme de calcul de similarité de texte du package {stringdist}. Ainsi, il est plus facile de noter de manière équivalente des réponses similaires. Cette manière de travailler diminue également le temps nécessaire à la correction. Des liens cliquables permettent aussi d'accéder rapidement aux travaux complets, et au contexte éventuel (jeu de données, documents annexes, ...), améliorant ainsi encore la vitesse de correction et le confort d'utilisation dans le remplissage des grilles critériées.
+
+\noindent \textbf{Mots-clefs} : Science des données biologiques -- Application web -- Shiny -- Correction -- Projet RStudio -- Biologie
+
+## Développement
+
+R est enseigné dans les [cours de science des données](https://wp.sciviews.org) du cursus en biologie de l'Université de Mons, en Belgique. Les cours, donnés en classe inversée, intègrent des éléments de statistiques, de reproductibilité, de données ouvertes ou encore d'Open Science. Le package [{learnitdown}](https://www.sciviews.org/learnitdown/) nous permet de gérer nos différents outils d'apprentissage {bookdown}, h5p, {learnr}, {shiny} et les projets individuels ou de groupes sur GitHub.
+
+Les projets réalisés par les étudiants traitent toujours de questions biologiques et utilisent au maximum des données provenant de publications scientifiques mises à disposition par les auteurs. Les projets sont générés à l'aide de GitHub Classroom sur base de dépôts templates GitHub. Ces templates sont structurés à l'aide d'un README et de balises dans les documents R Markdown et les scripts R. Les consignes sont placées sous la forme de commentaires HTML dans les documents afin de ne pas modifier le rendu final lors de la compilation. Les travaux sont récupérés depuis GitHub, ce qui implique une bonne gestion de git et de GitHub des étudiants pour être corrigés.
+
+Une grille critériée est élaborée pour chaque projet afin de proposer une correction similaire et objective d'un étudiant à l'autre. Cette correction se veut détaillée et riche en commentaires. Elle doit permettre à l'étudiant de comprendre précisément sa note et les éléments clés pour s'améliorer. Cette étape est longue et fastidieuse, mais se doit d'être le plus rapide possible pour permettre à l'étudiant de remettre en cause ou de consolider ces connaissances pour les projets à venir.
+
+Dans ce contexte, nous développons une application web avec le package {Shiny} afin de compléter les grilles critériées de chaque projet. Les critères sont évalués les uns à la suite des autres pour l'ensemble des travaux. Les noms de sections et les noms de chunks sont associés aux critères. La partie concernée est extraite des documents R Markdown ou des scripts R. Ces extraits sont comparés avec un algorithme de calcul de similarité de texte du package {stringdist} puis regroupés par classification hiérarchique ascendante. De ce fait, il est possible d'évaluer de manière équivalente des réponses similaires. De plus, la correction de certains critères est semi-automatisée grâce à la comparaison d'objets à la solution attendue afin de réduire le temps de correction pour l'évaluateur. De nombreux liens cliquables sont également disponibles dans l'application afin d'accéder rapidement aux travaux complets (document compilé en HTML, jeu de données, dépôt GitHub ...).
+
+En résumé, cette application permet de proposer une correction similaire et détaillée, de réduire le temps de correction et d'avoir un plus grand confort dans le remplissage des grilles critériées.
