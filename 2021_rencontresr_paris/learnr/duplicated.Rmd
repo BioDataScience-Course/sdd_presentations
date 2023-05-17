@@ -20,8 +20,35 @@ runtime: shiny_prerendered
 #remotes::install_github("rstudio/greadethis")
 #install.packages(c("dplyr", "tibble"))
 
+options(tutorial.exercise.evaluator.onstart = function(pid) {
+  require(RAppArmor, quietly = TRUE)
+  #require(unix, quietly = TRUE)
+  # change to r-user profile (see note above on required edit to r-user)
+  aa_change_profile("r-user")
+  # set process group to pid (allows kill of entire subtree in cleanup)
+  setpgid()
+  # set nice priority
+  #setpriority(10)
+  # set rlimits as appropriate
+  #rlimit_nproc(1000)
+  #rlimit_as(1024*1024*1024)
+})
+
+options(tutorial.exercise.evaluator.oncleanup = function(pid) {
+  require(RAppArmor, quietly = TRUE)
+  #require(unix, quietly = TRUE)
+  # kill entire process subtree. note that the second call works
+  # because the call to setpgid above sets our pgid (process group id)
+  # to our pid (process id)
+  kill(pid, tools::SIGKILL)
+  kill(-1 * pid, tools::SIGKILL)
+})
+
 knitr::opts_chunk$set(echo = TRUE)
 library(learnr)
+library(tibble)
+library(dplyr)
+library(withr)
 gradethis::gradethis_setup()
 
 set.seed(477)
@@ -161,6 +188,7 @@ Dans un tableau `ex2`, nous avons également les années dans la colonne `year` 
 
 ```{r echo=FALSE}
 set.seed(477)
+library(dplyr)
 ex2 <- tibble::tibble(
   month = sample(month.name, size = 10, replace = TRUE),
   value = rnorm(10),
@@ -176,6 +204,7 @@ head(ex2, n = 5)
 
 ```{r prepare_data2}
 set.seed(477)
+library(dplyr)
 ex2 <- tibble::tibble(
   month = sample(month.name, size = 10, replace = TRUE),
   value = rnorm(10),

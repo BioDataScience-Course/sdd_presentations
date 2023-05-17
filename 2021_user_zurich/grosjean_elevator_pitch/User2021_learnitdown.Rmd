@@ -5,6 +5,8 @@ author: "Philippe Grosjean & Guyliann Engels"
 institute: "Numerical Ecology, University of Mons, Be"
 date: "2021/07/06"
 output:
+  html_document: 
+    highlight: kate
   xaringan::moon_reader:
     css: ["useR", "useR-fonts"]
     lib_dir: libs
