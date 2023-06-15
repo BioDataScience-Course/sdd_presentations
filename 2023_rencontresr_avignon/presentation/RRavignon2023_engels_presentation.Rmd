@@ -1,0 +1,134 @@
+---
+title: "Application {shiny} de correction de projets individuels utilisant R, RStudio, GitHub"
+shorttitle: "Beamer Slides"
+subtitle: "\\break \\vfill \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/EcoNum-logo.pdf}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/biodatascience.png}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{figures/rr2023.jpg}"
+author: "Philippe Grosjean & Guyliann Engels"
+institute: "Université de Mons, Belgique\\break Service d'Écologie numérique \\break <\\url{philippe.grosjean@umons.ac.be}>, <\\url{phgrosjean@sciviews.org}>"
+date: "Rencontres R 2023, Avignon"
+fontfamily: mathpazo
+fontsize: 9pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+#SciViews::R
+```
+
+### Qui sommes-nous?
+
+```{=tex}
+\begincols
+\begincol{.50\textwidth}
+```
+Philippe Grosjean
+
+-   Professeur
+-   Biologiste marin
+-   Développeur en R
+
+![](figures/phg1.png){width="65%"}
+
+```{=tex}
+\endcol
+\begincol{.50\textwidth}
+```
+Guyliann Engels
+
+-   Assistant
+-   Biologiste marin
+-   Utilisateur de R
+
+![](../../2021_rencontresr_paris/presentation/figures/guyliann.jpeg){width="55%"}
+
+```{=tex}
+\endcol
+\endcols
+```
+### Cours de sciences des données biologiques
+
+```{=tex}
+\begin{center}
+https://wp.sciviews.org/
+\end{center}
+```
+![](figures/site_cours.png)
+
+### Méthode d'enseignement
+
+On veut des étudiants **actifs**
+
+**Cours classique *ex cathedra* + séances d'exercices**
+
+![](figures/organisation1.png)
+
+**Approche en classe inversée**
+
+![](figures/organisation2.png)
+
+### Quatre niveaux d'exercices
+
+![](figures/apprendre3.png){width="80%"}
+
+### Gestion des projets
+
+Projet RStudio hebergé sur github sous la forme d'un template. : <https://github.com/BioDataScience-Course/A09Ia_ttest>
+
+Github Classroom permet à chaque étudiant de générer une copie dans notre organisation github du projet template.
+
+![](figures/github.png){width="100%"}
+
+### Structuration du document
+
+```{=tex}
+\begincols
+\begincol{.70\textwidth}
+```
+![](figures/test.drawio.png){width="100%"}
+
+```{=tex}
+\endcol
+\begincol{.30\textwidth}
+```
+Un document Rmarkdown contenu dans un projet RStudio sur un dépot github :
+
+<https://github.com/BioDataScience-Course/A09Ia_ttest>
+
+\vfill
+
+-   des consignes sous la forme de commentaires
+
+-   des noms de chunks ou des niveaux de titres comme des balises.
+
+```{=tex}
+\endcol
+\endcols
+```
+### Comment corriger ces projets ?
+
+<!-- Faire un dia de transition qui exprime toute la réflexion sur comment faire pour corriger 50 projets RStudio. avec des  grilles d'évaluation ? -->
+
+### Démonstration : {learnitgrid}
+
+![](figures/learnitgrid.png){width="100%"}
+
+### Avez-vous des questions ?
+
+```{=tex}
+\begin{center}
+\textbf{Ressources utiles}
+\end{center}
+```
+\vfill
+
+-   Site web du cours : <https://wp.sciviews.org/>
+-   {learnitgrid} : <https://www.sciviews.org/learnitgrid/>
+-   {learnitdown} : <https://www.sciviews.org/learnitdown/>
+-   cette présentation : <https://github.com/BioDataScience-Course/sdd_presentations/tree/master/2023_rencontresr_avignon>
+
+\vfill
+
+```{=tex}
+\begin{center}
+\includegraphics[width=.16\textwidth,height=.2\textheight]{template/EcoNum-logo.pdf}  \includegraphics[width=.16\textwidth,height=.2\textheight]{template/biodatascience.png}
+\end{center}
+```
