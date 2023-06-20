@@ -1,9 +1,9 @@
 ---
 title: "Application {shiny} de correction de projets individuels utilisant R, RStudio, GitHub"
 shorttitle: "Beamer Slides"
-subtitle: "\\break \\vfill \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/EcoNum-logo.pdf}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/biodatascience.png}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{figures/rr2023.jpg}"
+subtitle: "\\break \\vfill \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/EcoNum-logo.pdf}\\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/SciViews-logo.pdf}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/biodatascience.png}  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{figures/rr2023.jpg}"
 author: "Philippe Grosjean & Guyliann Engels"
-institute: "Université de Mons, Belgique\\break Service d'Écologie numérique \\break <\\url{philippe.grosjean@umons.ac.be}>, <\\url{phgrosjean@sciviews.org}>"
+institute: "Service d'Écologie numérique \\break Université de Mons, Belgique \\break <\\url{guyliann.engels@umons.ac.be}>"
 date: "Rencontres R 2023, Avignon"
 fontfamily: mathpazo
 fontsize: 9pt
@@ -160,12 +160,13 @@ Notre solution : {learnitgrid} <https://github.com/SciViews/learnitgrid>
 -   Site web du cours : <https://wp.sciviews.org/>
 -   {learnitgrid} : <https://github.com/SciViews/learnitgrid>
 -   {learnitdown} : <https://www.sciviews.org/learnitdown/>
--   cette présentation : <https://github.com/BioDataScience-Course/sdd_presentations/tree/master/2023_rencontresr_avignon>
+-   Cette présentation : <https://github.com/BioDataScience-Course/sdd_presentations/tree/master/2023_rencontresr_avignon>
 
 \vfill
 
 ```{=tex}
 \begin{center}
-\includegraphics[width=.16\textwidth,height=.2\textheight]{template/EcoNum-logo.pdf}  \includegraphics[width=.16\textwidth,height=.2\textheight]{template/biodatascience.png}
+\includegraphics[width=.16\textwidth,height=.2\textheight]{template/EcoNum-logo.pdf} 
+\includegraphics[width=.16\textwidth,height=.2\textheight]{template/SciViews-logo.pdf} \includegraphics[width=.16\textwidth,height=.2\textheight]{template/biodatascience.png}
 \end{center}
 ```
