@@ -83,7 +83,7 @@ Github Classroom permet à chaque étudiant de générer une copie dans notre or
 \begincols
 \begincol{.70\textwidth}
 ```
-![](figures/test.drawio.png){width="100%"}
+![](figures/rmd.png){width="100%"}
 
 ```{=tex}
 \endcol
@@ -105,7 +105,44 @@ Un document Rmarkdown contenu dans un projet RStudio sur un dépot github :
 ```
 ### Comment corriger ces projets ?
 
+Cas pratique : A09Ia_22M_ttest
+
+```{=tex}
+\begincols
+\begincol{.30\textwidth}
+```
+-   50 projets
+
+    -   avec 1 document Rmarkdown
+
+-   50 grilles de corrections
+
+    -   avec 26 critères (code R, interpétation de graphique, ...)
+
+\vfill
+
+```{=tex}
+\endcol
+\begincol{.70\textwidth}
+```
+![](figures/criterion.png){width="100%"}
+
+```{=tex}
+\endcol
+\endcols
+```
+Total : 1300 critères note et commentaire à compléter
+
 <!-- Faire un dia de transition qui exprime toute la réflexion sur comment faire pour corriger 50 projets RStudio. avec des  grilles d'évaluation ? -->
+
+### {learnitgrid}
+
+Notre solution : {learnitgrid} <https://github.com/SciViews/learnitgrid>
+
+-   create_context() : une liste contenant toutes les informations sur les projets à corriger
+-   populate_table() : regrouper toutes les informations dans un tableau pour réaliser la correction
+
+=\> Une application shiny permettant la correction en série.
 
 ### Démonstration : {learnitgrid}
 
@@ -121,7 +158,7 @@ Un document Rmarkdown contenu dans un projet RStudio sur un dépot github :
 \vfill
 
 -   Site web du cours : <https://wp.sciviews.org/>
--   {learnitgrid} : <https://www.sciviews.org/learnitgrid/>
+-   {learnitgrid} : <https://github.com/SciViews/learnitgrid>
 -   {learnitdown} : <https://www.sciviews.org/learnitdown/>
 -   cette présentation : <https://github.com/BioDataScience-Course/sdd_presentations/tree/master/2023_rencontresr_avignon>
 
