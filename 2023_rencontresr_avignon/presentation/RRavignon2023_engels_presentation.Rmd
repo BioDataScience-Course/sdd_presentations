@@ -71,7 +71,7 @@ On veut des étudiants **actifs**
 
 ### Gestion des projets
 
-Projet RStudio hebergé sur github sous la forme d'un template. : <https://github.com/BioDataScience-Course/A09Ia_ttest>
+Projet RStudio hébergé sur github sous la forme d'un template : <https://github.com/BioDataScience-Course/A09Ia_ttest>
 
 Github Classroom permet à chaque étudiant de générer une copie dans notre organisation github du projet template.
 
@@ -89,13 +89,13 @@ Github Classroom permet à chaque étudiant de générer une copie dans notre or
 \endcol
 \begincol{.30\textwidth}
 ```
-Un document Rmarkdown contenu dans un projet RStudio sur un dépot github :
+Un document R Markdown contenu dans un projet RStudio sur un dépôt github :
 
 <https://github.com/BioDataScience-Course/A09Ia_ttest>
 
 \vfill
 
--   des consignes sous la forme de commentaires
+-   des consignes sous la forme de commentaire
 
 -   des noms de chunks ou des niveaux de titres comme des balises.
 
@@ -113,11 +113,11 @@ Cas pratique : A09Ia_22M_ttest
 ```
 -   50 projets
 
-    -   avec 1 document Rmarkdown
+    -   avec 1 document R Markdown
 
 -   50 grilles de corrections
 
-    -   avec 26 critères (code R, interpétation de graphique, ...)
+    -   avec 26 critères (code R, interpétation de graphiques, ...)
 
 \vfill
 
@@ -131,7 +131,7 @@ Cas pratique : A09Ia_22M_ttest
 \endcol
 \endcols
 ```
-Total : 1300 critères note et commentaire à compléter
+Total : 1300 critères : Il faut attribuer 1300 notes et commentaires
 
 <!-- Faire un dia de transition qui exprime toute la réflexion sur comment faire pour corriger 50 projets RStudio. avec des  grilles d'évaluation ? -->
 
