@@ -10,80 +10,122 @@ indent: true
 bibliography: ref.bib
 ---
 
+<!-- Les referees demandent des exemples dans la section dévelopment, mais c'est impossible de sortir une table ou un graphique sans dépasser le nombre de pages max autorisé de... 2 pages !!! Donc, le développement devrait plutôt être sous forme d'une vignette quelque part et il faut y faire référence (ou un document PDF sur GitHub ?) -->
+
 ```{=tex}
 \begin{center}
 \textbf{Résumé (max 300 mots)}
 \end{center}
 ```
-Dans l’univers de R, plusieurs packages tels que {flextable} [@flextable], {gt} [@gt] ou encore {stargazer} [@stargazer] offrent des fonctionnalités de formatage de tableaux pour répondre aux normes de qualité des revues scientifiques. Bien que ces packages nécessitent de nombreuses lignes de code pour atteindre ces normes, ils permettent une personnalisation complète des tableaux. Cette situation est comparable à celle des packages dédiés à la génération de graphiques. Les graphiques sont réalisables avec les packages {graphics} [@graphics], {lattice} [@lattice] ou encore {ggplot2} [@ggplot]. Les possibilités de personnalisation sont également nombreuses.
 
-Au sein de la suite de packages SciViews [@sciviews]qui contient par exemple {[data.io](https://www.sciviews.org/data.io/)}, {[svFlow](https://www.sciviews.org/svFlow/)}, ou encore {[learnitdown](https://www.sciviews.org/learnitdown/)}, nous présentons {[tabularise](https://www.sciviews.org/tabularise)} pour les tableaux et {[chart](https://www.sciviews.org/chart/)} pour les graphiques. Ces outils s’appuient respectivement sur {flextable} et {ggplot2} pour offrir des tableaux et des graphiques représentant différents objets R, tels que **lm** ou **glm**, par exemple.
+Au sein de la suite de packages SciViews [@sciviews], voir aussi <https://sciviews.r-universe.dev/>, qui vise à simplifier R pour les utilisateurs occasionnels, débutants ou désireux de gagner du temps, nous présentons {[tabularise](https://www.sciviews.org/tabularise/)} pour les tableaux et {[chart](https://www.sciviews.org/chart/)} pour les graphiques. Ces packages s’appuient respectivement sur {flextable} et {ggplot2} pour offrir des tableaux et des graphiques représentant différents objets R dans une forme aussi proche que possible de versions prêtes à publication, dans la lignée de {cowplot} par exemple.
 
-Ces tableaux et graphiques supportent l'anglais et le français et prennent également en compte les labels des variables pour fournir du contenu prêt à être publié avec un minimum d’instructions R. Ces outils visent à simplifier et à accélérer le processus de préparation des contenus à la publication.
+Pour accélérer et simplifier la création de ces tableaux et graphiques, {tabularise} et {chart} supportent l'anglais et le français et prennent également en compte les labels des variables pour générer les noms de colonnes des tableaux ou les libelles des axes et des encarts de légende des graphiques. Les équations, au format LaTeX, sont également automatiquement générées pour une large gamme de modèles statistiques grâce à {equatiomatic} et intégrés dans certains tableaux (par exemple pour les objets **lm** ou **glm**).
+
+Ces tableaux et graphiques étant compatibles avec {flextable} et {ggplot2)}, ils restent entièrement personnalisables à l'aide des fonctions offertes par ces derniers packages ou leurs extensions. Pour l'utilisateur avancé ou plus créatif, ils seront plutôt considérés comme des premières étapes de production de contenu plus spécifique. 
 
 \noindent \textbf{Mots-clefs} : Prêt à publication -- Tableau -- Graphique -- tabularise -- chart -- SciViews
 
 ## Développement
 
-Lors de la rédaction de documents scientifiques, d’articles de blog ou encore de manuscrits de thèse, des outils tels que Rmarkdown [@rmarkdown] ou Quarto [@quarto] sont couramment utilisés. Ces outils permettent d’intégrer du code R dans des chunks et du texte en Markdown, ce qui constitue la première étape pour produire des documents prêts à être publiés. Cependant, une seconde étape est nécessaire pour créer des tableaux et des graphiques conformes aux normes de publication. Les sorties de base de R ne sont pas adaptées à cette fin, mais la communauté R propose de nombreuses solutions parmi les plus de 20 000 packages disponibles sur CRAN, sans compter ceux disponibles depuis BioConductor, GitHub ou Gitlab.
+Lors de la rédaction de documents scientifiques, d’articles de blog ou encore de manuscrits de thèse, des outils tels que Rmarkdown [@rmarkdown] ou Quarto [@quarto] sont couramment utilisés. Ces outils permettent d’intégrer du code R dans des chunks et du texte en Markdown, ce qui constitue la première étape pour produire des documents prêts à être publiés. Cependant, une seconde étape est nécessaire pour créer des tableaux et des graphiques conformes aux normes de publication. Les sorties de base de R ne sont pas adaptées à cette fin, surtout pour les tableaux, mais la communauté R propose de nombreuses solutions parmi les plus de 20 000 packages disponibles sur CRAN, sans compter ceux disponibles depuis BioConductor, GitHub ou Gitlab.
 
-Pour la création de tableaux adaptés à la publication, on peut citer le package R {flextable} [@flextable] ou encore le package {gt} [@gt]. Ces outils puissants permettent de formater un tableau à partir d’un data frame. Ils offrent une grande flexibilité pour répondre à tous les besoins, mais nécessitent de nombreuses lignes de code pour obtenir le tableau dans le formatage souhaité. C’est pourquoi nous proposons, dans le cadre de SciViews, le package {tabularise}. Ce package permet d’obtenir des tableaux prêts à être publiés en une seule instruction pour une série d'objets dans R. Ces premières versions peuvent ensuite être remaniées à l'aide des instructions de {flextable}. {tabularise} gère l’anglais et le français et prend en compte automatiquement les labels des variables si ils sont présents dans l'objet. De nombreuses méthodes sont disponibles. Certaines offrent des fonctionnalités supplémentaires au-delà de réalisation de tableaux. Par exemple, pour les objets **lm**, {tabularise} intègre également des équations dans son rendu en s'appuyant sur le package {equatiomatic} [@equatiomatic]. Ces caractéristiques en font un package intéressant pour la recherche et l’enseignement.
+Pour la création de tableaux propres et publiables, on peut citer le package R {flextable} [@flextable] ou encore le package {gt} [@gt]. Ces outils puissants permettent de formater un tableau à partir d’un data frame. Ils offrent une grande flexibilité pour répondre à tous les besoins, mais nécessitent de nombreuses lignes de code pour obtenir le tableau dans le formatage souhaité. C’est pourquoi nous proposons, dans l'univers SciViews (<https://sciviews.r-universe.dev/>), le package {tabularise}. Il permet d’obtenir des tableaux quasiment prêts à être publiés en une seule instruction pour une série d'objets R. Ces premières versions peuvent ensuite être remaniées à l'aide de {flextable}. {tabularise} gère l’anglais et le français et prend en compte automatiquement les labels des variables s'ils sont présents dans l'objet via un attribut "label". Il prend également en compte les unités si un attribut "units" est défini. Le package {chart} fait de même pour les graphiques. Il s'appuie sur {ggplot2} ou {lattice}. Les labels et unités peuvent être rajoutés directement, ou en utilisant `data.io::labellise()` ({data.io} est un autre package de l'univers SciViews). Voici un exemple :
 
-```{r setup, warning=FALSE, message=FALSE}
-knitr::opts_chunk$set(echo = TRUE, warning=FALSE, echo=TRUE, message=FALSE)
-# Configuration de l'environnement de travail avec SciViews
-SciViews::R("model", lang = "fr") 
-# Charge plusieurs packages dont chart et tabularise
-# Charge des packages supplémentaires pour la modélisation
-# Spécifie que l'on souhaite les sorties au maximum en français
+```{r, echo=TRUE, output=FALSE, message=FALSE}
+# Installation des packages nécessaires depuis l'univers SciViews
+# {data.io} pour les labels, {equatags} pour les équations et {modelit} pour des
+# graphiques et tableaux supplémentaires pour les modèles statistiques
+# (d'autres dépendances sont susceptibles d'être également installées)
+#install.packages(c('tabularise', 'chart', 'data.io', 'equatags', 'modelit'),
+#  repos = c('https://sciviews.r-universe.dev', 'https://cloud.r-project.org'))
+library(tabularise)
+library(chart)
+library(modelit)
 ```
 
-Prenons un cas pratique avec l'utilisation du tableau de données bien connu `penguins` du package {palmerpenguins}. Le tableau suivant présente les premières et dernières lignes des données.
+Notez que ces packages ne sont pas encore sur CRAN car ils sont en cours de développement et susceptibles d'évoluer de manière difficilement compatible avec CRAN. Ils seront proposé à CRAN lorsqu'ils seront stabilisés. L'installation depuis R-universe est donc recommandée pour l'instant.
 
 ```{r}
-penguins <- read("penguins", package = "palmerpenguins") 
-tabularise(penguins[1:5,1:4])
+# Exemple : données de croissance du pin *Pinus tadea*
+data("Loblolly", package = "datasets")
+# Conversion de la hauteur de pieds en mètres
+Loblolly$height <- round(Loblolly$height * 0.3048, 2)
+# La labelisation des variables ne doit se faire qu'une seule fois
+Loblolly <- data.io::labelise(Loblolly,
+  label = list(height = "Hauteur", age = "Age", Seed = "Semence"),
+  units = list(height = "m", age = "ans"))
+# Les tableaux et graphiques l'utilisent ensuite automatiquement
+# Les variantes éventuelles peuvent être spécifiées avec '$<type>'
+tabularise$headtail(Loblolly[, c(3, 1, 2)])
+chart(Loblolly, height ~ age %col=% Seed) + geom_line()
 ```
 
-Une régression linéaire peut être réalisée afin d'étudier la variation de la longueur du bec en fonction de la largeur du bec et de l'espèce étudiée. Ce modèle peut être résumé par la fonction summary() ou encore mis sous forme de tableau avec la fonction tidy() du package {broom}. Ces deux sorties, bien que riches en informations, nécessitent d'être formatées pour figurer dans un rapport d'analyse.La solution proposée avec la fonction tabularise() permet d'obtenir un rendu plus abouti, comme le montrent les deux tableaux suivants, tout en respectant la classe des objets.
+<!-- Il faut trouver une solution pour l'indicateur de continuation qui ne s'affiche pas bien en PDF. -->
+
+De nombreuses méthodes sont disponibles pour {tabularise} et {chart} et elles sont encore augmentées par d'autres packages dans l'univers SciViews comme {modelit} que nous utilisons ici ou encore {inferit}, {exploreit}. Pour les objets **lm**, **glm**, **nls**..., {tabularise} intègre également des équations dans son rendu en s'appuyant sur les packages {equatiomatic} [@equatiomatic] et {equatags}.
+
+Voici quelques tableaux et graphiques qu'il est possible de générer à partir d'un objet **lm** (ici, nous ne conservons qu'une seule mesure par arbre (*alias* `Seed`) pour étudier un jeu de données ayant des observations indépendantes les unes des autres).
 
 ```{r}
-peng_model <- lm(data = penguins, bill_length ~ bill_depth + species)
+# Ne conserver qu'une mesure par arbre dans `pine`
+set.seed(3652)
+pine <- dplyr::slice_sample(Loblolly, n = 1, by = Seed)
+chart(pine, height ~ age) + geom_point()
 ```
 
-Les solutions proposées avec la fonction tabularise() permettent d'obtenir un rendu plus abouti, comme le montrent les deux tableaux suivants, tout en respectant la classe des objets.
+Voici un modèle linéaire ajusté dans ces données :
 
 ```{r}
-summary(peng_model)
-summary(peng_model) |> tabularise()
+pine_lm <- lm(data = pine, height ~ age + I(age^2))
+summary(pine_lm)
 ```
+
+Comparez le résumé "brut" de l'objet **lm** ci-dessus dans R avec la version formatée à l'aide de `tabularise'()` (en français grâce à `lang = "fr"`).
 
 ```{r}
-tidy(peng_model)
-tabularise(peng_model, type = "tidy")
+summary(pine_lm) |> tabularise(lang = "fr")
 ```
 
-Vous retrouvez plusieurs autres exemples d'utilisation dans l'enseignement dans les modules relatif à la [régression linéaire](https://wp.sciviews.org/sdd-umons2/?iframe=wp.sciviews.org/sdd-umons2-2023/outils-de-diagnostic-suite.html) des cours de Sciences des données biologique données à l'Université de Mons.
-
-Vous retrouvez plusieurs autres exemples d'utilisation dans l'enseignement dans les modules relatifs à la [régression linéaire](https://wp.sciviews.org/sdd-umons2/?iframe=wp.sciviews.org/sdd-umons2-2023/outils-de-diagnostic-suite.html) des cours de sciences des données biologiques donnés à l'Université de Mons.
-
-En ce qui concerne les graphiques, la communauté R propose principalement trois solutions : les packages R {graphics} [@graphics], {lattice} [@lattice] et {ggplot2} [@ggplot]. Le package {chart} propose une interface unique pour unifier ces trois moteurs graphiques, mais s'appuie principalement sur {ggplot2}. L’interface formule est utilisée, ce qui permet de se rapprocher des instructions que l’on peut utiliser, par exemple, dans la fonction `lm()`. Tout comme {tabularise}, {chart} s’adapte à l’anglais et au français. Il utilise les labels et les unités des variables pour libeller automatiquement les axes du graphique. De nombreuses méthodes ont été développées pour fournir des graphiques adaptés à toute une série d’objets.
-
-En reprenant l'exemple réalisé ci-dessus, on peut le visualiser sous la forme d'un nuage de points avec les instructions suivantes. L'interface formule permet, entre autres, d'obtenir une haute ressemblance avec la formule proposée par la fonction lm().
+Le tableau de l'ANOVA relatif à ce modèle donne ceci en `tabularise()` (en anglais par défaut) :
 
 ```{r}
-chart(data = penguins, bill_length ~ bill_depth %col=% species) +
-  geom_point()
+# Si un label est suboptimal, il est facilement remplacé avec labs =
+anova(pine_lm) |> tabularise(labs = c(`I(age^2)` = "age^2^"))
 ```
 
-Tout comme tabularise, chart() propose des graphiques spécifiques lors de l'utilisation de certains objets dans R.
+Plusieurs graphiques sont aussi accessibles facilement avec {chart}, à commencer par le graphique montrant le modèle ajusté dans les données :
 
 ```{r}
-chart(peng_model, type = "qqplot")
+chart(pine_lm)
 ```
 
-Nous utilisons le package {chart} pour la grande majorité des graphiques que nous réalisons dans les 34 modules des cours de [sciences des données biologiques](https://wp.sciviews.org/) de l'Université de Mons.
+Les graphiques d'analyse des résidus sont accessibles sous forme de variantes (en utilisant `$<type`). Par exemple, le graphique quantile quantile des résidus :
 
-En conclusion, {tabularise} et {chart} sont deux packages développés dans le cadre de SciViews pour faciliter et améliorer les sorties tabulaires et graphiques de R, prêts à être publiés.
+```{r}
+chart$qqplot(pine_lm, lang = "fr")
+```
+
+Un graphique composite, reprenant les quatre graphiques d'analyse des résidus les plus utilisés, s'obtient comme ceci (notez que les quatre graphiques sont libellés A-D pour en faciliter la description dans la légende du graphique) :
+
+```{r, fig.height=7}
+chart$residuals(pine_lm, lang = "fr")
+```
+
+D'autre objets sont également supportés. Par exemple, un modèle non linéaire peut être ajusté dans ces données, ce qui est plus adéquat pour des mesures de croissance. Nous utilisons alors un objet **nls**. Si nous ajustons un modèle de Gompertz ($\textrm{height} = a \cdot e^{(-b1 \cdot b2^{\textrm{age}})}$) nous obtenons ceci :
+
+```{r}
+pine_nls <- nls(data = pine, height ~ SSgompertz(age, a, b1, b2))
+# Résumé de l'analyse
+summary(pine_nls) |> tabularise(lang = "fr")
+# Graphique du modèle ajusté dans les données
+chart(pine_nls, lang = "fr")
+```
+
+<!-- Les referees ont raison : on ne peut pas simplement introduire {tabularise} et {chart} en l'état. Il faut un peu retravailler la documentation et a minima, retravailler les vignettes principales de ces packages qui expliquent comment installer et qui montrent un ou deux exemples d'utilisation. Il faudrait aussi une vignette "table gallery" et "graph gallery", respectivement, qui montrent différents tableaux et graphiques que l'on peut faire avec {tabularise} et {chart}. Ensuite, il faut écrire ici une phrase qui va pointer vers ces vignettes ! -->
+
+Vous retrouvez plusieurs autres exemples d'utilisation dans le module relatif à la [régression linéaire](https://wp.sciviews.org/sdd-umons2/?iframe=wp.sciviews.org/sdd-umons2-2023/outils-de-diagnostic-suite.html), ainsi que dans les autres chapitres des cours de sciences des données biologique donnés à l'Université de Mons.
+
+En conclusion, {tabularise} et {chart} sont deux packages développés pour faciliter les sorties tabulaires et graphiques de R, avec un rendu "presque prêts à être publié". Grâce à {flextable}, les tableaux apparaissent correctement formatés quel que soit le format de sortie (HTML, PDF, Word, PowerPoint). L'usage des labels et unités directement insérés dans les données permet une présentation homogène des libellés de colonnes (tables) et d'axes (graphiques) et les équations des modèles sont automatiquement générées pour les modèles statistiques. Ces sorties tabulaires et graphiques restent, cependant, éditables avec les instructions de {flextable} et {ggplot2}, respectivement. Il ne s'agit donc pas de forcer l'utilisateur à utiliser des tables stéréotypées, mais de lui fournir un bon point de départ pour des sorties de qualité qu'il pourra ensuite adapter à sa guise.
 
 ## Références
