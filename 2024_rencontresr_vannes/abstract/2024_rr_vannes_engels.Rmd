@@ -77,7 +77,7 @@ chart(pine, height ~ age) + geom_point()
 Voici un modèle linéaire ajusté dans ces données :
 
 ```{r}
-pine_lm <- lm(data = pine, height ~ age + I(age^2))
+pine_lm <- lm(height ~ age + I(age^2), data = pine)
 summary(pine_lm)
 ```
 
@@ -115,7 +115,7 @@ chart$residuals(pine_lm, lang = "fr")
 D'autre objets sont également supportés. Par exemple, un modèle non linéaire peut être ajusté dans ces données, ce qui est plus adéquat pour des mesures de croissance. Nous utilisons alors un objet **nls**. Si nous ajustons un modèle de Gompertz ($\textrm{height} = a \cdot e^{(-b1 \cdot b2^{\textrm{age}})}$) nous obtenons ceci :
 
 ```{r}
-pine_nls <- nls(data = pine, height ~ SSgompertz(age, a, b1, b2))
+pine_nls <- nls(height ~ SSgompertz(age, a, b1, b2), data = pine)
 # Résumé de l'analyse
 summary(pine_nls) |> tabularise(lang = "fr")
 # Graphique du modèle ajusté dans les données
