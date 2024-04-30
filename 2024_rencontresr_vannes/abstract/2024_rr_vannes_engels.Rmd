@@ -56,11 +56,6 @@ Loblolly$height <- round(Loblolly$height * 0.3048, 2)
 Loblolly <- data.io::labelise(Loblolly,
   label = list(height = "Hauteur", age = "Age", Seed = "Semence"),
   units = list(height = "m", age = "ans"))
-# Les tableaux et graphiques l'utilisent ensuite automatiquement
-# Les variantes éventuelles peuvent être spécifiées avec '$<type>'
-tabularise$headtail(Loblolly[, c(3, 1, 2)], sep = "...", lang ="fr")
-chart(Loblolly, height ~ age %col=% Seed) + 
-  geom_line()
 ```
 
 De nombreuses méthodes sont disponibles pour {tabularise} et {chart} et elles sont encore augmentées par d'autres packages dans l'univers SciViews comme {modelit} que nous utilisons ici ou encore {inferit}, {exploreit}. Pour les objets **lm**, **glm**, **nls**..., {tabularise} intègre également des équations dans son rendu en s'appuyant sur les packages {equatiomatic} [@equatiomatic] et {equatags}. Voici un exemple d'un tableaux et d'un graphique qu'il est possible de générer à partir d'un objet **lm** (ici, nous ne conservons qu'une seule mesure par arbre (*alias* `Seed`) pour étudier un jeu de données ayant des observations indépendantes les unes des autres).
