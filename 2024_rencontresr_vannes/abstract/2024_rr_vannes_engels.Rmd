@@ -10,73 +10,55 @@ indent: true
 bibliography: ref.bib
 ---
 
-<!-- Les referees demandent des exemples dans la section dévelopment, mais c'est impossible de sortir une table ou un graphique sans dépasser le nombre de pages max autorisé de... 2 pages !!! Donc, le développement devrait plutôt être sous forme d'une vignette quelque part et il faut y faire référence (ou un document PDF sur GitHub ?) -->
-
 ```{=tex}
 \begin{center}
 \textbf{Résumé (max 300 mots)}
 \end{center}
 ```
-Au sein de la suite de packages SciViews [@sciviews], voir aussi <https://sciviews.r-universe.dev/>, qui vise à simplifier R pour les utilisateurs occasionnels, débutants ou désireux de gagner du temps, nous présentons {[tabularise](https://www.sciviews.org/tabularise/)} pour les tableaux et {[chart](https://www.sciviews.org/chart/)} pour les graphiques. Ces packages s’appuient respectivement sur {flextable} et {ggplot2} pour offrir des tableaux et des graphiques représentant différents objets R dans une forme aussi proche que possible de versions prêtes à publication, dans la lignée de {cowplot} par exemple.
+Au sein de la suite de packages SciViews [@sciviews], voir aussi <https://sciviews.r-universe.dev/>, nous présentons {[tabularise](https://www.sciviews.org/tabularise/)} pour les tableaux et {[chart](https://www.sciviews.org/chart/)} pour les graphiques. Ces packages s’appuient respectivement sur {flextable} et {ggplot2} pour offrir des tableaux et des graphiques d'objets R dans une forme pratiquement prête à publication.
 
-Pour accélérer et simplifier la création de ces tableaux et graphiques, {tabularise} et {chart} supportent l'anglais et le français et prennent également en compte les labels des variables pour générer les noms de colonnes des tableaux ou les libelles des axes et des encarts de légende des graphiques. Les équations, au format LaTeX, sont également automatiquement générées pour une large gamme de modèles statistiques grâce à {equatiomatic} et intégrés dans certains tableaux (par exemple pour les objets **lm** ou **glm**).
+Pour simplifier la création de ces tableaux et graphiques, {tabularise} et {chart} supportent l'anglais et le français et prennent en compte les labels des variables automatiquement (pour les axes des graphiques ou les noms de colonnes des tableaux). Les équations, au format LaTeX, sont également automatiquement générées pour une large gamme de modèles statistiques grâce à {equatiomatic} et intégrés dans les tableaux.
 
-Ces tableaux et graphiques étant compatibles avec {flextable} et {ggplot2)}, ils restent entièrement personnalisables à l'aide des fonctions offertes par ces derniers packages ou leurs extensions. Pour l'utilisateur avancé ou plus créatif, ils seront plutôt considérés comme des premières étapes de production de contenu plus spécifique.
+Ces tableaux et graphiques étant compatibles avec {flextable} et {ggplot2}, ils restent entièrement personnalisables par la suite. Pour l'utilisateur avancé ou plus créatif, ils seront plutôt considérés comme de premières étapes de production de contenu plus spécifique.
 
 \noindent \textbf{Mots-clefs} : Prêt à publication -- Tableau -- Graphique -- tabularise -- chart -- SciViews
 
 ## Développement
 
 ```{r setup, output=FALSE, message=FALSE, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, out.width = "70%", fig.align = "center")
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, out.width = "60%", fig.align = "center")
 ```
 
-Lors de la rédaction de documents scientifiques, d’articles de blog ou encore de manuscrits de thèse, des outils tels que Rmarkdown [@rmarkdown] ou Quarto [@quarto] sont couramment utilisés. Ces outils permettent d’intégrer du code R dans des chunks et du texte en Markdown, ce qui constitue la première étape pour produire des documents prêts à être publiés. Cependant, une seconde étape est nécessaire pour créer des tableaux et des graphiques conformes aux normes de publication. Pour la création de tableaux propres et publiables, on peut citer les packages R {tinytable} [@tinytable], package R {flextable} [@flextable] ou encore le package {gt} [@gt]. Ces outils puissants permettent de formater un tableau à partir d’un data frame. Ils offrent une grande flexibilité pour répondre à tous les besoins. Dans l'univers SciViews (<https://sciviews.r-universe.dev/>), le package {tabularise} permet d’obtenir des tableaux quasiment prêts à être publiés en une seule instruction pour une série d'objets R. Ces premières versions peuvent ensuite être remaniées à l'aide de {flextable}. {tabularise} gère l’anglais et le français et prend en compte automatiquement les labels des variables s'ils sont présents dans l'objet via un attribut "label". Il prend également en compte les unités si un attribut "units" est défini. Le package {chart} fait de même pour les graphiques. Il s'appuie sur {ggplot2} ou {lattice}. Les labels et unités peuvent être rajoutés directement, ou en utilisant `data.io::labellise()` ({data.io} est un autre package de l'univers SciViews). Voici un exemple :
+Quarto [@quarto] est couramment utilisé pour générer facilement des documents publiables de manière reproductible. Les tableaux et graphiques demandent, par contre, un peu plus de travail pour être conformes aux normes de publication. Dans l'univers SciViews (<https://sciviews.r-universe.dev/>), le package {tabularise} accélère le processus de création de tableaux en une seule instruction pour une série d'objets R et {chart} en fait de même pour les graphiques. Ces premières versions peuvent ensuite être remaniées avec {flextable} et {ggplot2}, respectivement. {tabularise} et {chart} gèrent l’anglais et le français et prennent en compte automatiquement les labels et unités des variables (attributs "label" et "units"). Ces labels et unités peuvent être rajoutés directement dans le data.frame, ou en utilisant `data.io::labellise()` ({data.io} est un autre package de l'univers SciViews).
+
+Ces packages ne sont pas encore sur CRAN car ils sont en cours de développement et susceptibles d'évoluer de manière difficilement compatible avec CRAN. L'installation depuis R-universe est donc recommandée.
 
 ```{r, output=FALSE}
-# Installation des packages nécessaires depuis l'univers SciViews
-# {data.io} pour les labels, {equatags} pour les équations et {modelit} pour des
-# graphiques et tableaux supplémentaires pour les modèles statistiques
-# (d'autres dépendances sont susceptibles d'être également installées)
+# Installation des packages nécessaires
 #install.packages(c('tabularise', 'chart', 'data.io', 'equatags', 'modelit'),
 #  repos = c('https://sciviews.r-universe.dev', 'https://cloud.r-project.org'))
-library(tabularise)
-library(chart)
-library(modelit)
+library(tabularise); library(chart); library(modelit)
+flextable::set_flextable_defaults(font.family = "Arial", font.size = 9)
 ```
 
-Notez que ces packages ne sont pas encore sur CRAN car ils sont en cours de développement et susceptibles d'évoluer de manière difficilement compatible avec CRAN. Ils seront proposé à CRAN lorsqu'ils seront stabilisés. L'installation depuis R-universe est donc recommandée pour l'instant.
+De nombreuses méthodes sont disponibles pour `tabularise()` et `chart()` au travers d'autres packages dans l'univers SciViews comme {modelit}, {inferit} ou {exploreit}. Pour les objets **lm**, **glm**, **nls**..., les tableaux `tabularise()` de {modelit} intègrent également des équations en s'appuyant sur {equatiomatic} [@equatiomatic]. Voici un exemple :
 
 ```{r}
-# Exemple : données de croissance du pin *Pinus tadea*
-data("Loblolly", package = "datasets")
-# Conversion de la hauteur de pieds en mètres
-Loblolly$height <- round(Loblolly$height * 0.3048, 2)
-# La labelisation des variables ne doit se faire qu'une seule fois
-Loblolly <- data.io::labelise(Loblolly,
+data(Loblolly, package = "datasets")
+Loblolly$height <- round(Loblolly$height * 0.3048, 2) # pieds -> m
+Loblolly <- data.io::labelise(Loblolly, # Labelisation des variables
   label = list(height = "Hauteur", age = "Age", Seed = "Semence"),
   units = list(height = "m", age = "ans"))
-```
-
-De nombreuses méthodes sont disponibles pour {tabularise} et {chart} et elles sont encore augmentées par d'autres packages dans l'univers SciViews comme {modelit} que nous utilisons ici ou encore {inferit}, {exploreit}. Pour les objets **lm**, **glm**, **nls**..., {tabularise} intègre également des équations dans son rendu en s'appuyant sur les packages {equatiomatic} [@equatiomatic] et {equatags}. Voici un exemple d'un tableaux et d'un graphique qu'il est possible de générer à partir d'un objet **lm** (ici, nous ne conservons qu'une seule mesure par arbre (*alias* `Seed`) pour étudier un jeu de données ayant des observations indépendantes les unes des autres).
-
-```{r}
-# Ne conserver qu'une mesure par arbre dans `pine`
 set.seed(3652)
-pine <- dplyr::slice_sample(Loblolly, n = 1, by = Seed)
-# Modèle
-pine_lm <- lm(data = pine, height ~ age + I(age^2))
-pine_lm |> tabularise$tidy(lang = "fr")
+pine <- dplyr::slice_sample(Loblolly, n = 1, by = Seed) # une mesure/arbre
+pine_lm <- lm(data = pine, height ~ age + I(age^2)) # modèle quadratique
+pine_lm |> tabularise$tidy(lang = "fr") # tableau formaté
 ```
 
-Plusieurs graphiques sont aussi accessibles facilement avec {chart}, à commencer par le graphique montrant le modèle ajusté dans les données :
+Plusieurs graphiques sont disponibles avec {chart} (nous n'en montrons qu'un seul ici par manque de place, pour plus de détails, voyez https://sciviews.r-universe.dev/articles/modelit/modelit.html et https://wp.sciviews.org/sdd-umons2/?iframe=wp.sciviews.org/sdd-umons2-2023/outils-de-diagnostic-suite.html).
 
 ```{r}
-chart(pine_lm)
+chart$model(pine_lm, lang = "fr") # graphique du modèle
 ```
-
-Vous retrouvez plusieurs autres exemples dans les vignettes associées à ces packages comme [modelit](https://www.sciviews.org/modelit/articles/modelit.html) et dans le module relatif à la [régression linéaire](https://wp.sciviews.org/sdd-umons2/?iframe=wp.sciviews.org/sdd-umons2-2023/outils-de-diagnostic-suite.html), ainsi que dans les autres chapitres des cours de sciences des données biologique donnés à l'Université de Mons.
-
-En conclusion, {tabularise} et {chart} sont deux packages développés pour faciliter les sorties tabulaires et graphiques de R, avec un rendu "presque prêts à être publié". Les tableaux apparaissent correctement formatés quel que soit le format de sortie (HTML, PDF, Word, PowerPoint). L'usage des labels et unités directement insérés dans les données permet une présentation homogène des libellés de colonnes (tables) et d'axes (graphiques) et les équations des modèles sont automatiquement générées pour les modèles statistiques. Ces sorties tabulaires et graphiques restent, cependant, éditables avec les instructions de {flextable} et {ggplot2}, respectivement. Il ne s'agit donc pas de forcer l'utilisateur à utiliser des tables stéréotypées, mais de lui fournir un bon point de départ pour des sorties de qualité qu'il pourra ensuite adapter à sa guise.
 
 ## Références
