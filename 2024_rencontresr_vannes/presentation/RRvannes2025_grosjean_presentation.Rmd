@@ -1,0 +1,225 @@
+---
+title: "Apprendre R et les statistiques... grâce à R"
+shorttitle: "Beamer Slides"
+subtitle: "\\break \\vfill  \\includegraphics[width=.16\\textwidth,height=.2\\textheight]{template/biodatascience.png}  
+\\includegraphics[width=.16\\textwidth,height=.2\\textheight]{figures/learnitr_800.png} 
+\\hfill  
+\\includegraphics[width=.16\\textwidth,height=.2\\textheight]{figures/rr2024.jpg}"
+author: "Philippe Grosjean & Guyliann Engels"
+institute: "\\putabs{-0.3cm}{1.5cm}{\\includegraphics[width=1.5cm]{template/EcoNum-logo.pdf}}
+Université de Mons, Belgique\\break Service d'Écologie numérique \\break <\\url{philippe.grosjean@umons.ac.be}>, <\\url{phgrosjean@sciviews.org}>  \\break
+<\\url{guyliann.engels@umons.ac.be}>"
+date: "Rencontres R 2024, Vannes"
+fontfamily: mathpazo
+fontsize: 9pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+### Enseigner R et les statistiques à des étudiants réfractaires
+
+\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
+
+Cursus universitaire en biologie, voir \alert{\underline{https://wp.sciviews.org}}.
+
+\vfill
+
+![](images/site_cours.png){width='65%'}
+
+## Motiver et capter l'attention
+
+### Contextualiser - décontextualiser - recontextualiser
+
+
+![](images/cdr.png)
+
+*Tardif J., Meirieu P., 1996, Stratégies pour favoriser le transfert des connaissances. Vie pédagogique, 98, 4-7.*
+
+### Pédagogie active en classe inversée
+
+**Cours + exercices** = étudiants passifs une partie du temps
+
+![](images/organisation1.png)
+\vfill
+
+**Classe inversée** = étudiant actif et optimisation du temps en présentiel
+
+![](images/organisation2.png)
+
+Découpage du cours en **modules** de 2 séances (2h + 4h) toutes les 2 semaines. 
+
+### Classe inversée - attention !
+
+-   Pas juste une vidéo du cours à visionner !
+
+-   Être disponible pour \alert{répondre aux questions} (coaching).
+
+-   Matériel pédagogique en ligne \alert{adapté}, visant l'*auto-apprentissage* et l'*auto-évaluation* (\alert{exercices interactifs}, [H5P](https://h5p.org) et [learnr](https://rstudio.github.io/learnr/)).
+
+![](images/h5p_drag_words.png)
+
+
+
+### Manque de participation
+
+Exemple : exercices interactifs en ligne proposés sans précautions particulières
+
+![](images/participation_exercices_math_bab1.png){width='80%'}
+
+### Participation - des solutions...
+
+-   Exercices directement dans le cours en ligne
+
+![](images/h5p.png)
+
+\vfill
+
+### Participation - des solutions...
+
+-   Exercices directement dans le cours en ligne
+
+-   Liste des exercices à la fin de chaque module
+
+![](images/list_ex.png){width='80%'}
+
+
+### Participation - des solutions...
+
+-   Exercices directement dans le cours en ligne
+
+-   Liste des exercices à la fin de chaque module
+
+-   Points attribués à la réalisation des exercices (exemple, 5% de la note finale)
+
+![](images/carrot.png){width='60%'}
+
+
+### Participation - des solutions...
+
+-   Exercices directement dans le cours en ligne
+
+-   Liste des exercices à la fin de chaque module
+
+-   Points attribués à la réalisation des exercices (exemple, 5% de la note finale)
+
+-   Rapport de progression en temps réel
+
+![](images/progress_report.png){width='85%'}
+
+### Participation - résultat
+
+\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
+
+**Plus de 90%** de participation observée aux exercices
+
+![](images/test.pdf){width='80%'}
+
+
+## Progressivité de l'apprentissage
+
+### Évaluation continue
+
+\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
+
+Évaluation formative tout au long du cours divisé en modules
+
+\vfill
+
+![](images/eval_continue.png)
+
+
+
+
+### Progressivité en 4 niveaux d'exercices
+
+\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
+
+![](images/apprendre2.png){width='80%'}
+
+### Projets GitHub Classroom cadrés
+
+\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
+
+![](images/github.png){width='70%'}
+
+### Projets GitHub Classroom cadrés
+
+\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
+
+- Instructions sous forme de commentaires
+
+\vfill
+
+![](images/github_instructions2.png){width='80%'}
+
+\vfill
+
+### Projets GitHub Classroom cadrés
+
+\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
+
+- Instructions sous forme de commentaires
+
+- Interprétation par sélection des phrases correctes
+
+![](images/github_select_answer.png){width='80%'}
+
+### Projets GitHub Classroom cadrés
+
+\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
+
+- Instructions sous forme de commentaires
+
+- Interprétation par sélection des phrases correctes
+
+- Évaluation semi-automatique avec {testthat} + suggestions pour s'améliorer
+
+![](images/github_testthat.png){width='80%'}
+
+### Correction des projets (grilles critériées)
+
+100 étudiants * 10 projets * 30 critères = 30.000 évaluations !
+
+![](images/learnitgrid.png){width='100%'}
+
+### Plateforme pédagogique LearnIt::R
+
+\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{figures/learnitr_800.png}}
+
+La \alert{plateforme pédagogique LearnIt::R} :
+
+-   Exercices H5P , Shiny, learnr dans un bookdown (+ Quarto book bientôt)
+
+-   Enregistrement de l'activité des étudiants dans les exercices en ligne
+
+-   Rapport de progression en temps réel
+
+-   Projets GitHub Classroom cadrés avec auto-évaluation {testthat}
+
+-   Application \alert{learnitgrid} de correction par grilles critériées
+
+### Quatre niveaux d'exercices avec LearnIt::R
+
+![](images/apprendre2b.png){width='100%'}
+
+___
+
+\begin{center}
+\textbf{Avez-vous des questions ?}
+\end{center}
+
+\centering
+
+![](images/monkey2.jpg){width='30%'}
+
+\vfill
+
+**Ressources utiles**
+
+\alert{Plateforme pédagogique LearnIt::R}}: <https://github.com/learnitr> *en cours d'élaboration sur base des outils développés pour nos cours*
+
+- Site web du cours : <https://wp.sciviews.org/>
+
+- Cette présentation : <https://github.com/BioDataScience-Course/sdd_presentations/tree/master/2023_rencontresr_vannes>

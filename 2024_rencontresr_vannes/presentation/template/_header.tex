@@ -7,7 +7,7 @@
 % If you have several lectures defined in the same document, uncomment this:
 %\includeonlylecture{cours02}
 
-\usepackage{fontspec}
+%\usepackage{fontspec}
 %\fontfamily{ppl}\selectfont
 %\setmainfont{Arial}
 %\setmainfont{DejaVu LGC Sans}
@@ -32,7 +32,7 @@
 {
   \usepackage{beamerbasearticle}
   \usepackage{fullpage}
-  \pdfimageresolution 96
+  \pdfimageresolution 72
 }
 \mode<beamer>
 {
@@ -77,8 +77,8 @@ height=1.07\paperheight]{template/background-hex.jpg}}
   \setbeamerfont{date}{size=\small}
   \setbeamerfont{framesubtitle}{size=\small}
   % This stands out a little bit more than umons-red!
-  \setbeamercolor{alerted text}{fg=red!80!black}
-  %\setbeamercolor{alerted text}{fg=umons-red}
+  %\setbeamercolor{alerted text}{fg=red!80!black}
+  \setbeamercolor{alerted text}{fg=umons-red}
   \setbeamercolor*{palette primary}{fg=black, bg=umons-turquoise}
   \setbeamercolor*{palette secondary}{fg=black, bg=umons-turquoise}
   \setbeamercolor*{palette tertiary}{fg=umons-gray!30, bg=umons-red!80!black}
@@ -131,7 +131,7 @@ height=1.07\paperheight]{template/background-hex.jpg}}
 
 % To get coherent font between text and equations
 \usefonttheme{professionalfonts}
-\usepackage{mathpazo}
+%\usepackage{mathpazo}
 % Useful package in this context
 \usepackage{listings}
 % Command used to place a picture somewhere in the slide (relative to current pos)
@@ -141,14 +141,6 @@ height=1.07\paperheight]{template/background-hex.jpg}}
 \usepackage{textpos}
 \newcommand{\putabs}[3]{\begin{textblock*}{10mm}[0,0](#1,#2){#3}\end{textblock*}}
 
-% Commands useful to place columns in the slides
-\newcommand{\columnsbegin}{\begin{columns}}
-\newcommand{\columnsend}{\end{columns}}
-\newcommand{\columnhalf}{\column{.5\textwidth}}
-\newcommand{\columnlarge}{\column{.66\textwidth}}
-\newcommand{\columnsmall}{\column{.33\textwidth}}
-\newcommand{\columnverylarge}{\column{.75\textwidth}}
-\newcommand{\columnverysmall}{\column{.25\textwidth}}
 
 % Copyright notices and sources:
 % The background picture: http://www.uberpiglet.com/vectors/20-amazing-vector-backgrounds/
@@ -189,13 +181,10 @@ height=1.07\paperheight]{template/background-hex.jpg}}
 \usepackage{wasysym}
 %\usepackage{amsmath}
 
-% Redefine colors for links
-\hypersetup{colorlinks=true,urlcolor=umons-turquoise,linkcolor=umons-turquoise,% link color controls section, subsection, and title
-citecolor = umons-turquoise, anchorcolor = umons-turquoise}
-% We do not want to change link colors in infolines
-\addtobeamertemplate{headline}{\hypersetup{allcolors=.}}{}
-\addtobeamertemplate{footline}{\hypersetup{allcolors=.}}{}
+% TODO: redefine colors for syntax highlighting!
 
-% Do not print slides with first level header
-\AtBeginSection[]{}
-
+% Tricks for two-columns sections
+\def\begincols{\begin{columns}}
+\def\begincol{\begin{column}}
+\def\endcol{\end{column}}
+\def\endcols{\end{columns}}
