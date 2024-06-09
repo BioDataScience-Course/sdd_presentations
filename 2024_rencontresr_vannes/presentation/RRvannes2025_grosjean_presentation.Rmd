@@ -218,8 +218,10 @@ ___
 
 **Ressources utiles**
 
-\alert{Plateforme pédagogique LearnIt::R}}: <https://github.com/learnitr> *en cours d'élaboration sur base des outils développés pour nos cours*
+\alert{Plateforme pédagogique LearnIt::R}}: <https://github.com/learnitr>
+
+*en cours d'élaboration sur base des outils développés pour nos cours*
 
 - Site web du cours : <https://wp.sciviews.org/>
 
-- Cette présentation : <https://github.com/BioDataScience-Course/sdd_presentations/tree/master/2023_rencontresr_vannes>
+- Cette présentation : <https://go.sciviews.org/rr2024>
