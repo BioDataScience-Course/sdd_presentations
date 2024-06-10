@@ -20,9 +20,9 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 ### Enseigner R et les statistiques à des étudiants réfractaires
 
-\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
+\vfill
 
-Cursus universitaire en biologie, voir \alert{\underline{https://wp.sciviews.org}}.
+Cursus universitaire en biologie, voir [\alert{\underline{https://wp.sciviews.org}}](https://wp.sciviews.org)
 
 \vfill
 
@@ -30,47 +30,52 @@ Cursus universitaire en biologie, voir \alert{\underline{https://wp.sciviews.org
 
 ## Motiver et capter l'attention
 
-### Contextualiser - décontextualiser - recontextualiser
 
+### Exercices facultatifs - peu de participation
 
-![](images/cdr.png)
-
-*Tardif J., Meirieu P., 1996, Stratégies pour favoriser le transfert des connaissances. Vie pédagogique, 98, 4-7.*
-
-### Pédagogie active en classe inversée
-
-**Cours + exercices** = étudiants passifs une partie du temps
-
-![](images/organisation1.png)
-\vfill
-
-**Classe inversée** = étudiant actif et optimisation du temps en présentiel
-
-![](images/organisation2.png)
-
-Découpage du cours en **modules** de 2 séances (2h + 4h) toutes les 2 semaines. 
-
-### Classe inversée - attention !
-
--   Pas juste une vidéo du cours à visionner !
-
--   Être disponible pour \alert{répondre aux questions} (coaching).
-
--   Matériel pédagogique en ligne \alert{adapté}, visant l'*auto-apprentissage* et l'*auto-évaluation* (\alert{exercices interactifs}, [H5P](https://h5p.org) et [learnr](https://rstudio.github.io/learnr/)).
-
-![](images/h5p_drag_words.png)
-
-
-
-### Manque de participation
-
-Exemple : exercices interactifs en ligne proposés sans précautions particulières
+Cours de math, exercices interactifs en ligne proposés sans précautions particulières
 
 ![](images/participation_exercices_math_bab1.png){width='80%'}
 
 ### Participation - des solutions...
 
--   Exercices directement dans le cours en ligne
+**Varier** le type d'exercices : **\alert{H5P}**
+
+- Plus de 50 types d'exercices différents, voir [https://h5p.org](https://h5p.org/)
+
+\vfill
+
+![](images/h5p_drag_words.png){width='100%'}
+
+\vfill
+
+\vfill
+
+\vfill
+
+### Participation - des solutions...
+
+**Varier** le type d'exercices : **H5P** + **\alert{learnr}**
+
+- Tutoriels avec écriture de code R, voir [https://rstudio.github.io/learnr/](https://rstudio.github.io/learnr/)
+
+\vfill
+
+![](images/learnr.png){width='100%'}
+
+\vfill
+
+### Participation - des solutions...
+
+**Varier** le type d'exercices : **H5P** + **learnr** + **\alert{Shiny}**
+
+- Démonstration de concepts statistiques avec [https://shiny.rstudio.com/](https://shiny.rstudio.com/)
+
+![](images/shiny.png){width='80%'}
+
+### Participation - des solutions...
+
+-   Exercices directement **dans le cours en ligne**
 
 ![](images/h5p.png)
 
@@ -80,7 +85,7 @@ Exemple : exercices interactifs en ligne proposés sans précautions particuli�
 
 -   Exercices directement dans le cours en ligne
 
--   Liste des exercices à la fin de chaque module
+-   **Liste des exercices** à la fin de chaque module
 
 ![](images/list_ex.png){width='80%'}
 
@@ -91,7 +96,7 @@ Exemple : exercices interactifs en ligne proposés sans précautions particuli�
 
 -   Liste des exercices à la fin de chaque module
 
--   Points attribués à la réalisation des exercices (exemple, 5% de la note finale)
+-   **Points attribués à la réalisation des exercices** (exemple, 5% de la note finale)
 
 ![](images/carrot.png){width='60%'}
 
@@ -104,51 +109,30 @@ Exemple : exercices interactifs en ligne proposés sans précautions particuli�
 
 -   Points attribués à la réalisation des exercices (exemple, 5% de la note finale)
 
--   Rapport de progression en temps réel
+-   **Rapport de progression** en temps réel
 
 ![](images/progress_report.png){width='85%'}
 
 ### Participation - résultat
 
-\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
-
-**Plus de 90%** de participation observée aux exercices
+**Plus de 90%** de participation observée aux exercices en ligne de nos cours
 
 ![](images/test.pdf){width='80%'}
 
 
 ## Progressivité de l'apprentissage
 
-### Évaluation continue
-
-\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
-
-Évaluation formative tout au long du cours divisé en modules
-
-\vfill
-
-![](images/eval_continue.png)
-
-
-
-
-### Progressivité en 4 niveaux d'exercices
-
-\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
+### Progressivité : 4 niveaux de difficulté croissante
 
 ![](images/apprendre2.png){width='80%'}
 
 ### Projets GitHub Classroom cadrés
 
-\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
-
 ![](images/github.png){width='70%'}
 
 ### Projets GitHub Classroom cadrés
 
-\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
-
-- Instructions sous forme de commentaires
+- **Instructions** sous forme de commentaires
 
 \vfill
 
@@ -158,23 +142,19 @@ Exemple : exercices interactifs en ligne proposés sans précautions particuli�
 
 ### Projets GitHub Classroom cadrés
 
-\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
-
 - Instructions sous forme de commentaires
 
-- Interprétation par sélection des phrases correctes
+- Interprétation par **sélection des phrases correctes**
 
 ![](images/github_select_answer.png){width='80%'}
 
 ### Projets GitHub Classroom cadrés
 
-\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{template/biodatascience.png}}
-
 - Instructions sous forme de commentaires
 
 - Interprétation par sélection des phrases correctes
 
-- Évaluation semi-automatique avec {testthat} + suggestions pour s'améliorer
+- **Évaluation semi-automatique** avec {testthat} + suggestions pour s'améliorer
 
 ![](images/github_testthat.png){width='80%'}
 
@@ -186,42 +166,26 @@ Exemple : exercices interactifs en ligne proposés sans précautions particuli�
 
 ### Plateforme pédagogique LearnIt::R
 
-\putabs{10.5cm}{-0.5cm}{\includegraphics[width=1.5cm]{figures/learnitr_800.png}}
-
-La \alert{plateforme pédagogique LearnIt::R} :
-
--   Exercices H5P , Shiny, learnr dans un bookdown (+ Quarto book bientôt)
-
--   Enregistrement de l'activité des étudiants dans les exercices en ligne
-
--   Rapport de progression en temps réel
-
--   Projets GitHub Classroom cadrés avec auto-évaluation {testthat}
-
--   Application \alert{learnitgrid} de correction par grilles critériées
-
-### Quatre niveaux d'exercices avec LearnIt::R
-
 ![](images/apprendre2b.png){width='100%'}
 
 ___
 
 \begin{center}
-\textbf{Avez-vous des questions ?}
+\textbf{Avez-vous des questions ?}
 \end{center}
 
 \centering
 
-![](images/monkey2.jpg){width='30%'}
+![](images/monkey2.jpg){width='20%'}
 
 \vfill
 
-**Ressources utiles**
+**Plateforme pédagogique LearnIt::R** : [\underline{\alert{https://github.com/learnitr}}](https://github.com/learnitr)
 
-\alert{Plateforme pédagogique LearnIt::R}}: <https://github.com/learnitr>
+*en cours d'élaboration sur base du code développé pour nos cours*
 
-*en cours d'élaboration sur base des outils développés pour nos cours*
+\vfill
 
-- Site web du cours : <https://wp.sciviews.org/>
+- Site web du cours : [\alert{https://wp.sciviews.org/}](https://wp.sciviews.org/)
 
-- Cette présentation : <https://go.sciviews.org/rr2024>
+- Cette présentation : [\alert{https://go.sciviews.org/rr2024}](https://go.sciviews.org/rr2024)
