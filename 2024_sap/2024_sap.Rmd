@@ -181,21 +181,21 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ![](images/semaine_type.png){width="80%"}
 
-### Evaluation continue
-
--   **Evaluation continue** : une interrogation par module et tous les exercices en ligne et les projets sont également comptabilisés :
-
-| Type | Description               | Pourcentage |
-|------|---------------------------|-------------|
-| N1   | Exercices H5P et shiny    | 2           |
-| N2   | Tutoriels avec learnr     | 4           |
-| N3   | Projets individuels cadré | 6           |
-| N4   | Projets de groupe         | 28          |
-| /    | Evaluation / challenge    | 5 x 12      |
-
 ### Progressivité : 4 niveaux de difficulté croissante
 
 ![](images/apprendre3.png){width="100%"}
+
+### Évaluation continue
+
+**Évaluation continue** : une interrogation par module et tous les exercices en ligne et les projets sont également comptabilisés :
+
+\vfill
+
+* **Niveau 1** : exercices H5P et shiny =  \alert{2\%}
+* **Niveau 2** : tutoriels avec learnr = \alert{4\%}
+* **Niveau 3** : projets individuels cadrés = \alert{6\%}
+* **Niveau 4** : projets de groupe = \alert{28\%}
+* **Évaluations sommatives / challenges** : \alert{12\% x 5 modules}
 
 ### Projets GitHub Classroom cadrés
 
@@ -247,23 +247,21 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ### Questions et difficultés
 
--   Reconnaissance du travail réalisé, *ainsi que du rôle pionnier en biologie, voire en Faculté des Sciences à l'UMONS*
+-   Faible niveau en **littératie** (textes, mais aussi mathématique et numérique) de certains étudiants. *Rien pour leur faire prendre conscience, rien pour les aider ensuite* + faible niveau par rapport à la taxonomie de Bloom
 
--   Réticence pour ne pas dire opposition des collègues en biologie
+-   **Notation** : les exercices donnent des points (reconnaissance du travail), les étudiants trichent, certains réussissent avec un niveau trop faible. **Note absorbante mal perçue** et points négatifs.
 
--   Réticence pour ne pas dire révolution des étudiants
+-   **Perception de la notation par les étudiants** : points "négatifs" mal perçus + impression d'être fliqué + réticence des étudiants face à une autre pédagogie
 
--   Faible niveau en littératie (textes, mais aussi mathématique et numérique) de certains étudiants. *Rien pour leur faire prendre conscience, rien pour les aider ensuite*
+-   **Mauvaise perception de l'évaluation continue par les collègues** : séances obligatoires et pas d'examen en seconde session
 
--   Difficulté d'évaluation des étudiants *(les exercices donnent des points, les étudiants trichent, certains réussissent avec un niveau trop faible)*
+-   **Examen en seconde session ou pas ?** Cf. évaluation continue. *Si pas pousse les étudiants à travailler pendant l'année, mais incompréhension.*
 
--   Impossibilité de mise en œuvre de la note absorbante *(révolution chez les étudiants !)*
+-   **Inutilisé constatée du redoublement** *(impossible de varier les exercices chaque année)*
 
--   Inutilisé constatée du redoublement *(impossible de varier les exercices chaque année)*
+-   **Temps nécessaire** *(préparation des exercices, corrections)* Souhait de passer à l'évaluation Moodle + Safe Exam Browser
 
--   Présence en séance obligatoire *=\> un ineptie pour nos collègues biologistes, source de tensions*
-
--   Examen en seconde session ou pas ? cf. évaluation continue. *Pousse l'étudiant à travailler pendant l'année, mais il ne comprend pas qu'il n'y ait pas de moyen de rattrapage. Totalement inacceptable pour les collègues.*
+-   **Reconnaissance du travail réalisé**, *ainsi que du rôle pionnier en biologie, voire en Faculté des Sciences à l'UMONS*
 
 ------------------------------------------------------------------------
 
