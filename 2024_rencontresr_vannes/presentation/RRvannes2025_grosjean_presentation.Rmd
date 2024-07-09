@@ -28,6 +28,21 @@ Cursus universitaire en biologie, voir [\alert{\underline{https://wp.sciviews.or
 
 ![](images/site_cours.png){width='65%'}
 
+## Sondage du public avec Wooclap
+
+### Question 1 (retient-on en écoutant ?)
+
+![](images/wooclap1.png)
+
+### Question 2 (mode d'apprentissage préféré)
+
+![](images/wooclap2.png)
+
+### Question 3 (question ouverte)
+
+![](images/wooclap3.png)
+
+
 ## Motiver et capter l'attention
 
 
