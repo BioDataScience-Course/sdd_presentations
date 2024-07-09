@@ -171,6 +171,11 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ![](images/processus.png)
 
+
+### Progressivité : 4 niveaux de difficulté croissante
+
+![](images/apprendre3.png){width="100%"}
+
 ### Progressivité : découpage en 30 modules
 
 -   Chaque module est travaillé pendant **une semaine**
@@ -181,27 +186,45 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ![](images/semaine_type.png){width="80%"}
 
-### Progressivité : 4 niveaux de difficulté croissante
-
-![](images/apprendre3.png){width="100%"}
-
 ### Évaluation continue
 
-**Évaluation continue** : une interrogation par module et tous les exercices en ligne et les projets sont également comptabilisés :
+**Évaluation continue** prenant en compte **toute l'activité des étudiants** (>360 notes) :
 
-\vfill
+-   Exercices N1 & 2 en distanciel
+-   Projets individuels et en groupe
+-   Une évaluations sommative par module
 
-* **Niveau 1** : exercices H5P et shiny =  \alert{2\%}
-* **Niveau 2** : tutoriels avec learnr = \alert{4\%}
-* **Niveau 3** : projets individuels cadrés = \alert{6\%}
-* **Niveau 4** : projets de groupe = \alert{28\%}
-* **Évaluations sommatives / challenges** : \alert{12\% x 5 modules}
+ 
 
-### Projets GitHub Classroom cadrés
+Répartition des points **particulièrement soignée** : motiver les étudiants sur les activités les plus importantes, mais sans rien négliger (*chaque* exercice donne des points) !
+
+```{r, fig.width=8}
+ec <- data.frame(
+  Niveau = c("Niveau 1", "Niveau 2", "Niveau 3", "Niveau 4", "Évaluations"),
+  Type = c("Exercices H5P et shiny", "Tutoriels learnr", "Projets individuels cadrés", "Projets de groupe", "Interrogations & challenges"),
+  Pourcentage = c("2%", "4%", "6%", "28%", "12% x 5"),
+  Fraction = c(2, 4, 6, 28, 60)
+)
+library(flextable)
+set_flextable_defaults(font.size = 14, background.color = "white")
+flextable(ec) |>
+  theme_booktabs() |>
+  set_table_properties(width = 1) |>
+  mk_par(j = 4, value = as_paragraph(
+    minibar(value = Fraction,
+      max = 100, height = .15, barcol = "darkred")), part = "body") |>
+  set_header_labels(Fraction = "") |>
+  autofit() |>
+  plot(fit = "width", just = NULL)
+```
+
+## Recontextualisation (N3) = étape clé mais difficile
+
+### Projets GitHub Classroom cadrés (N3)
 
 ![](images/github.png){width="70%"}
 
-### Projets GitHub Classroom cadrés
+### Projets GitHub Classroom cadrés (N3)
 
 -   **Instructions** sous forme de commentaires
 
@@ -211,7 +234,7 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 \vfill
 
-### Projets GitHub Classroom cadrés
+### Projets GitHub Classroom cadrés (N3)
 
 -   Instructions sous forme de commentaires
 
@@ -219,7 +242,7 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ![](images/github_select_answer.png){width="80%"}
 
-### Projets GitHub Classroom cadrés
+### Projets GitHub Classroom cadrés (N3)
 
 -   Instructions sous forme de commentaires
 
@@ -245,23 +268,58 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 -   **Module type :** SDD II, module 2 (assez difficile), *21/10/2024 10h30 - 12h30 + 24/10/2024 8h15 à 12h30, salle Vaughan (De Vinci)*
 
-### Questions et difficultés
 
--   Faible niveau en **littératie** (textes, mais aussi mathématique et numérique) de certains étudiants. *Rien pour leur faire prendre conscience, rien pour les aider ensuite* + faible niveau par rapport à la taxonomie de Bloom
+### Questions et difficultés (1/4 litteratie & Bloom)
 
--   **Notation** : les exercices donnent des points (reconnaissance du travail), les étudiants trichent, certains réussissent avec un niveau trop faible. **Note absorbante mal perçue** et points négatifs.
+-   Faible niveau en **littératie** de certains étudiants
+    * en **français** : incapables de comprendre et résumer une trentaine de pages de texte, habitués seulement à annoter des PowerPoints fournis par le prof
+    * en **mathématiques** : difficultés à comprendre des concepts de base, des équations simples...
+    * **numérique** : difficulté à utiliser un clavier, faire des actions simples (copier-coller, copie d'écran, recherche de mots dans un texte...)
 
--   **Perception de la notation par les étudiants** : points "négatifs" mal perçus + impression d'être fliqué + réticence des étudiants face à une autre pédagogie
+*Comment leur faire prendre conscience et les aider ensuite ?* Pix ?
+
+\vfill
+
+-   Faible niveau par rapport à la **taxonomie de Bloom** (connaître et un peu comprendre) pour les autres cours
+
+### Questions et difficultés (2/4 évaluation formative vs sommative)
+
+-   Tous les exercices donnent des points (reconnaissance du travail), mais les N1-3 sont à visée formative
+
+-   **Triche** possible (et facile en distanciel)
+
+-   -> Réussite avec un **niveau trop faible**
+
+-   **Note absorbante** mal perçue
+
+-   **Points négatifs** mal perçus + "fliquage"
+
+-   **Inutilité constatée du redoublement** *(impossible de varier les exercices chaque année)*
+
+### Questions et difficultés (3/4 perception)
+
+-   **Réticence des étudiants** face à une autre pédagogie, incompréhension de l'inexistance d'un rattrapage en seconde session
 
 -   **Mauvaise perception de l'évaluation continue par les collègues** : séances obligatoires et pas d'examen en seconde session
 
--   **Examen en seconde session ou pas ?** Cf. évaluation continue. *Si pas pousse les étudiants à travailler pendant l'année, mais incompréhension.*
+\vfill
 
--   **Inutilisé constatée du redoublement** *(impossible de varier les exercices chaque année)*
+-   **Examen en seconde session ou pas ?** Cf. évaluation continue. *Si pas pousse les étudiants à travailler pendant l'année, mais très mal perçu.*
 
--   **Temps nécessaire** *(préparation des exercices, corrections)* Souhait de passer à l'évaluation Moodle + Safe Exam Browser
 
--   **Reconnaissance du travail réalisé**, *ainsi que du rôle pionnier en biologie, voire en Faculté des Sciences à l'UMONS*
+### Questions et difficultés (4/4 temps et reconnaissance institutionnelle)
+
+-   **Temps énorme à la préparation** (mais l'essentiel est écrit maintenant)
+
+-   **Temps énorme à la correction** (learnitgrid nous aide bien + projet d'évaluation par les pairs)
+
+-   **Temps énorme au coaching** individuel des étudiants (favoriser l'entre-aide dans la classe)
+
+-   **Aide inefficace de la DSI** (serveur LRS, plateforme LearnIt::R, calcul sur le cloud...)
+
+-   Souhait de passer à l'**évaluation avec Moodle + Safe Exam Browser** au lieu des interros papier
+
+-   **Reconnaissance indispensable du travail réalisé**, *ainsi que du rôle pionnier en biologie, voire en Faculté des Sciences à l'UMONS*
 
 ------------------------------------------------------------------------
 
