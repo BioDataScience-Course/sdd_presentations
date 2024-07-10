@@ -34,7 +34,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 ### Objectifs pédagogiques (par rapport à Anderson & Krathwohl 2001)
 
-![](images/bloom_revised.png){width="75%"}
+![](images/bloom_revised.pdf){width="75%"}
 
 ## Sondage de data scientists avec Wooclap
 
@@ -60,7 +60,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 Exemple pratique qui introduit un concept quasi-systématiquement dans le cours en ligne. Recontextualisation en séance.
 
-![](images/cdr.png){width="100%"}
+![](images/cdr.pdf){width="100%"}
 
 ### Matériel pédagogique en ligne
 
@@ -174,7 +174,7 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ### Progressivité : 4 niveaux de difficulté croissante
 
-![](images/apprendre3.png){width="100%"}
+![](images/apprendre3.pdf){width="100%"}
 
 ### Progressivité : découpage en 30 modules
 
@@ -184,7 +184,7 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 -   Un module **une semaine sur deux** pour laisser le temps aux étudiants de finaliser le précédent et de préparer le suivant
 
-![](images/semaine_type.png){width="80%"}
+![](images/semaine_type.pdf){width="80%"}
 
 ### Évaluation continue
 
