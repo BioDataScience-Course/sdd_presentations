@@ -171,7 +171,6 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ![](images/processus.png)
 
-
 ### Progressivité : 4 niveaux de difficulté croissante
 
 ![](images/apprendre3.pdf){width="100%"}
@@ -188,7 +187,7 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ### Évaluation continue
 
-**Évaluation continue** prenant en compte **toute l'activité des étudiants** (>360 notes) :
+**Évaluation continue** prenant en compte **toute l'activité des étudiants** (\>360 notes) :
 
 -   Exercices N1 & 2 en distanciel
 -   Projets individuels et en groupe
@@ -268,13 +267,12 @@ flextable(ec) |>
 
 -   **Module type :** SDD II, module 2 (assez difficile), *21/10/2024 10h30 - 12h30 + 24/10/2024 8h15 à 12h30, salle Vaughan (De Vinci)*
 
-
 ### Questions et difficultés (1/4 litteratie & Bloom)
 
 -   Faible niveau en **littératie** de certains étudiants
-    * en **français** : incapables de comprendre et résumer une trentaine de pages de texte, habitués seulement à annoter des PowerPoints fournis par le prof
-    * en **mathématiques** : difficultés à comprendre des concepts de base, des équations simples...
-    * **numérique** : difficulté à utiliser un clavier, faire des actions simples (copier-coller, copie d'écran, recherche de mots dans un texte...)
+    -   en **français** : incapables de comprendre et résumer une trentaine de pages de texte, habitués seulement à annoter des PowerPoints fournis par le prof
+    -   en **mathématiques** : difficultés à comprendre des concepts de base, des équations simples...
+    -   **numérique** : difficulté à utiliser un clavier, faire des actions simples (copier-coller, copie d'écran, recherche de mots dans un texte...)
 
 *Comment leur faire prendre conscience et les aider ensuite ?* Pix ?
 
@@ -288,7 +286,7 @@ flextable(ec) |>
 
 -   **Triche** possible (et facile en distanciel)
 
--   -> Réussite avec un **niveau trop faible**
+-   -\> Réussite avec un **niveau trop faible**
 
 -   **Note absorbante** mal perçue
 
@@ -305,7 +303,6 @@ flextable(ec) |>
 \vfill
 
 -   **Examen en seconde session ou pas ?** Cf. évaluation continue. *Si pas pousse les étudiants à travailler pendant l'année, mais très mal perçu.*
-
 
 ### Questions et difficultés (4/4 temps et reconnaissance institutionnelle)
 
