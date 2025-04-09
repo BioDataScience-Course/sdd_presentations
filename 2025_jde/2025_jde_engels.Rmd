@@ -1,0 +1,23 @@
+---
+title: "Pages d'aide simplifiées et en français dans R grâce à l'IA"
+output: html_document
+date: "2025-03-03"
+---
+
+## Version brève
+
+Dans les cours de sciences des données biologiques à l'UMONS, l'apprentissage du logiciel R est essentiel. Mais les pages d'aide de R sont souvent trop techniques pour les débutants, et en anglais (barrière linguistique).
+ 
+Nous avons développé le package {helpai} qui génère des pages d'aide simplifiées, éventuellement en français, grâce à l'IA. Une boîte de dialogue permet à l'étudiant de spécifier la fonction d'intérêt. La page générée fournit une description non technique de la fonction, documente ses principaux arguments et présente un exemple exécutable. Elle pointe aussi vers la page d'aide officielle pour une exploration plus approfondie.
+ 
+Le LLM utilisé est spécialisé pour répondre aux notions des cours. Un serveur dédié à l'UMONS assure la confidentialité des données en respect du RGPD. Les traces d'activité sont collectées pour analyser l'impact de cet outil sur les apprentissages.
+
+## Version longue
+
+Dans R, une grande partie des pages d'aide est très technique pour une première approche d'une fonction, par exemple pour un étudiant dans le cadre d'un cours. Cette complexité freine les nouveaux utilisateurs dans l'utilisation des pages d'aide. En outre, la barrière linguistique constitue un obstacle supplémentaire pour les utilisateurs non anglophones.
+
+Dans le cadre des cours de sciences des données biologiques à l'UMONS, l'apprentissage de R est un élément important de la formation. Nous avons développé le package R {helpai} qui permet, entre autres, de générer des pages d'aide simplifiées, éventuellement en français, grâce à l'IA. Une boite de dialogue permet à l'étudiant de spécifier la fonction d'intérêt pour laquelle il souhaite une page d'aide. La page ainsi générée fournit une description non ou peu technique de la fonction en deux ou trois paragraphes, documente les principaux arguments et présente un exemple généralement exécutable. Enfin, cette page pointe vers la page d'aide "officielle" de ladite fonction suggérant, donc, à l'étudiant de continuer à découvrir la fonction ciblée au travers de la documentation usuelle s'il le juge nécessaire.
+
+Le LLM employé est spécialisé pour répondre quasi exclusivement aux notions en relation avec les cours (prompt engineering). De plus, un serveur dédié localisé à l'UMONS assure la confidentialité des données en respect du RGPD. Les traces d'activité de ce serveur sont collectées dans le but de déterminer l'impact de cet outil sur les apprentissages. Les données pourront être analysées plus tard (learning analytics).
+
+L'originalité de notre approche réside dans le format du document généré, complémentaire à une discussion de type chat ou de complétion de code plus classique. Ces pages d'aide s'intègrent dans l'interface du logiciel employé (RStudio). 
