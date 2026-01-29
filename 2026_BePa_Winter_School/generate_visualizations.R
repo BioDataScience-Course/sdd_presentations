@@ -387,6 +387,7 @@ png("proteomics_figures/10_volcano_plot.png",
 par(mar = c(5, 5, 4, 2))
 
 # Simulate proteomics differential expression data
+set.seed(4764)
 n_proteins <- 2000
 n_de <- 200  # Differentially expressed
 
@@ -394,13 +395,13 @@ n_de <- 200  # Differentially expressed
 log_fc <- c(
   rnorm(n_de/2, mean = -2, sd = 0.5),  # Down-regulated
   rnorm(n_de/2, mean = 2, sd = 0.5),   # Up-regulated
-  rnorm(n_proteins - n_de, mean = 0, sd = 0.3)  # Not DE
+  rnorm(n_proteins - n_de, mean = 0, sd = 0.4)  # Not DE
 )
 
 # P-values
 p_values_volcano <- c(
-  10^(-runif(n_de, min = 2, max = 10)),  # DE proteins (small p-values)
-  runif(n_proteins - n_de, min = 0.05, max = 1)  # Not DE
+  10^(-runif(n_de, min = 1, max = 10)),  # DE proteins (small p-values)
+  runif(n_proteins - n_de, min = 0.05, max = 10)  # Not DE
 )
 
 # Adjust p-values (FDR)
@@ -416,7 +417,7 @@ plot(log_fc, -log10(p_values_volcano), pch = 20, cex = 0.8, col = colors,
   cex.lab = 1.2, cex.main = 1.3)
 
 # Add threshold lines
-abline(h = -log10(0.05), col = "black", lwd = 2, lty = 2)
+abline(h = -log10(0.005), col = "black", lwd = 2, lty = 2)
 abline(v = c(-1, 1), col = "black", lwd = 2, lty = 2)
 
 # Add legend
