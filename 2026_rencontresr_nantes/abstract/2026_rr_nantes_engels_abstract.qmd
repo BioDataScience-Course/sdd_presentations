@@ -1,0 +1,38 @@
+---
+title: "Utilisation de tutoriel learnr pour évaluer des étudiants en science des données biologiques"
+author:
+  - Guyliann Engels 1^[Service d'écologie numérique, Institut Complexys & Infortech, Université de Mons, Belgique, guyliann.engels@umons.ac.be]
+  - Philippe Grosjean 1^[Service d'écologie numérique, Institut Complexys & Infortech, Université de Mons, Belgique, philippe.grosjean@umons.ac.be]
+format: typst
+indent: true
+lang: fr
+---
+
+```{=typst}
+#align(center)[#strong[Résumé (max 300 mots)]]
+```
+
+Nous présentons une dispositif d'évaluation continu basé sur R, conçue pour des enseignements de Sciences des données biologiques à l’Université de Mons. 
+
+L’objectif est de concilier un feedback individualisé et une charge d’évaluation acceptable. Le dispositif s’appuie sur des tutoriels interactifs {learnr} publiés via Posit Connect et suivis par 108 étudiants (BA2 → MA1) au premier quadrimestre. Quarante et un questionnaires totalisant 298 items (61 QCM, 81 ouverts, 156 de code) ont alimenté 45 156 enregistrements dans un Learning Record Store (LRS) dédié.
+
+La contribution centrale tient à un R Markdown bi-fonction. Le même fichier sert à servir le tutoriel et de template de correction grâce à des balises HTML. 
+
+À partir du LRS et du template, un document de correction individuel est généré pour chaque étudiant, restituant l’intégralité des questions et les dernières réponses soumises. La compilation produit un HTML de correction, les figures PNG et des objets interméditaires exploitables pour une pré‑correction.
+
+Une grille d’évaluation est ensuite pré‑remplie et validée via une application Shiny (package {learnitgrid}) : les QCM et exercices de code sont validés automatiquement, tandis que les réponses ouvertes sont annotées manuellement. Le HTML final est enrichi de notes et commentaires par question puis mis à disposition des étudiants.
+
+**Mots-clefs (3 à 5)** : Enseignement - Évaluation  - learnr  - Shiny 
+
+## Développement 
+
+
+Dans le cadre des cours de Sciences des données biologiques donnés à l’Université de Mons (Belgique), 108 étudiants répartis en trois cours successifs, de la BA2 à la MA1, sont évalués via des questionnaires interactifs basés sur le package {learnr} et publiés sur Posit Connect. Sur le premier quadrimestre, 41 questionnaires composés de 298 questions ont été rédigés. Ils se répartissent en 61 questions à choix multiples, 81 questions ouvertes et 156 questions de code. Les réponses soumises ont généré 45 156 entrées dans le référentiel de données d’apprentissage (Learning Record Store, LRS) du cours.
+
+Chaque questionnaire est conçu en R Markdown et remplit deux fonctions complémentaires. Premièrement,il permet de servir le questionnaire sur Posit Connect. Deuxièmement, il intègre des balises HTML qui le transforment en modèle de correction. À partir du LRS, nous générons pour chaque étudiant un fichier R Markdown de correction qui reprend l’intégralité des questions ainsi que les dernières réponses soumises.
+
+La compilation de ce document génère un HTML de correction, les figures (PNG) et des objets contenant les résultats des chunks destinés à la correction semi-automatisée. Les questions de code sont éxécutées à l'intérieur de fonction try() afin de ne pas empecher la compilation.
+
+Une grille d’évaluation est associée à chaque R Markdown de correction. Sur la base des éléments obtenus à la compilation, celle-ci est complétée de manière semi-automatisée. L’évaluateur utilise l’application Shiny du package {learnitgrid}, présentée lors des Rencontres R 2023, pour valider les corrections automatisées (questions de type QCM et de code) et corriger manuellement les questions ouvertes.
+
+Le fichier HTML de correction est ensuite modifié pour y intégrer les notes et les remarques pour chaque question. Ce fichier HTML enrichi est mis à disposition des étudiants.
