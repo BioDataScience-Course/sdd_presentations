@@ -1,0 +1,322 @@
+---
+title: "SDD II : interro 4A"
+author: "Philippe Grosjean & Guyliann Engels"
+description: "**SDD II** Interrogation du module 4, série A."
+tutorial:
+  id: "B04Xa_glm"
+  version: 1.0.0/6
+output:
+  learnr::tutorial:
+    progressive: true
+    allow_skip: false
+runtime: shiny_prerendered
+---
+
+```{=html}
+<!--##YAML
+---
+title: "SDD II : interro module 4, série A (B04Xa_glm)"
+author: "{{user_login}}"
+date: "2025-11-20"
+output:
+  html_document:
+    theme: default
+    self_contained: true
+editor: visual
+lang: fr
+---
+-->
+```
+
+```{r setup, include=FALSE}
+BioDataScience2::learnr_setup() ##Delete
+knitr::opts_chunk$set(dev = "ragg_png")
+SciViews::R("model")
+# Required for RSConnect ##Delete
+# SciViews::R
+library(rlang)
+library(data.table)
+library(ggplot2)
+library(tibble)
+library(tidyr)
+library(dplyr)
+library(dtplyr)
+library(broom)
+library(forcats)
+library(collapse)
+library(fs)
+library(data.trame)
+library(svFast)
+library(svTidy)
+library(svMisc)
+library(svBase)
+library(svFlow)
+library(data.io)
+library(chart)
+library(tabularise)
+library(SciViews)
+# ... more
+library(readxl)
+library(testthat)
+library(equatags)
+library(modelit)
+library(MASS)
+library(GLMsData)
+
+# For corrections
+##Add options(learnitdown.correction = TRUE)
+##Add suppressMessages(library(learnitgrid))
+##Add learnitgrid::hook_last_chunk()
+##Add learnitgrid::hook_record()
+##Add knitr::opts_chunk$set(fig.path = "images/", comment = "")
+
+# Datasets
+boric <- {
+  .= read("boric", package = "GLMsData")
+  .= janitor::clean_names(.)
+  .= mutate_(., 
+    dose  = ~ as.ordered(dose), 
+    alive = ~ implants - dead)
+  .= arrange_(., 'dose', 'alive', 'dead', 'implants')
+}
+
+serum <- {
+  .= read("serum", package = "GLMsData")
+  .= mutate_(., ratio = ~ Survivors/Number)
+}
+
+rikz <- {
+  .= read("data/rikz.csv") ##Delete
+##Add  .= read$csv("https://wp.sciviews.org/sddexams/B04Xa_glm/rikz.csv")
+  .= janitor::clean_names(.)
+  .= select_(., ~-sample)
+  .= mutate_(.,
+    beach    = ~ as.factor(beach), 
+    exposure = ~ as.factor(exposure))
+}
+```
+
+<!--##Delete-->
+
+```{r, echo=FALSE}
+BioDataScience2::learnr_banner()
+```
+
+<!--##Delete-->
+
+```{r, context="server"}
+if (Sys.info()["user"] == "rstudio-connect") {
+  options(learnr_user_id = session$user)
+  assignInNamespace("default_user_id", function() {
+    getOption("learnr_user_id", unname(Sys.info()["user"]))
+  }, ns = "learnr")
+}
+BioDataScience2::learnr_server(input, output, session)
+# Configure learnrs for exams
+learnr::tutorial_options(exercise.reveal_solution = FALSE,
+  exercise.lines = 4L, exercise.completion = FALSE)
+```
+
+--------------------------------------------------------------------------------
+
+<!--##Delete-->
+
+Les interrogations écrites se présentent comme vos learnrs du cours sauf que vous n'avez aucune aide. Vous pouvez recommencer autant de fois que vous voulez (bouton `Try Again` ou `Run Code`). Seule votre dernière réponse sera prise en compte pour la cotation, mais n'oubliez pas de la valider en cliquant sur `Submit Answer` ou `Run Code` selon le type de question. Bon travail !
+
+
+## Question 1
+
+<!--##Q:q1-->
+
+<!--##A:q1-->
+
+```{=html}
+<!--
+C'est la variable Y réponse ainsi que la fonction de lien employée qui va permettre cette différenciation. Pour le premier, on est sur un variable réponse numérique qui doit suivre une distribution normale. Le second a la possibilité d'aovir des variables Y différente grâce à la fonction de lien.
+-->
+```
+
+<!--##Delete-->
+
+```{r q1, echo=FALSE}
+question_text(
+  "Qu'est-ce qui différencie un modèle linéaire mixte d'un modèle linéaire généralisé mixte ?",
+  answer("", TRUE, message = "Pas de réponse ?"),
+  incorrect = "Votre réponse est enregistrée.",
+  placeholder = "Entrez votre réponse ici...",
+  rows = 5, allow_retry = TRUE)
+```
+
+
+## Question 2
+
+Des chercheurs ont étudié l'effet de l'acide borique sur des embryons de souris soumis à quatre doses différentes (variable `dose`). Ils dénombrent pour ce faire les embryons vivants (variable `alive`) et morts *in utero* (variable `dead`) par rapport aux embryons totaux implantés (variable `implants`).
+
+À partir du jeu de données `boric` déjà chargé en mémoire, calculez la fraction d'individus morts sur la globalité des implants et nommez cette variable `fract`, toujours dans le tableau `boric`. Ensuite, ajustez un modèle nommé `boric_glm` de la fraction en fonction de la dose. Utilisez une fonction de lien de type quasibinomial. Tenez compte du nombre d'implants.
+
+
+```{r q2table, echo=TRUE, warning=FALSE}
+tabularise$headtail(boric)
+```
+
+<!--##A-chunk:q2-->
+
+```{=html}
+<!--record='ROP', object='boric_glm', arg='call'
+# Calcul de la nouvelle variable
+boric <- smutate(boric, frac = dead/implants)
+# Modèle
+boric_glm <- glm(data = boric, frac ~ dose, family = quasibinomial,
+  weights = boric$implants)
+summary_(boric_glm) |> tabularise()
+-->
+```
+
+<!--##Delete-->
+
+```{r q2, exercise=TRUE, exercise.lines=6}
+# Calcul de la nouvelle variable
+ 
+# Modèle
+boric_glm <-
+
+```
+
+
+## Question 3
+
+```{r q3table, echo=FALSE, warning=FALSE}
+# Model
+se_glm <- glm(data = serum, cbind(Survivors, Number) ~ Dose, family = binomial)
+summary_(se_glm) |> tabularise()
+confint(se_glm)
+```
+
+<!--##Q:q3-->
+
+<!--##Select-answer[OXOOOXXOO]-->
+
+```{r q3}
+question("Interprétez le tableau résumé du modèle ci-dessus.",
+  answer("La dispersion est correcte.", correct = TRUE),
+  answer("Nous sommes en présence d'une surdispersion importante. On devrait changer la fonction de lien.", correct = TRUE),
+  answer("Nous sommes en présence d'une sous-dispersion importante. On devrait changer la fonction de lien.", correct = TRUE),
+  answer("L'AIC est faible. Ce modèle est excellent", correct = TRUE),
+  answer("L'AIC est élevé. Ce modèle est excellent", correct = TRUE),
+  answer("L'AIC n'est pas utilisable tel quel. Il permet seulement de comparer plusieurs modèles.", correct = TRUE),
+  answer("Il s'agit d'un modèle linéaire généralisé avec une famille binomiale.", correct = TRUE),
+  answer("Il s'agit d'un modèle linéaire généralisé mixte avec une famille binomiale.", correct = TRUE),
+  answer("Il s'agit d'un modèle linéaire mixte avec une famille binomiale.", correct = TRUE),
+  allow_retry = TRUE, random_answer_order = TRUE,
+  try_again = "Votre réponse est enregistrée.",
+  correct = "Votre réponse est enregistrée."
+)
+```
+
+
+## Question 4
+
+<!--##Q:q4-->
+
+<!--##A:q4-->
+
+```{=html}
+<!--
+Notion équivalente, mais pas totalement identique à la somme des carrés des résidus, d’où les noms différents.
+-->
+```
+
+<!--##Delete-->
+
+```{r q4, echo=FALSE}
+question_text(
+  "Qu'est ce que le déviance des résidus ?",
+  answer("", TRUE, message = "Pas de réponse ?"),
+  incorrect = "Votre réponse est enregistrée.",
+  placeholder = "Réponse ici en une phrase...",
+  rows = 6, allow_retry = TRUE)
+```
+
+
+## Question 5
+
+```{r q5table, echo=FALSE, warning=FALSE}
+# Model
+mod <- lme4::glmer(data = rikz, richness ~ nap + (nap|beach), family = poisson)
+summary_(mod)
+confint(mod, oldNames = FALSE)
+```
+
+<!--##Q:q5-->
+
+<!--##Select-answer[XOXOXOOX]-->
+
+```{r q5}
+question("Interprétez le modèle ci-dessus.",
+  answer("La distribution de la variable `richness` suit une distribution de Poisson de variance 1.", correct = TRUE),
+  answer("La distribution de la variable `richness` suit une distribution de Poisson de variance sigma^2.", correct = TRUE),
+  answer("L'ordonnée à l'origine et la pente sont significativement différentes de 0 (test z).", correct = TRUE),
+  answer("L'ordonnée à l'origine et la pente ne sont pas significativement différentes de 0 (test z).", correct = TRUE),
+  answer("L'effet aléatoire sur la pente a une variance de 0.09 et de 0.26 sur l'ordonnée à l'origine.", correct = TRUE),
+  answer("L'effet aléatoire sur la pente a une variance de 0.26 et de 0.09 sur l'ordonnée à l'origine.", correct = TRUE),
+  answer("L'ordonnée à l'origine et la pente ne sont pas significativement différents de 0 selon l'intervalle de confiance à 95%.", correct = TRUE),
+  answer("L'ordonnée à l'origine et la pente sont significativement différents de 0 selon l'intervalle de confiance à 95%.", correct = TRUE),
+  allow_retry = TRUE, random_answer_order = TRUE,
+  try_again = "Votre réponse est enregistrée.",
+  correct = "Votre réponse est enregistrée.")
+```
+
+
+## Question 6
+
+Ajustez un nouveau modèle `rikz_mod2` similaire à `rikz_mod1` préencodé, mais pour lequel l'effet aléatoire ne joue que sur la pente. Affichez-en le résumé sans utiliser `tabularise()`. Enfin, comparez les deux modèles de la manière la plus adéquate.
+
+<!--##A-chunk:q6-->
+
+```{=html}
+<!--record='ROP', object='rikz_mod2', arg='call'
+# Modèle 1
+rikz_mod1 <- lme4::glmer(data = rikz, richness ~ nap + (nap|beach), family = poisson)
+summary(rikz_mod1)
+# Modèle 2
+rikz_mod2 <- lme4::glmer(data = rikz, richness ~ nap + (0 + nap|beach), family = poisson)
+summary(rikz_mod2)
+# Comparaison entre les modèles
+anova(rikz_mod1, rikz_mod2, test = "Chisq")
+-->
+```
+
+<!--##Delete-->
+
+```{r q6, exercise=TRUE, exercise.lines=8}
+# Modèle 1
+rikz_mod1 <- lme4::glmer(data = rikz, richness ~ nap + (nap|beach), family = poisson)
+summary(rikz_mod1)
+# Modèle 2
+rikz_mod2 <- 
+
+# Comparaison des deux modèles
+
+```
+
+<!--##Delete-->
+
+## Fin
+
+<!--##Delete-->
+
+Pour sortir de cette interrogation **une fois que vous avez tout fini**, [cliquez ici](https://wp.sciviews.org/examdone/).
+
+<!--##Delete-->
+
+```{css, echo=FALSE}
+@media print {
+  .topics {
+    width: 100% !important;
+    padding: 0 0.5em 0 !important;
+  }
+  .topicsContainer, .topicsContainer *, .learnrBanner, .learnrBanner *, .topicActions, .topicActions * {
+    display: none !important;
+  }
+}
+```
