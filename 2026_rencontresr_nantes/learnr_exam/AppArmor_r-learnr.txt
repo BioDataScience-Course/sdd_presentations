@@ -1,0 +1,95 @@
+#include <tunables/global>
+
+profile r-learnr {
+  #include <abstractions/base>
+  #include <abstractions/nameservice>
+
+  capability kill,
+  capability net_bind_service,
+  capability sys_tty_config,
+
+  @{PROC}/[0-9]*/attr/current r,
+  @{PROC}/[0-9]*/loginuid r,
+  @{PROC}/[0-9]*/task/[0-9]*/comm rw,
+
+  /dev/tty r,
+  /etc/fonts/** mr,
+  /etc/resolv.conf r,
+  /etc/xml/* r,
+
+  # These are used by pandoc
+  /usr/bin/pandoc ix,
+  /usr/bin/dash ix,
+
+  # These may be useful for R:
+  /usr/bin/bzip2 ix,
+  /usr/bin/pager ix,
+  /usr/bin/sed ix,
+  /usr/bin/tar ix,
+  /usr/bin/texi2dvi ix,
+  /usr/bin/unzip ix,
+  /usr/bin/xdg-open ix,
+  /usr/bin/zip ix,
+
+  # There are possibly useful, but not activated for now
+  #/usr/bin/python3 ix,
+  #/usr/bin/getent ix,
+  #/usr/bin/pandoc-server ix,
+  #/usr/bin/ghostscript ix,
+  #/usr/bin/env ix,
+  #/usr/bin/which ix,
+  #/usr/bin/git ix,
+  #/usr/bin/rrdtool ix,
+  # Probably not: /usr/bin/lpr ix,
+  # Prbably not: /usr/bin/make ix,
+  #/usr/bin/sh ix,
+  #/usr/bin/bash ix,
+  #/usr/local/bin/quarto ix,
+  #/usr/local/bin/* ix,
+
+  # No need to compile anything, or access to these ? (from r-user)
+  #/usr/include/** r,
+  #/usr/lib/gcc/** rix,
+  #/usr/lib/R/bin/* rix,
+  #/usr/lib{,32,64}/** mr,
+  #/usr/lib{,32,64}/R/bin/exec/R rix,
+  #/usr/local/lib/R/** mr,
+  #/usr/local/lib/R/site-library/** mrwix,
+
+  /usr/local/share/** mr,
+  /usr/share/** mr,
+  /usr/share/ca-certificates/** r,
+  /var/cache/** r,
+
+  # Required to access OpenBLAS pthreads
+  /usr/lib/x86_64-linux-gnu/openblas-pthread/* rix,
+
+  # Give access to some of the R files
+  /opt/R/{4.3.3,4.4.3,4.5.2}/lib/R/share/** r,
+  /opt/R/{4.3.3,4.4.3,4.5.2}/lib/R/modules/* rix,
+  /opt/R/{4.3.3,4.4.3,4.5.2}/lib/R/lib/* rix,
+  # We do not give access to Renviron or Rprofile.site!
+  /opt/R/{4.3.3,4.4.3,4.5.2}/lib/R/etc/repositories r,
+  /opt/R/{4.3.3,4.4.3,4.5.2}/lib/R/bin/** rix,
+
+  # Give access to tmp in read-write mode:
+  /opt/rstudio-connect/mnt/tmp/** mrwix,
+
+  # Give access to the R process packages in read-only mode:
+  /opt/R/{4.3.3,4.4.3,4.5.2}/lib/R/library/** mrix,
+  /opt/rstudio-connect/mnt/app/packrat/lib/x86_64-pc-linux-gnu/{4.3.3,4.4.3,4.5.2}/** mrix,
+  /opt/rstudio-connect/mnt/packrat/{4.3.3,4.4.3,4.5.2}/** mrix,
+
+  # Does not seem to be useful:
+  #/opt/R/{4.3.3,4.4.3,4.5.2}/lib/R/** mrix,
+  #deny /opt/R/{4.3.3,4.4.3,4.5.2}/lib/R/etc/** mrx,
+  #/opt/rstudio-connect/ext/pandoc/** ix,
+  #/opt/quarto/** ix,
+  #/opt/rstudio-connect/mnt/bookmarks/** rw,
+  #/data1/rstudio-connect/** rw,
+
+  # No access to the mongolite R package
+  deny /opt/R/{4.3.3,4.4.3,4.5.2}/lib/R/library/mongolite/** mr,
+  deny /opt/rstudio-connect/mnt/app/packrat/lib/x86_64-pc-linux-gnu/{4.3.3,4.4.3,4.5.2}/mongolite/** mr,
+  deny /opt/rstudio-connect/mnt/packrat/{4.3.3,4.4.3,4.5.2}/v2/library/mongolite/** mr,
+}
