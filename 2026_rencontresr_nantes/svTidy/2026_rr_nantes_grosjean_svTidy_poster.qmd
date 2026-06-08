@@ -1,0 +1,245 @@
+---
+title: "svTidy et le 'formula-masking'"
+author: "Philippe Grosjean & Guyliann Engels (Écologie numérique, Complexys & Infortech, Université de Mons, BE)"
+subtitle: "Une alternative intéressante à {dplyr} et {tidyr} pour remanier vos jeux de données"
+#header_font: "Roboto" # optional, default JetBrains Mono -- for the title block
+header_logo: "logo.png" # optional                       -- for the title block
+header_block_color: "961f4b" # optional, default 6b1f50  -- for the title block
+heading_color: "961f4b" # optional, default 6b1f50       -- the headings color in the body
+body_color: "f5deb3" # optional, default cccccc          -- the color of the body background
+body_font: "Calibri" #"JetBrains Mono" # optional, default Calibri  -- the body text font
+format:
+  poster-typst: default
+execute:
+  eval: true
+---
+
+<!--# Format poster with Quarto >= 1.6.0: quarto install extension https://codeberg.org/edenian-prince/quarto-typst-poster/archive/main.zip, see https://codeberg.org/edenian-prince/quarto-typst-poster%20 -->
+
+```{r}
+#| echo: false
+SciViews::R
+data('starwars', package = 'dplyr')
+#library(ggplot2)
+#var <- "JN.1"
+#today_date <- Sys.Date()
+```
+
+```{=typst}
+#import "@preview/showybox:2.0.4": showybox 
+#let main = rgb("#961f4b")
+
+#showybox(
+  title-style: (
+    boxed-style: (
+      anchor: (
+        x: center,
+        y: horizon
+      ),
+      radius: (top-left: 10pt, bottom-right: 10pt, rest: 0pt),
+    )
+  ),
+  frame: (
+    title-color: main,
+    body-color: main.lighten(80%),
+    footer-color: main.lighten(60%),
+    border-color: main.darken(20%),
+    radius: (top-left: 10pt, bottom-right: 10pt, rest: 0pt)
+
+  ),
+  title: "tl;dr",
+  footer: text(size: 30pt, weight: 600, emph("{svTidy} on GitHub https://github.com/SciViews/svTidy/ and R-Universe https://sciviews.r-universe.dev/. Also see https://www.sciviews.org/svTidy/."))
+)[
+  {svTidy} reimplémente les fonctions de {dplyr} et {tidyr}, mais utilise des **formules** pour les évaluations non standard. Cela présente de nombreux avantages. Les plus importants sont :
+
+- indication explicite de l'utilisateur qu'une évaluation non standard est souhaitée
+- généralisation/inclusion du code dans une fonction facilitées
+
+Le code de {svTidy} est également souvent plus rapide.
+]
+```
+
+:::{.block fill="white" inset="30pt" radius="6pt"}
+
+# **Évaluation non standard (NSE)**
+
+R permet de retravailler le code fourni aux arguments d'une fonction pour l'évaluer de manière différente. C'est l'**évaluation non standard** (NSE par opposition à SE, évaluation standard). Par exemple, pour extraire une colonne d'un data frame, on peut faire en R de base (évaluation standard) :
+
+```r
+starwars[["species"]] # SE
+```
+
+Une version plus courte utilise l'opérateur `$`. Cet opérateur évalue son second argument (ici `species`) de manière *non standard* de telle sorte que les guillemets sont optionnels, malgré qu'il s'agisse bien ici d'une chaîne de caractères :
+
+```r
+starwars$species # NSE pour species (guillemets optionnels)
+```
+
+Le [Tidyverse](https://tidyverse.org) implémente sa propre version de NSE avec la 'tidy evaluation'. Un code équivalent s'écrit avec {dplyr} comme ceci :
+
+```r
+pull(starwars, species) # NSE pour species (tidy evaluation)
+```
+
+Dans le cas de `pull()` le NSE est identique à `$`, mais en réalité la 'tidy evaluation' permet des constructions bien plus complexes.
+
+:::
+
+::::{.block fill="white" inset="35pt" radius="6pt"}
+
+# **NSE avec le 'formula-masking'**
+
+Il n'est pas toujours facile de déterminer quand un argument est évalué SE ou NSE. Et quand il est NSE, avec quel mécanisme.
+
+{svTidy} introduit le **'formula-masking'**, une approche NSE *explicite* et *standardisée*. Les formules de R contiennent toutes l'opérateur `~` qui ne sert à rien d'autre, et est donc facile à identifier dans le code.
+
+::::
+
+:::{.block fill="white" inset="30pt" radius="6pt"}
+
+En {dplyr}, on écrit :
+
+```r
+# {dplyr} version
+ages_dplyr <-
+  starwars |>
+  filter(species == "Human") |>
+  mutate(age = birth_year + 2) |>
+  summarise(
+    mean_age = mean(age, na.rm = TRUE),
+    sd_age   = sd(age, na.rm = TRUE),
+    n_age    = sum(!is.na(age)),
+    .by      = "gender"
+  )
+```
+
+En {svTidy} les sections NSE sont plus explicites (précédées du `~`) :
+
+```r
+# {svTidy} version
+ages_svTidy <-
+  starwars |>
+  filter_(~species == "Human") |>
+  mutate_(age = ~birth_year + 2) |>
+  summarise_(
+    mean_age = ~mean(age, na.rm = TRUE),
+    sd_age   = ~sd(age, na.rm = TRUE),
+    n_age    = ~sum(!is.na(age)),
+    .by      = "gender"
+  )
+}
+```
+*Notez aussi que les fonctions {svTidy} portent le même nom que celles de {dplyr}, mais terminées par un `_`.*
+
+:::
+
+:::{.block fill="white" inset="35pt" radius="6pt"}
+
+# **Inclusion dans une fonction**
+
+La 'tidy evaluation' est assortie de mécanismes complexes pour permettre la *généralisation* du code et son inclusion dans une fonction. Le 'formula-masking' permet un traitement plus direct et intuitif.
+
+:::
+
+:::{.block fill="white" inset="30pt" radius="6pt"}
+
+```r
+# {dplyr} version
+f_dplyr <- function(data, subset, var, year, group) {
+  filter(data, {{ subset }}) |>
+    mutate({{var}} := .data$birth_year + .env$year) |>
+    summarise(
+      "mean_{{var}}" := mean({{ var }}, na.rm = TRUE),
+      .by = {{ group }})
+}
+```
+
+```r
+# {svTidy} version
+f_svTidy <- function(data, subset, var, year, group) {
+  filter_(data, subset) |>
+    mutate_(var ~ birth_year + year) |>
+    summarise_(
+      "mean_{{var}}" ~ mean(var, na.rm = TRUE),
+      .by = group)
+}
+```
+
+:::
+
+:::{.block fill="white" inset="30pt" radius="6pt"}
+
+# **Bonus : code optimisé - vitesse et mémoire**
+
+```{r}
+#| message: false 
+#| warning: false
+#| echo: false
+f_dplyr <- function(data, subset, var, year, group) {
+  filter(data, {{ subset }}) |>
+    mutate({{var}} := .data$birth_year + .env$year) |>
+    summarise(
+      "mean_{{var}}" := mean({{ var }}, na.rm = TRUE),
+      .by = {{ group }})
+}
+
+f_svTidy <- function(data, subset, var, year, group) {
+  filter_(data, subset) |>
+    mutate_(var ~ birth_year + year) |>
+    summarise_(
+      "mean_{{var}}" ~ mean(var, na.rm = TRUE),
+      .by = group)
+}
+```
+
+```{r}
+#| message: false 
+#| warning: false
+#| echo: false
+bm <- bench::mark(
+  f_dplyr  = f_dplyr(starwars, species == "Human", age, 2, "gender"),
+  f_svTidy = f_svTidy(starwars, ~species == "Human", ~age, 2, "gender")
+)
+bm2 <- bm[, c("expression", "median", "itr/sec", "mem_alloc")]
+bm2$expression <- c("f_dplyr", "f_svTidy")
+tabularise(bm2) |> flextable::fontsize(size = 38, part = "all") |> flextable::autofit()
+```
+
+:::
+
+```{=typst}
+
+#showybox(
+  title-style: (
+    boxed-style: (
+      anchor: (
+        x: center,
+        y: horizon
+      ),
+      radius: (top-left: 10pt, bottom-right: 10pt, rest: 0pt),
+    )
+  ),
+  frame: (
+    title-color: main,
+    body-color: main.lighten(80%),
+    footer-color: main.lighten(60%),
+    border-color: main.darken(20%),
+    radius: (top-left: 10pt, bottom-right: 10pt, rest: 0pt)
+  ),
+  title: "Détails, y compris sur le benchmark, ici :",
+)[
+```
+<!-- im adding the qr code between the typst block here, fyi -->
+
+```{r}
+#| echo: false
+#| fig-align: center 
+#| fig-height: 5
+#| fig-wigth: 6
+code <- qrcode::qr_code("https://www.sciviews.org/svTidy/")
+plot(code)
+```
+
+```{=typst}
+]
+```
