@@ -48,7 +48,7 @@ data('starwars', package = 'dplyr')
 
   ),
   title: "tl;dr",
-  footer: text(size: 30pt, weight: 600, emph("{svTidy} on GitHub https://github.com/SciViews/svTidy/ and R-Universe https://sciviews.r-universe.dev/. Also see https://www.sciviews.org/svTidy/."))
+  footer: text(size: 30pt, weight: 600, emph("{svTidy} sur GitHub https://github.com/SciViews/svTidy/ et R-Universe https://sciviews.r-universe.dev/. Aussi https://www.sciviews.org/svTidy/."))
 )[
   {svTidy} reimplémente les fonctions de {dplyr} et {tidyr}, mais utilise des **formules** pour les évaluations non standard. Cela présente de nombreux avantages. Les plus importants sont :
 
@@ -91,7 +91,7 @@ Dans le cas de `pull()` le NSE est identique à `$`, mais en réalité la 'tidy 
 
 Il n'est pas toujours facile de déterminer quand un argument est évalué SE ou NSE. Et quand il est NSE, avec quel mécanisme.
 
-{svTidy} introduit le **'formula-masking'**, une approche NSE *explicite* et *standardisée*. Les formules de R contiennent toutes l'opérateur `~` qui ne sert à rien d'autre, et est donc facile à identifier dans le code.
+{svTidy} introduit le **'formula-masking'**, une approche NSE *explicite* et *standardisée*. Les formules de R contiennent toutes l'opérateur 'tilde' `~` qui ne sert à rien d'autre, et est donc facile à identifier dans le code.
 
 ::::
 
