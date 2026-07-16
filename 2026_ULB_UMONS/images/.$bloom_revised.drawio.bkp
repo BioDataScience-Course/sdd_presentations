@@ -1,0 +1,28 @@
+<mxfile host="Electron" modified="2024-07-08T17:02:15.772Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="OBCESAjjiZ-WZlbMqiUV" version="24.6.4" type="device">
+  <diagram name="Page-1" id="8RcB091pld8Xh7fh2s0W">
+    <mxGraphModel dx="1584" dy="1184" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3300" pageHeight="4681" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GztQF_fcFN-zkm4wOgRc-1" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-90;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="480" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="GztQF_fcFN-zkm4wOgRc-2" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-90;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="158.75" y="120" width="402.5" height="402.5" as="geometry" />
+        </mxCell>
+        <mxCell id="GztQF_fcFN-zkm4wOgRc-3" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-90;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="200.31" y="120" width="319.38" height="320.63" as="geometry" />
+        </mxCell>
+        <mxCell id="GztQF_fcFN-zkm4wOgRc-4" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-90;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="240.24" y="120" width="239.52" height="240.47" as="geometry" />
+        </mxCell>
+        <mxCell id="GztQF_fcFN-zkm4wOgRc-5" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-90;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="280.06" y="120" width="159.88" height="159.88" as="geometry" />
+        </mxCell>
+        <mxCell id="GztQF_fcFN-zkm4wOgRc-6" value="" style="triangle;whiteSpace=wrap;html=1;rotation=-90;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="320.02" y="120" width="79.97" height="79.97" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

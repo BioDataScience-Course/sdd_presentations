@@ -1,0 +1,21 @@
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.7)  7 JUN 2024 11:30
+entering extended mode
+ \write18 enabled.
+ %&-line parsing enabled.
+**/Users/phgrosjean/Documents/GitHub/BioDataScience-Course/sdd_presentations/2024_rencontresr_vannes/presentation/template/_header.tex
+(/Users/phgrosjean/Documents/GitHub/BioDataScience-Course/sdd_presentations/2024_rencontresr_vannes/presentation/template/_header.tex
+LaTeX2e <2024-06-01>
+L3 programming layer <2024-05-27>
+! Undefined control sequence.
+l.23 \mode
+          <all> 
+Here is how much of TeX's memory you used:
+ 14 strings out of 476255
+ 619 string characters out of 5786433
+ 1918543 words of memory out of 5000000
+ 22651 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 11i,0n,13p,211b,8s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+No pages of output.
