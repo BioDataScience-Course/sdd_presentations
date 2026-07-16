@@ -139,7 +139,7 @@ Batterie de tests en niveau 3 permettant l'auto-vérification et auto-correction
 
 - Étudiant dans un contexte universitaire (Bachelier / Master)
 
-- Professionnels en formation continuée menant à une microcertification
+- Professionnels en formation continue menant à une microcertification
 
 \vfill
 
