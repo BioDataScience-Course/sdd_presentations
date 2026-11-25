@@ -1,0 +1,309 @@
+---
+title: "Transformer l’évaluation des étudiants en science des données biologiques grâce à des tutoriels interactifs"
+shorttitle: "Évaluer avec des tutoriels interactifs"
+subtitle: "\\break \\vfill  \\includegraphics[width=.15\\textwidth,height=.2\\textheight]{template/biodatascience.png}  
+\\includegraphics[width=.15\\textwidth,height=.2\\textheight]{figures/learnitr_800.png}"
+author: "Guyliann Engels & Philippe Grosjean"
+institute: "\\putabs{-0.3cm}{1.5cm}{\\includegraphics[width=1.5cm]{template/EcoNum-logo.pdf}}
+Université de Mons, Belgique\\break Service d'Écologie numérique \\break <\\url{guyliann.engels@umons.ac.be}>, <\\url{philippe.grosjean@umons.ac.be}>" 
+date: "CFIES 2026, UNamur"
+fontfamily: mathpazo
+fontsize: 9pt
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, fig.height=3)
+SciViews::R
+tab_question <- read$rds("data/tab_question.rds")
+```
+
+### Qui sommes-nous ?
+
+\begincols
+\begincol{.50\textwidth}
+
+Philippe Grosjean
+
+- Professeur
+- Biologiste marin
+- Développeur en R
+
+![](figures/PhilippeGrosjean.jpg){height=3.5cm}
+
+\endcol
+\begincol{.50\textwidth}
+
+Guyliann Engels
+
+- Adjoint pédagogique
+- Biologiste marin
+- Utilisateur de R
+
+![](figures/guyliann.jpeg){height=3.5cm}
+
+\endcol
+\endcols
+
+### Les cours de science des données dans le cursus en biologie
+
+![](figures/sdd_orga.png){width='100%'}
+
+### Science des données biologiques à l'Université de Mons
+
+On veut des étudiants **actifs**
+
+**Cours classique *ex cathedra* + séances d'exercices**
+
+![](figures/organisation1.png)
+
+**Approche en classe inversée**
+
+![](figures/organisation2.png)
+
+### Enseigner la science des données biologiques 
+
+Ce cursus vise à donner une série de compétences englobant des notions de biologie, de statistique et de programmation afin de **répondre à une question biologique.**
+
+\begin{center}
+\includegraphics[height=.6\textheight]{figures/apprendre2.png}
+\end{center}
+
+### Évaluer les apprentissages en science des données
+
+Le grand défi est de proposer une **évaluation** en accord avec les **objectifs d'apprentissage** et les **activités d'enseignement**.
+
+**Statistique & biologie** : évaluation via des projets, des QCM, des questions ouvertes…
+
+**Programmation** : 
+
+- Projets : les étudiants peuvent s'entraider ou utiliser l'IA
+- Examen papier : écrire du code R sur papier est artificiel et frustrant
+
+
+![](figures/learnr_logo.png){width='10%'}
+
+![](screenshots/learnr.png){width='80%'} 
+
+### learnr comme bon candidat
+
+Une interrogation sur **ordinateur**, via un **outil connu**, avec des questions variées
+
+```{r, echo=FALSE}
+
+df <- data.frame(
+  Type = c("QCM", "", "Question ouverte", "", "Codage en R"),
+  Exemple = c(
+    "Interpréter un tableau résumé de modèle",
+    "",
+    "Définir la déviance des résidus",
+    "",
+    "Ajuster un GLM, comparer deux modèles"
+  ),
+  `Ce qu'on évalue` = c(
+    "Compréhension conceptuelle",
+    "",
+    "Capacité d'explication",
+    "",
+    "Compétence pratique réelle"
+  ),
+  check.names = FALSE
+) 
+
+knitr::kable(df, booktabs = TRUE) 
+
+#  kableExtra::row_spec(3, bold = TRUE)
+#tabularise(df) |> flextable::autofit()
+```
+
+Un learnr par défaut ne permet pas d'**enregistrer les résultats**, ni de s'exécuter dans un **environnement contrôlé**.
+
+### Adaptation du learnr pour l'évaluation
+
+![](screenshots/dispositif.png)
+
+### Passation du test par l'étudiant
+
+\putat{-20}{-160}{\includegraphics[width=110mm]{screenshots/learnr_posit2.png}}
+\putat{280}{80}{\includegraphics[width=20mm]{figures/posit.png}}
+
+### Sécurisation à deux niveaux
+
+**Côté client — [Safe Exam Browser](https://safeexambrowser.org/news_en.html)**
+
+\putat{245}{-15}{\includegraphics[width=20mm]{figures/safeexam.jpg}}
+
+- Fichier *.seb* distribué aux étudiants avant l'épreuve
+- Mode kiosque : accès restreint aux pages autorisées (learnr + site de cours)
+
+
+\vfill
+
+
+**Côté serveur — AppArmor**
+
+\putat{245}{-35}{\includegraphics[width=20mm]{figures/apparmor.png}}
+
+- Profil restreint pour le processus R
+- Accès limité aux packages R nécessaires
+
+\vfill
+
+Deux couches indépendantes : sécurité robuste sans sacrifier l'interactivité.
+
+### Correction de l'enseignant : {learnitgrid}
+
+![](screenshots/learnitgrid_byquestion.png){width='125%'}
+
+```{r feedback, include=FALSE}
+# Builds fig_words, fig_hist, fig_hist2 and fig_agree
+source("data/pres_g8_feedback_figures.R", local = TRUE)
+```
+
+### Correction assistée : longueur du feedback
+
+\alert{$\rightarrow$ Le LLM rédige un feedback plus long, même pour les réponses correctes}
+
+```{r, fig.width=10.5, fig.height=5, out.width='.95\\textwidth'}
+fig_hist2 + labs(title = NULL)
+```
+
+### Correction assistée : accord avec la note de l'enseignant
+
+\alert{$\rightarrow$ Désaccord important : l'enseignant reste garant de la note}
+
+```{r, fig.width=9.5, fig.height=4.2, out.width='\\textwidth', dev='cairo_pdf'}
+fig_agree + labs(title = NULL)
+```
+
+### Correctif issu du même Rmd que le learnr
+
+Un [seul fichier R Markdown](https://github.com/BioDataScience-Course/sdd_presentations/blob/master/2026_rencontresr_nantes/learnr_exam/exam_example.Rmd) avec des balises spéciales pour le questionnaire interactif ({learnr}) et pour le corrigé (fichier HTML).
+
+![](screenshots/onermd.png)
+
+### Rapport de correction de l'étudiant
+
+Exemple anonymisé d'un correctif en HTML
+
+![](screenshots/corrected_q6.png)
+
+
+### Ce que les données révèlent : maîtrise du langage
+
+\alert{$\rightarrow$ Amélioration dans l'écriture du code}
+
+```{r, echo=FALSE}
+tab_question |>
+    filter_(~ type == "code") |>
+    mutate_(syntax_valid = ~ n_evaluated / n_executed) |>
+    drop_na_(~syntax_valid) |>
+    summarise_(
+        mean_valid = ~ fmean(syntax_valid),
+        .by = c("course", "user")
+    ) |>
+    chart(mean_valid ~ course) +
+    geom_boxplot(
+        aes(fill = course),
+        alpha = 0.3,
+        width = 0.5,
+        outlier.shape = NA,
+        show.legend = FALSE
+    ) +
+    geom_jitter(
+        aes(color = course),
+        width = 0.15,
+        alpha = 0.6,
+        size = 2,
+        show.legend = FALSE
+    ) +
+    scale_fill_manual(values = c(A = "#E74C3C", B = "#3498DB", C = "#2ECC71")) +
+    scale_color_manual(
+        values = c(A = "#E74C3C", B = "#3498DB", C = "#2ECC71")
+    ) +
+    scale_y_continuous(labels = scales::percent_format()) +
+    labs(
+        #title = "Proportion de code syntaxiquement valide moyen par étudiant et par cours",
+        y = "Code syntaxiquement valide (%)",
+        x = "Cours"
+    ) +
+        theme(text = element_text(size = 9))
+```
+
+
+### Ce que les données révèlent : tentatives & résultats
+
+\alert{$\rightarrow$ Augmentation de la complexité des questions}
+
+```{r, echo=FALSE}
+tab_question |>
+    filter_(~ type == "code") |>
+    drop_na_(~z_score, ~z_ntry) |>
+    summarise_(
+        mean_ntry = ~ fmean(ntry),
+        mean_ntry_valid = ~ fmean(n_evaluated),
+        mean_score = ~ fmean(prop_score) * 20,
+        n_questions = ~ fn(label),
+        .by = c("course", "user")
+    ) -> tab_temp
+
+tab_temp |>
+    #chart(med_z_score ~ med_z_ntry %col=% med_score | course) +
+    chart(mean_score ~ mean_ntry_valid %col=% course | course) +
+    geom_point(alpha = 0.8, size = 2, show.legend = FALSE) +
+    geom_hline(
+        yintercept = 10,
+        linetype = "dashed",
+        color = "red",
+        linewidth = 0.5
+    ) +
+    #scale_fill_manual(values = c(A = "#E74C3C", B = "#3498DB", C = "#2ECC71")) +
+    scale_color_manual(
+        values = c(A = "#E74C3C", B = "#3498DB", C = "#2ECC71")
+    ) +
+    geom_vline(
+        xintercept = fmean(tab_temp$mean_ntry_valid, na.rm = TRUE),
+        linetype = "dashed",
+        color = "red",
+        linewidth = 0.5
+    ) +
+    labs(
+        #title = "Résultat moyen aux questions de code vs nombre moyen de tentatives de code syntaxiquement valide",
+        x = "Nombre moyen de tentatives de code syntaxiquement valide",
+        y = "Note moyenne sur 20"
+    ) +
+        theme(text = element_text(size = 9))
+```
+
+
+### Take home message
+
+\begincols
+\begincol{.48\textwidth}
+
+1. **Source unique** : épreuve + corrigé depuis un seul fichier
+2. Données du learnr enregistrées dans une **base de données** (MongoDB)
+3. **Double sécurisation** (Safe Exam Browser + AppArmor)
+4. **Grilles de correction** pour chaque question (learnitgrid)
+5. **Bonus** : données exploitables pour mesurer la progression des étudiants
+
+\vfill
+
+**À suivre** : *Enseignement des statistiques avec R et learnitr : approche explicite en mode hybride et évaluation continue* (Philippe Grosjean)
+
+\endcol
+\begincol{.50\textwidth}
+
+\small
+
+**Liens utiles**
+
+- Matériel exemple : <https://go.sciviews.org/learnr_exam>
+- learnitr : <https://learnitr.r-universe.dev>
+    + **learnitdown** : enregistrement learnr dans la base de données
+    + **learnitgrid** : interface de correction
+    + **learnitprogress** : rapport de correction pour l'étudiant (HTML)
+    + **learnitexam** : futur package si intérêt de la communauté
+- Contact : <sdd@sciviews.org>
+
+\endcol
+\endcols
