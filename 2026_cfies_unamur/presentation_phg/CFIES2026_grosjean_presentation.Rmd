@@ -222,7 +222,8 @@ ___
 
 - Site web du cours : [\alert{https://wp.sciviews.org/}](https://wp.sciviews.org/)
 
-- Cette présentation : [\alert{https://go.sciviews.org/rr2024}](https://go.sciviews.org/rr2024)
+- Cette présentation : 
+[\alert{https://go.sciviews.org/cfies2026}](https://go.sciviews.org/cfies2026)
 
 - Bocquillon, M., Baco, Ch., Derobertmasure, A. et Demeuse, M. (2024), Enseignement explicite : pratiques et stratégies. Quand l’enseignant fait la différence. De Boek Supérieur ed., Louvain-La-Neuve 304pp.
 
