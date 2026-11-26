@@ -57,7 +57,7 @@ pédagogiques sur l'apprentissage et l'inclusivité
 ![](images/apprendre2b.png){width='100%'}
 
 
-## Challenge #1 : motiver et capter l'attention
+## Motiver et capter l'attention pour les exercices hors présentiel
 
 ### Exercices facultatifs - peu de participation
 
@@ -148,7 +148,7 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 ![](images/test.pdf){width='80%'}
 
 
-## Challenge #2 : apprentissage inclusif
+## Progressivité dans l'application pratique de la statistique
 
 ### Exercices de difficulté croissante
 
@@ -156,11 +156,11 @@ Niveaux 0 à 2 déjà discutés (H5P - Shiny - learnr)
 
 ![](images/apprendre2b.png){width='100%'}
 
-### Niveau 3 : projets GitHub cadrés (RStudio, Quarto)
+### Niveau 3 : projets GitHub cadrés (R, RStudio, Quarto)
 
 ![](images/github.png){width='70%'}
 
-### Niveau 3 : projets GitHub cadrés (RStudio, Quarto)
+### Niveau 3 : projets GitHub cadrés (R, RStudio, Quarto)
 
 - **Instructions** sous forme de commentaires
 
@@ -170,7 +170,7 @@ Niveaux 0 à 2 déjà discutés (H5P - Shiny - learnr)
 
 \vfill
 
-### Niveau 3 : projets GitHub cadrés (RStudio, Quarto)
+### Niveau 3 : projets GitHub cadrés (R, RStudio, Quarto)
 
 - Instructions sous forme de commentaires
 
@@ -178,7 +178,7 @@ Niveaux 0 à 2 déjà discutés (H5P - Shiny - learnr)
 
 ![](images/github_select_answer.png){width='80%'}
 
-### Niveau 3 : projets GitHub cadrés (RStudio, Quarto)
+### Niveau 3 : projets GitHub cadrés (R, RStudio, Quarto)
 
 - Instructions sous forme de commentaires
 
@@ -198,7 +198,7 @@ Niveaux 0 à 2 déjà discutés (H5P - Shiny - learnr)
 
 - Choix d'un jeu de données ouvertes (Zenodo, Dryad...)
 
-- Même environnement logiciel que pour le niveau 3 (RStudio, Quarto)
+- Même environnement logiciel que pour le niveau 3 (R, RStudio, Quarto)
 
 - Consignes minimales : explorer dans un bloc-notes, mettre au net dans un rapport
 
