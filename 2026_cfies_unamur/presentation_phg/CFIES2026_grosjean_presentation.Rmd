@@ -22,14 +22,42 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 \vfill
 
-Cursus universitaire en biologie, 4 cours Bab2, Bab3, Ma1 & Ma2 (option), 19 crédits, 194h, voir [\alert{\underline{https://wp.sciviews.org}}](https://wp.sciviews.org)
+Cursus universitaire en biologie, 4 cours Bab2, Bab3, Ma1 & Ma2 (option), 17
+crédits, 200h en présentiel, 30 modules, voir [\alert{\underline{https://wp.sciviews.org}}](https://wp.sciviews.org)
 
 \vfill
 
 ![](images/site_cours.png){width='65%'}
 
-## Motiver et capter l'attention
+### Inspiration : enseignement explicite
 
+\begincols
+\begincol{.50\textwidth}
+
+![](images/enseignement_explicite.jpg){width='80%'}
+
+\endcol
+\begincol{.50\textwidth}
+
+Utilisation d'un \alert{LRS, Learning Record Store} : base de données récoltant 
+les traces d'apprentissage. Évaluation objective de l'impact des pratiques
+pédagogiques sur l'apprentissage et l'inclusivité
+
+\endcol
+\endcols
+
+### Progressivité : 4 niveaux de difficulté croissante
+
+(cf présentation précédente de Guyliann Engels)
+
+![](images/apprendre2.png){width='80%'}
+
+### Besoin d'outils logiciels (originaux pour certains) : LearnIt::R
+
+![](images/apprendre2b.png){width='100%'}
+
+
+## Challenge #1 : motiver et capter l'attention
 
 ### Exercices facultatifs - peu de participation
 
@@ -120,17 +148,19 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 ![](images/test.pdf){width='80%'}
 
 
-## Progressivité de l'apprentissage
+## Challenge #2 : apprentissage inclusif
 
-### Progressivité : 4 niveaux de difficulté croissante
+### Exercices de difficulté croissante
 
-![](images/apprendre2.png){width='80%'}
+Niveaux 0 à 2 déjà discutés (H5P - Shiny - learnr)
 
-### Projets GitHub Classroom cadrés
+![](images/apprendre2b.png){width='100%'}
+
+### Niveau 3 : projets GitHub cadrés (RStudio, Quarto)
 
 ![](images/github.png){width='70%'}
 
-### Projets GitHub Classroom cadrés
+### Niveau 3 : projets GitHub cadrés (RStudio, Quarto)
 
 - **Instructions** sous forme de commentaires
 
@@ -140,7 +170,7 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 \vfill
 
-### Projets GitHub Classroom cadrés
+### Niveau 3 : projets GitHub cadrés (RStudio, Quarto)
 
 - Instructions sous forme de commentaires
 
@@ -148,7 +178,7 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ![](images/github_select_answer.png){width='80%'}
 
-### Projets GitHub Classroom cadrés
+### Niveau 3 : projets GitHub cadrés (RStudio, Quarto)
 
 - Instructions sous forme de commentaires
 
@@ -158,25 +188,29 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ![](images/github_testthat.png){width='80%'}
 
-### Correction des projets (grilles critériées)
+### Niveau 3 : correction des projets (grilles critériées)
 
-100 étudiants * 10 projets * 30 critères = 30.000 évaluations !
+100 étudiants * 10 projets * 30 critères = 30.000 notes (+ commentaires, voir présentation précédente de Guyliann Engels) !
 
 ![](images/learnitgrid.png){width='100%'}
 
-### Plateforme pédagogique LearnIt::R
+### Niveau 4 : projets GitHub libres par groupes de 4
 
-![](images/apprendre2b.png){width='100%'}
+- Choix d'un jeu de données ouvertes (Zenodo, Dryad...)
+
+- Même environnement logiciel que pour le niveau 3 (RStudio, Quarto)
+
+- Consignes minimales : explorer dans un bloc-notes, mettre au net dans un rapport
+
+- Coaching individualisé en classe
+
+- Utilisation de l'IA encouragée et devant être explicitée dans le rapport
 
 ___
 
 \begin{center}
 \textbf{Avez-vous des questions ?}
 \end{center}
-
-\centering
-
-![](images/monkey2.jpg){width='20%'}
 
 \vfill
 
@@ -189,3 +223,9 @@ ___
 - Site web du cours : [\alert{https://wp.sciviews.org/}](https://wp.sciviews.org/)
 
 - Cette présentation : [\alert{https://go.sciviews.org/rr2024}](https://go.sciviews.org/rr2024)
+
+- Bocquillon, M., Baco, Ch., Derobertmasure, A. et Demeuse, M. (2024), Enseignement explicite : pratiques et stratégies. Quand l’enseignant fait la différence. De Boek Supérieur ed., Louvain-La-Neuve 304pp.
+
+- Engels, G., Grosjean, Ph., et Artus, F. (2023). Teaching data science to students in biology
+using R, RStudio and learnr: Analysis of three years data. Foundations of Data Science,
+5(2), 266–285. https://doi.org/10.3934/fods.2022022
