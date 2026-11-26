@@ -6,7 +6,7 @@ author:
   - name: Philippe Grosjean
     email: philippe.grosjean@umons.ac.be
 surtitre: "CFIES 2026 · UNamur · Service d'Écologie numérique"
-ia: aucun
+ia: assiste
 logo-droite: false
 logos:
   - "template/EcoNum-logo.png"
@@ -68,7 +68,7 @@ source("data/pres_g8_feedback_figures.R", local = TRUE)
 
 ## Science des données biologiques à l'Université de Mons
 
-### On veut des étudiants **actifs**
+On veut des étudiants **actifs**
 
 **Cours classique *ex cathedra* + séances d'exercices**
 
@@ -108,7 +108,7 @@ Le grand défi est de proposer une **évaluation** en accord avec les **objectif
 
 ## learnr comme bon candidat
 
-### Une interrogation sur **ordinateur**, via un **outil connu**, avec des questions variées
+Une interrogation sur **ordinateur**, via un **outil connu**, avec des questions variées
 
 ```{r}
 data.frame(
@@ -164,7 +164,7 @@ Un learnr par défaut ne permet pas d'**enregistrer les résultats**, ni de s'ex
 ![](figures/apparmor.png){height="110px"}
 
 - Profil restreint pour le processus R
-- Accès limité aux packages R nécessaires
+- Accès limité aux packages R nécessaires et au système d'exploitation Linux
 :::
 ::::
 
