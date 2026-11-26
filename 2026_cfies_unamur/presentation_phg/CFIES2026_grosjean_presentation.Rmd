@@ -103,7 +103,7 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 ### Participation - des solutions...
 
--   Exercices directement **dans le cours en ligne**
+-   Exercices directement **dans le cours en ligne** : \alert{learnitdown}
 
 ![](images/h5p.png)
 
@@ -137,7 +137,7 @@ Cours de math, exercices interactifs en ligne proposés sans précautions partic
 
 -   Points attribués à la réalisation des exercices (exemple, 5% de la note finale)
 
--   **Rapport de progression** en temps réel
+-   **Rapport de progression** en temps réel : \alert{learnitprogress}
 
 ![](images/progress_report.png){width='85%'}
 
@@ -190,7 +190,8 @@ Niveaux 0 à 2 déjà discutés (H5P - Shiny - learnr)
 
 ### Niveau 3 : correction des projets (grilles critériées)
 
-100 étudiants * 10 projets * 30 critères = 30.000 notes (+ commentaires, voir présentation précédente de Guyliann Engels) !
+100 étudiants * 10 projets * 30 critères = 30.000 notes (+ commentaires,
+voir présentation précédente de Guyliann Engels) ! \alert{learnitgrid}
 
 ![](images/learnitgrid.png){width='100%'}
 
